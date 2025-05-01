@@ -1,17 +1,20 @@
 .logo-container {
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .logo-container:hover {
-    transform: scale(1.02);
+    transform: none;
 }
 
 .logo-image {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Simplified glitch animation */
 @keyframes glitch {
     0% {
         transform: translate(0);
@@ -45,9 +48,45 @@
 }
 
 .logo-glitch {
-    mix-blend-mode: screen;
     pointer-events: none;
-    transition: opacity 0.5s ease;
+    opacity: 0;
+    z-index: 1;
+}
+
+.logo-glitch .css-logo {
+    font-size: 7rem;
+}
+
+/* Remove all hover effects and shadows */
+.main-logo.css-logo .logo-text {
+    animation: none;
+    text-shadow: none;
+}
+
+.main-logo.css-logo:hover .logo-text {
+    animation: none;
+    text-shadow: none;
+}
+
+.main-logo.css-logo:hover + .logo-glitch {
+    opacity: 1;
+}
+
+.main-logo.css-logo:hover + .logo-glitch .logo-text {
+    animation: none;
+    opacity: 0.6;
+    text-shadow: none;
+}
+
+/* Remove unused animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+}
+
+@keyframes logo-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 @keyframes static-effect {
@@ -468,31 +507,14 @@ footer::before {
 /* Main hero logo size and effects */
 .main-logo.css-logo {
     font-size: 7rem;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .main-logo .logo-text {
     color: #1a1a1a;
     position: relative;
-    transition: all 0.3s ease;
     display: inline-block;
-}
-
-/* Glitch effect - only for main logo */
-.main-logo.css-logo:hover .logo-text {
-    text-shadow: 
-        -2px -2px 0 rgba(0, 255, 255, 0.6),
-        2px 2px 0 rgba(255, 0, 255, 0.6);
-    animation: logo-float 2s ease-in-out infinite;
-}
-
-@keyframes logo-float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
 }
 
 /* CSS Logo Styles */
@@ -517,73 +539,45 @@ footer::before {
 /* Main hero logo size */
 .main-logo.css-logo {
     font-size: 7rem;
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
 }
 
 .logo-text {
     color: #1a1a1a;
     position: relative;
-    transition: all 0.3s ease;
     display: inline-block;
+    text-shadow: none;
 }
 
-/* Glitch effect - only for main logo */
+/* Remove all hover effects */
 .main-logo.css-logo:hover .logo-text {
-    text-shadow: 
-        -2px -2px 0 rgba(0, 255, 255, 0.6),
-        2px 2px 0 rgba(255, 0, 255, 0.6);
-    animation: logo-float 2s ease-in-out infinite;
+    animation: none;
+    text-shadow: none;
+    transform: none;
 }
 
-@keyframes logo-float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-3px);
-    }
+/* Remove glitch effect */
+.logo-glitch {
+    display: none;
 }
 
-/* Logo glitch animation */
-.logo-glitch .css-logo {
-    position: absolute;
-    inset: 0;
+/* Remove all animations */
+@keyframes glitch { }
+@keyframes float { }
+@keyframes logo-float { }
+@keyframes logo-glitch { }
+
+/* Remove container hover effects */
+.logo-container {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.logo-glitch .css-logo .logo-text {
-    text-shadow: 
-        -2px -2px 0 rgba(0, 255, 255, 0.5),
-        2px 2px 0 rgba(255, 0, 255, 0.5);
-    animation: logo-glitch 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes logo-glitch {
-    0% {
-        transform: translate(0);
-        opacity: 0.7;
-    }
-    20% {
-        transform: translate(-2px, 1px);
-        opacity: 0.7;
-    }
-    40% {
-        transform: translate(-1px, -1px);
-        opacity: 0.7;
-    }
-    60% {
-        transform: translate(1px, 1px);
-        opacity: 0.7;
-    }
-    80% {
-        transform: translate(2px, -1px);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(0);
-        opacity: 0.7;
-    }
+.logo-container:hover {
+    transform: none;
 }
 
