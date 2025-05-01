@@ -187,11 +187,12 @@
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .quest-button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .quest-button::before {
@@ -405,4 +406,40 @@ footer::before {
 @keyframes glow {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 0.5; }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Hero Section Typography */
+.hero-section h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.05em;
+}
+
+.hero-section p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.03em;
+}
+
+.hero-section span {
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero-section p:hover span {
+    text-shadow: 0 0 8px currentColor;
 }
