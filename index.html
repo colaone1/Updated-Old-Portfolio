@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This declares that this is an HTML5 document, enabling modern browser features and ensuring proper rendering -->
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <!-- ===== META TAGS ===== -->
     <meta charset="UTF-8">
@@ -79,20 +79,67 @@
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google Fonts - Cinzel and others for the theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Dark Mode Support -->
+    <script>
+      // Check for saved theme preference
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+    
+    <!-- Dark Mode Styles -->
+    <style>
+      .dark {
+        color-scheme: dark;
+      }
+      .dark .bg-white {
+        background-color: #1a1a1a;
+      }
+      .dark .text-[#1a1a1a] {
+        color: #ffffff;
+      }
+      .dark .bg-gray-50 {
+        background-color: #2d2d2d;
+      }
+      .dark .bg-gray-800 {
+        background-color: #333333;
+      }
+      .dark .text-gray-300 {
+        color: #e5e5e5;
+      }
+      .dark .text-gray-400 {
+        color: #b3b3b3;
+      }
+      .dark .bg-[#f8f5f2] {
+        background-color: #2d2d2d;
+      }
+    </style>
   </head>
   
   <!-- The body contains all visible content of the webpage -->
   <!-- min-h-screen ensures the body takes at least the full viewport height, preventing awkward short pages -->
   <!-- bg-white sets a clean background color that works well with the fantasy theme -->
-  <body class="min-h-screen bg-white">
+  <body class="min-h-screen bg-white transition-colors duration-300">
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle dark mode">
+      <i class="fas fa-moon dark:hidden"></i>
+      <i class="fas fa-sun hidden dark:block"></i>
+    </button>
+
     <!-- Skip to main content link for keyboard navigation -->
     <!-- Positioned off-screen by default, visible on focus -->
     <a href="#main-content" 
-       class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none">
+       class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none"
+       aria-label="Skip to main content">
       Skip to main content
     </a>
 
@@ -120,11 +167,11 @@
                 </div>
                 
                 <!-- Navigation links with spacing between them -->
-                <div class="flex space-x-12">
-                    <a href="index.html" class="nav-button">Home</a>
-                    <a href="projects.html" class="nav-button">Projects</a>
-                    <a href="about-page.html" class="nav-button">About</a>
-                    <a href="contact-us.html" class="nav-button">Contact</a>
+                <div class="flex space-x-12" role="list">
+                    <a href="index.html" class="nav-button" role="listitem" aria-current="page">Home</a>
+                    <a href="projects.html" class="nav-button" role="listitem">Projects</a>
+                    <a href="about-page.html" class="nav-button" role="listitem">About</a>
+                    <a href="contact-us.html" class="nav-button" role="listitem">Contact</a>
                 </div>
                 
                 <!-- Empty div to balance the layout -->
@@ -137,11 +184,16 @@
     <!-- The hero section is the first thing visitors see, positioned relatively for absolute children -->
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
-    <header class="hero-section relative min-h-screen" role="banner">
+    <header class="hero-section relative min-h-screen" role="banner" aria-label="Hero section">
         <!-- Background layers container positioned absolutely to fill the parent -->
         <div class="absolute inset-0">
             <!-- Static background image -->
-            <img src="images/background.jpg" alt="Abstract geometric background pattern" class="absolute inset-0 w-full h-full object-cover object-top brightness-150">
+            <img src="images/background.jpg" 
+                 srcset="images/background-small.jpg 640w, images/background-medium.jpg 1024w, images/background.jpg 1920w"
+                 sizes="100vw"
+                 alt="Abstract geometric background pattern" 
+                 class="absolute inset-0 w-full h-full object-cover object-top brightness-150"
+                 loading="eager">
             
             <!-- Gradient overlays create a fade effect for better text readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
@@ -151,7 +203,11 @@
             
             <!-- Geometric Patterns -->
             <!-- Main patterns -->
-            <img src="images/Net-design.png" alt="" class="geometric-pattern left" aria-hidden="true">
+            <img src="images/Net-design.png" 
+                 alt="" 
+                 class="geometric-pattern left" 
+                 aria-hidden="true"
+                 loading="lazy">
             <img src="images/Net-design.png" alt="" class="geometric-pattern right" aria-hidden="true">
             
             <!-- Secondary patterns -->
@@ -199,7 +255,7 @@
                     </p>
                 </div>
                 <div class="mt-16">
-                    <a href="projects.html" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000">
+                    <a href="projects.html" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000" aria-label="View my work">
                         View My Work
                     </a>
                 </div>
@@ -216,25 +272,25 @@
                 <!-- Frontend Development -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Frontend Development</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-2" role="list">
                         <li class="flex items-center">
-                            <i class="fab fa-html5 text-orange-500 mr-2"></i>
+                            <i class="fab fa-html5 text-orange-500 mr-2" aria-hidden="true"></i>
                             <span>HTML5</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-css3-alt text-blue-500 mr-2"></i>
+                            <i class="fab fa-css3-alt text-blue-500 mr-2" aria-hidden="true"></i>
                             <span>CSS3</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-js text-yellow-500 mr-2"></i>
+                            <i class="fab fa-js text-yellow-500 mr-2" aria-hidden="true"></i>
                             <span>JavaScript</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-react text-blue-400 mr-2"></i>
+                            <i class="fab fa-react text-blue-400 mr-2" aria-hidden="true"></i>
                             <span>React</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-bootstrap text-purple-500 mr-2"></i>
+                            <i class="fab fa-bootstrap text-purple-500 mr-2" aria-hidden="true"></i>
                             <span>Tailwind CSS</span>
                         </li>
                     </ul>
@@ -243,13 +299,13 @@
                 <!-- Backend Development -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Backend Development</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-2" role="list">
                         <li class="flex items-center">
-                            <i class="fab fa-node-js text-green-500 mr-2"></i>
+                            <i class="fab fa-node-js text-green-500 mr-2" aria-hidden="true"></i>
                             <span>Node.js</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-server text-gray-600 mr-2"></i>
+                            <i class="fas fa-server text-gray-600 mr-2" aria-hidden="true"></i>
                             <span>RESTful APIs</span>
                         </li>
                     </ul>
@@ -258,25 +314,25 @@
                 <!-- Development Tools -->
                 <div class="bg-white rounded-lg shadow-lg p-6">
                     <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Development Tools</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-2" role="list">
                         <li class="flex items-center">
-                            <i class="fab fa-git-alt text-orange-600 mr-2"></i>
+                            <i class="fab fa-git-alt text-orange-600 mr-2" aria-hidden="true"></i>
                             <span>Git & GitHub</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-terminal text-gray-600 mr-2"></i>
+                            <i class="fas fa-terminal text-gray-600 mr-2" aria-hidden="true"></i>
                             <span>Command Line</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-code text-blue-500 mr-2"></i>
+                            <i class="fas fa-code text-blue-500 mr-2" aria-hidden="true"></i>
                             <span>VS Code</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-robot text-purple-500 mr-2"></i>
+                            <i class="fas fa-robot text-purple-500 mr-2" aria-hidden="true"></i>
                             <span>Cursor IDE</span>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-brain text-blue-400 mr-2"></i>
+                            <i class="fas fa-brain text-blue-400 mr-2" aria-hidden="true"></i>
                             <span>AI-Assisted Development</span>
                         </li>
                     </ul>
@@ -313,7 +369,12 @@
                         <div class="flex-grow">
                             <!-- Icon container with proper contrast and aria-hidden -->
                             <div class="flex items-center justify-center mb-6" aria-hidden="true">
-                                <i class="fas fa-dungeon text-6xl text-gray-600"></i>
+                                <img src="images/castle-icon.png" 
+                                     srcset="images/castle-icon-small.png 32w, images/castle-icon.png 64w"
+                                     sizes="64px"
+                                     alt="" 
+                                     class="w-16 h-16"
+                                     loading="lazy">
                             </div>
                             <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Castle Adventure Game</h3>
                             <p class="text-gray-300 mb-4">A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.</p>
@@ -418,22 +479,66 @@
     <!-- Footer with semantic role and ARIA label -->
     <!-- Color contrast ratio for bg-gray-900 against text colors meets WCAG 2.1 standards -->
     <footer class="bg-gray-900 text-white mt-auto" role="contentinfo" aria-label="Site footer">
-        <div class="mx-auto max-w-7xl px-6 py-12 text-center">
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <!-- Search Form -->
+            <div class="mb-8">
+                <form role="search" class="max-w-md mx-auto">
+                    <label for="site-search" class="sr-only">Search the site</label>
+                    <div class="relative">
+                        <input type="search" 
+                               id="site-search" 
+                               name="q" 
+                               class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                               placeholder="Search the site..."
+                               aria-label="Search the site">
+                        <button type="submit" 
+                                class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                aria-label="Submit search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
             <!-- Social media links with descriptive labels -->
             <div class="flex justify-center space-x-6" aria-label="Social media links">
-                <a href="https://github.com/colaone1" class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/colaone1" 
+                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visit my GitHub profile">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/sam-connor-4ab195363" class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/sam-connor-4ab195363" 
+                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Visit my LinkedIn profile">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="mailto:samconnor2020@outlook.com" 
                    class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                   aria-label="Send email to Sam">
+                   aria-label="Send me an email">
                     <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
             
+            <!-- Language Switcher -->
+            <div class="mt-8 text-center">
+                <div class="inline-flex space-x-4" role="list" aria-label="Language selection">
+                    <button class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                            aria-label="Switch to English"
+                            data-lang="en">
+                        English
+                    </button>
+                    <button class="text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                            aria-label="Switch to French"
+                            data-lang="fr">
+                        Français
+                    </button>
+                </div>
+            </div>
+
             <!-- Copyright information -->
             <div class="mt-8">
                 <p class="text-center text-xs leading-5 text-gray-400" role="contentinfo">
@@ -442,6 +547,14 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-20 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg opacity-0 invisible transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <!-- External JavaScript -->
     <script src="scripts.js"></script>
   </body>
