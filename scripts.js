@@ -1,4 +1,7 @@
-// Utility function for handling animations
+/**
+ * Handles reduced motion preferences for users who prefer less animation
+ * Checks user's system preferences and disables animations accordingly
+ */
 function handleReducedMotion() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const animatedElements = document.querySelectorAll('.animate-fadeInUp');
@@ -12,7 +15,10 @@ function handleReducedMotion() {
     }
 }
 
-// Navigation functionality
+/**
+ * Initializes navigation functionality including scroll-based hiding/showing
+ * Uses throttling to optimize scroll event handling
+ */
 function initializeNavigation() {
     const nav = document.querySelector('.nav-container');
     let lastScroll = 0;
@@ -50,7 +56,29 @@ function initializeNavigation() {
     }, 250));
 }
 
-// Project card interactions
+/**
+ * Throttles function execution to limit how often it can be called
+ * @param {Function} func - The function to throttle
+ * @param {number} limit - Time in milliseconds between function calls
+ * @returns {Function} - Throttled version of the input function
+ */
+function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+        const args = arguments;
+        const context = this;
+        if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+/**
+ * Initializes project card interactions including hover effects and focus states
+ * Handles both mouse and keyboard interactions for accessibility
+ */
 function initializeProjectCards() {
     const projectCards = document.querySelectorAll('.projects-section article');
     
@@ -80,7 +108,10 @@ function initializeProjectCards() {
     });
 }
 
-// Handle skip link functionality
+/**
+ * Implements skip link functionality for keyboard navigation
+ * Allows users to skip directly to main content
+ */
 function initializeSkipLink() {
     const skipLink = document.querySelector('a[href="#main-content"]');
     const mainContent = document.getElementById('main-content');
@@ -95,7 +126,10 @@ function initializeSkipLink() {
     }
 }
 
-// Initialize all functionality
+/**
+ * Initializes all application functionality
+ * Sets up event listeners and initial states
+ */
 function initializeApp() {
     handleReducedMotion();
     initializeNavigation();
@@ -106,20 +140,6 @@ function initializeApp() {
     window.addEventListener('resize', throttle(() => {
         handleReducedMotion();
     }, 250));
-}
-
-// Helper function for throttling
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
 }
 
 // Initialize when DOM is ready
