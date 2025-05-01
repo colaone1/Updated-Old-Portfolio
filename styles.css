@@ -57,3 +57,213 @@
 .logo-container {
     animation: static-effect 2s ease-in-out infinite;
 }
+
+/* Navigation Styles */
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background-color: rgba(248, 245, 242, 0.85);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nav-button {
+    position: relative;
+    color: #1a1a1a;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 50%;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-button:hover::after {
+    width: 100%;
+}
+
+.nav-link {
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+    .logo-container,
+    .logo-container:hover .logo-glitch {
+        animation: none;
+        transition: none;
+    }
+    
+    .nav-link,
+    .nav-link::after {
+        transition: none;
+    }
+}
+
+/* Add slight blur to navigation */
+.navigation {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.02);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+/* Project Cards Enhancement */
+.projects-section {
+    background-color: #f8f5f2;
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+}
+
+/* Card Hover Effects */
+.bg-gray-800 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-gray-800:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quest-button {
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    color: white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.quest-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quest-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.quest-button:hover::before {
+    left: 100%;
+}
+
+/* Footer Enhancement */
+footer {
+    background: linear-gradient(to bottom, #1a1a1a, #000000);
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ffff, #ff00ff, transparent);
+}
+
+.social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+    color: #00ffff;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Hero Section Enhancement */
+.hero-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 255, 255, 0.1) 50%, transparent 100%);
+    opacity: 0.5;
+    animation: glow 10s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+}
