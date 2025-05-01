@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - RPG Hub</title>
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  
+  <body class="min-h-screen bg-white">
+    <!-- Navigation Bar -->
+    <nav class="nav-container bg-[#f8f5f2]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between items-center">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="index.html" class="logo-button">
+                    </a>
+                </div>
+                
+                <div class="flex space-x-8">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="projects.html" class="nav-button">Projects</a>
+                    <a href="about-page.html" class="nav-button">About</a>
+                    <a href="contact-us.html" class="nav-button">Contact</a>
+                </div>
+                
+                <div class="flex-shrink-0 w-[80px]"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h1>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="space-y-8">
+                        <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                            <h2 class="text-2xl font-bold text-[#d4c5a9] mb-4">Contact Information</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-envelope text-[#d4c5a9]"></i>
+                                    <span class="text-gray-300">your.email@example.com</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-phone text-[#d4c5a9]"></i>
+                                    <span class="text-gray-300">+1 (123) 456-7890</span>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <i class="fas fa-map-marker-alt text-[#d4c5a9]"></i>
+                                    <span class="text-gray-300">Your Location</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                            <h2 class="text-2xl font-bold text-[#d4c5a9] mb-4">Social Media</h2>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-gray-400 hover:text-[#d4c5a9] transition-colors">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-[#d4c5a9] transition-colors">
+                                    <i class="fab fa-github text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-[#d4c5a9] transition-colors">
+                                    <i class="fab fa-linkedin text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-gray-400 hover:text-[#d4c5a9] transition-colors">
+                                    <i class="fab fa-discord text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-gray-800 rounded-lg p-6 shadow-lg">
+                        <h2 class="text-2xl font-bold text-[#d4c5a9] mb-4">Send a Message</h2>
+                        <form class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-300 focus:outline-none focus:border-[#d4c5a9]">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-300 focus:outline-none focus:border-[#d4c5a9]">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-gray-300 mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-300 focus:outline-none focus:border-[#d4c5a9]">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-300 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-md text-gray-300 focus:outline-none focus:border-[#d4c5a9]"></textarea>
+                            </div>
+                            <button type="submit" class="w-full quest-button py-2 px-4 rounded-md text-white font-semibold hover:bg-indigo-500 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-auto">
+        <div class="mx-auto max-w-7xl px-6 py-12 text-center">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-gray-300">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-center text-xs leading-5 text-gray-400">
+                    &copy; 2025 RPG Hub. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html> 
