@@ -64,72 +64,26 @@
     <!-- The hero section is the first thing visitors see, positioned relatively for absolute children -->
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
-    <div class="hero-section relative">
+    <div class="hero-section relative min-h-[100vh]">
         <!-- Background layers container positioned absolutely to fill the parent -->
-        <!-- This creates a full-width, full-height background that scales with the viewport -->
-        <!-- The absolute positioning ensures the background stays fixed while content scrolls -->
         <div class="absolute inset-0">
-            <!-- Main background image with brightness increased for better text visibility -->
-            <!-- The brightness-150 class makes the image brighter to ensure text readability -->
-            <!-- bg-cover and bg-center ensure the image fills the space properly -->
-            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-150" 
-                 style="background-image: url('images/fantasy-map-bg.jpg');"></div>
+            <!-- Video background with autoplay, loop, and muted attributes -->
+            <video class="absolute inset-0 w-full h-full object-cover brightness-150" autoplay muted playsinline>
+                <source src="videos/background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             
             <!-- Gradient overlays create a fade effect for better text readability -->
-            <!-- These gradients help create depth and ensure text remains readable regardless of background image -->
-            <!-- The multiple gradient layers create a sophisticated lighting effect -->
-            <!-- Top gradient fades from white to transparent -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
-            <!-- Bottom gradient fades from white to transparent -->
             <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
-            <!-- Subtle white overlay for additional contrast -->
-            <!-- The /10 opacity creates a soft, ethereal effect -->
             <div class="absolute inset-0 bg-white/10"></div>
-            <!-- Custom glow effect defined in CSS -->
-            <!-- This adds a magical atmosphere to the hero section -->
             <div class="hero-glow"></div>
         </div>
 
         <!-- Hero content positioned above the background with z-index -->
-        <!-- The large padding values create a tall hero section that pushes the footer out of view -->
-        <!-- This creates a more immersive first impression and encourages scrolling -->
-        <!-- z-10 ensures content appears above the background layers -->
-        <div class="relative z-10 mx-auto max-w-7xl px-6 py-48 sm:py-80 lg:px-8">
-            <!-- Centered content with padding -->
-            <!-- The p-10 padding creates space around the content for better visual balance -->
-            <!-- text-center ensures all content is properly aligned -->
+        <div class="relative z-10 mx-auto max-w-7xl px-6 py-96 sm:py-[40rem] lg:px-8">
             <div class="text-center hero-content p-10">
-                <!-- Main heading with responsive text size (larger on bigger screens) -->
-                <!-- Using text-5xl on mobile and text-7xl on larger screens ensures readability across devices -->
-                <!-- tracking-tight adjusts letter spacing for better readability at large sizes -->
-                <h1 class="hero-title text-5xl font-bold tracking-tight sm:text-7xl">
-                    What world will you save (or totally mess up) next?
-                </h1>
-                
-                <!-- Subheading with medium font weight and spacing from the heading -->
-                <!-- The mt-8 class adds margin-top for proper spacing between heading and subheading -->
-                <!-- text-xl provides a readable size that complements the heading -->
-                <p class="hero-text mt-8 text-xl font-medium">
-                    Dive into the world of RPGs with RPG Hub! We'll guide you to your next unforgettable adventure and give your stay-at-home plans a thrilling upgrade.
-                </p>
-                
-                <!-- Call to action buttons with spacing between them -->
-                <!-- The gap-x-6 class ensures consistent horizontal spacing between buttons -->
-                <!-- mt-10 adds margin-top to separate buttons from the text above -->
-                <div class="mt-10 flex items-center justify-center gap-x-6">
-                    <!-- Primary button with hover and focus states for accessibility -->
-                    <!-- The focus-visible classes ensure the button is accessible for keyboard navigation -->
-                    <!-- hover:bg-indigo-500 provides visual feedback on interaction -->
-                    <a href="games-page.html" class="quest-button rounded-md px-6 py-3 text-sm font-semibold shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                        Start Your Quest
-                    </a>
-                    <!-- Secondary text link with hover state and arrow indicator -->
-                    <!-- The arrow (→) provides a visual cue for the link's action -->
-                    <!-- hover:text-[#2c1810] darkens the text on hover for better interaction feedback -->
-                    <a href="about-page.html" class="text-sm font-semibold leading-6 text-[#4b3829] hover:text-[#2c1810]">
-                        Learn more <span aria-hidden="true">→</span>
-                    </a>
-                </div>
+                <!-- Empty content container to maintain spacing -->
             </div>
         </div>
     </div>
