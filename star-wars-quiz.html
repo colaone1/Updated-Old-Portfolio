@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Quiz - Sam C. Software Developer</title>
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  
+  <body class="min-h-screen bg-[#f8f5f2]">
+    <!-- Navigation Bar -->
+    <nav class="nav-container bg-[#f8f5f2]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between items-center">
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="index.html" class="nav-logo">
+                        <div class="css-logo">
+                            <span class="logo-text">S</span>
+                            <span class="logo-text">C</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="flex space-x-12">
+                    <a href="index.html" class="nav-button">Home</a>
+                    <a href="projects.html" class="nav-button">Projects</a>
+                    <a href="about-page.html" class="nav-button">About</a>
+                    <a href="contact-us.html" class="nav-button">Contact</a>
+                </div>
+                
+                <div class="flex-shrink-0 w-[100px]"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="bg-gray-900 text-white py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Star Wars Trivia Quiz</h1>
+            <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
+                A fun and interactive Star Wars trivia quiz built with HTML, CSS, and JavaScript. Test your knowledge of the Star Wars universe with this engaging quiz application.
+            </p>
+        </div>
+    </header>
+
+    <!-- Project Details -->
+    <main class="container mx-auto px-4 py-16">
+        <!-- Project Overview -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <p class="text-lg text-gray-700 mb-6">
+                    This interactive quiz application challenges users with Star Wars trivia while implementing modern web development practices. The project showcases responsive design, interactive elements, and efficient state management.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Key Features</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>5 challenging Star Wars trivia questions</li>
+                            <li>60-second timer per question</li>
+                            <li>Randomized question order</li>
+                            <li>Visual feedback with themed images</li>
+                            <li>Progress tracking</li>
+                            <li>Responsive design</li>
+                            <li>Star Wars themed UI with yellow accents</li>
+                            <li>Interactive elements with hover effects</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Vanilla JavaScript for functionality</li>
+                            <li>Tailwind CSS for styling</li>
+                            <li>HTML5 for structure</li>
+                            <li>Responsive design principles</li>
+                            <li>Modern CSS animations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Question Categories -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Question Categories</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-bold mb-2">Lightsaber Colors</h3>
+                        <p class="text-gray-700">Test your knowledge about Mace Windu's unique lightsaber</p>
+                    </div>
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-bold mb-2">Sith Names</h3>
+                        <p class="text-gray-700">Questions about Emperor Palpatine and the dark side</p>
+                    </div>
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-bold mb-2">Starships</h3>
+                        <p class="text-gray-700">Details about the legendary Millennium Falcon</p>
+                    </div>
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-bold mb-2">Famous Quotes</h3>
+                        <p class="text-gray-700">Iconic lines from Darth Vader</p>
+                    </div>
+                    <div class="p-4 border rounded-lg">
+                        <h3 class="font-bold mb-2">Star Wars Creatures</h3>
+                        <p class="text-gray-700">Information about the lovable Ewoks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Implementation -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Technical Implementation</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Code Structure</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Clean and maintainable code organization</li>
+                            <li>Efficient timer management system</li>
+                            <li>Robust DOM manipulation</li>
+                            <li>Enhanced error handling</li>
+                            <li>Optimized CSS with no duplicate rules</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Visual Design</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Themed images for each question</li>
+                            <li>Consistent yellow tint styling</li>
+                            <li>Hover effects with scale animation</li>
+                            <li>Drop shadow effects for better visibility</li>
+                            <li>Optimized image loading</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Links -->
+        <section>
+            <h2 class="text-3xl font-bold mb-6">Project Links</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <a href="https://github.com/colaone1/Star-Wars-Quiz" 
+                       class="flex-1 bg-gray-900 text-white py-4 px-6 rounded-lg text-center hover:bg-gray-800 transition-colors">
+                        <i class="fab fa-github mr-2"></i>
+                        View on GitHub
+                    </a>
+                    <a href="https://colaone1.github.io/Star-Wars-Quiz/" 
+                       class="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg text-center hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-play mr-2"></i>
+                        Try the Quiz
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-16">
+        <div class="mx-auto max-w-7xl px-6 py-12 text-center">
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/colaone1" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/sam-c-software-dev/" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:sam.c.software.dev@gmail.com" class="text-gray-400 hover:text-gray-300">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="mt-8">
+                <p class="text-center text-xs leading-5 text-gray-400">
+                    &copy; 2025 Sam C. Software Developer. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html> 
