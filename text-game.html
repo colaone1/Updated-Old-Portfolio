@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OOP Text-Based Game - Portfolio Project</title>
+    <title>Castle Adventure Game - Portfolio Project</title>
     
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,101 +43,132 @@
     <!-- Project Header -->
     <header class="bg-gray-900 text-white py-20">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">OOP Text-Based Game</h1>
+            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Castle Adventure Game</h1>
             <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
-                An immersive console-based adventure game built using Object-Oriented Programming principles in Python
+                A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.
             </p>
         </div>
     </header>
 
     <!-- Project Details -->
     <main class="container mx-auto px-4 py-16">
-        <!-- Project Overview -->
+        <!-- Game Overview -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
+            <h2 class="text-3xl font-bold mb-6">Game Overview</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <p class="text-lg text-gray-700 mb-6">
-                    This text-based adventure game demonstrates strong Object-Oriented Programming principles while creating an engaging player experience. Players navigate through various locations, interact with characters, and make decisions that affect the game's outcome.
+                    You find yourself at the entrance of an ancient castle. Your goal is to explore the castle, find the necessary items, and defeat the enemies that guard its treasures. The game features multiple rooms, interactive characters, and challenging puzzles.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Key Features</h3>
+                        <h3 class="text-xl font-bold mb-4">Game Locations</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Multiple character classes with unique abilities</li>
-                            <li>Dynamic inventory system</li>
-                            <li>Turn-based combat mechanics</li>
-                            <li>Save/load game functionality</li>
-                            <li>Branching storylines based on player choices</li>
+                            <li>Castle Entrance - Starting point</li>
+                            <li>Great Hall - Contains the Guard</li>
+                            <li>Wizard's Tower - Contains the Royal Seal</li>
+                            <li>Throne Room - Requires Royal Seal</li>
+                            <li>Armory - Contains powerful weapons</li>
+                            <li>Dungeon - Contains the Skeleton Warrior</li>
+                            <li>Treasure Room - Contains the Dragon</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Key Items</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Royal Seal - Required for Throne Room access</li>
+                            <li>Holy Sword - Used to defeat the Skeleton Warrior</li>
+                            <li>Dragon Slayer - Used to defeat the Dragon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Play -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">How to Play</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Starting the Game</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Click the "Start Game" button to begin</li>
+                            <li>You'll start at the Castle Entrance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Navigation</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Use directional buttons (North, South, East, West) to move between rooms</li>
+                            <li>Each room has a description and available exits</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Interactions</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Talk to characters by clicking the "Talk to [Character]" button</li>
+                            <li>Collect items by clicking the "Take [Item]" button</li>
+                            <li>Fight enemies by clicking the "Fight [Enemy]" button</li>
+                            <li>Check your inventory by clicking the "Check Inventory" button</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Win -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">How to Win</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <p class="text-lg text-gray-700 mb-6">
+                    To win the game, you must complete these objectives in order:
+                </p>
+                <ol class="list-decimal list-inside space-y-2 text-gray-700">
+                    <li>Find the Royal Seal in the Wizard's Tower</li>
+                    <li>Show the Royal Seal to the Guard to access the Throne Room</li>
+                    <li>Get the Holy Sword and Dragon Slayer from the Armory</li>
+                    <li>Defeat the Skeleton Warrior in the Dungeon using the Holy Sword</li>
+                    <li>Defeat the Dragon in the Treasure Room using the Dragon Slayer</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Tips and Strategies -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Tips and Strategies</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                    <li>Talk to Everyone: Characters provide valuable information</li>
+                    <li>Collect All Items: You'll need specific items to progress</li>
+                    <li>Explore Thoroughly: Check all rooms and directions</li>
+                    <li>Read Descriptions: Room descriptions contain important clues</li>
+                    <li>Use the Right Weapon: Each enemy has a specific weakness</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Technical Information -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Technical Information</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Requirements</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
+                            <li>JavaScript enabled</li>
+                            <li>No additional installations required</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Python 3.9</li>
-                            <li>Object-Oriented Programming</li>
-                            <li>File I/O for save states</li>
-                            <li>Custom data structures</li>
-                            <li>Unit testing with pytest</li>
+                            <li>JavaScript for game logic</li>
+                            <li>HTML for structure</li>
+                            <li>CSS for styling</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Development Process -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Development Process</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Challenges Overcome</h3>
-                        <p class="text-gray-700">
-                            During development, I faced and overcame several key challenges:
-                        </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Implementing a flexible combat system that could handle different character types</li>
-                            <li>Creating an intuitive save/load system for game progress</li>
-                            <li>Balancing game difficulty and progression</li>
-                            <li>Managing complex state changes based on player decisions</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-4">Learning Outcomes</h3>
-                        <p class="text-gray-700">
-                            This project significantly improved my understanding of:
-                        </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Object-Oriented Design patterns</li>
-                            <li>Code organization and modularity</li>
-                            <li>Game state management</li>
-                            <li>User experience design in text-based interfaces</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Code Examples -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Code Highlights</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto">
-<code># Example of the Character class implementation
-class Character:
-    def __init__(self, name, character_class):
-        self.name = name
-        self.character_class = character_class
-        self.health = 100
-        self.inventory = Inventory()
-        
-    def attack(self, target):
-        damage = self.calculate_damage()
-        target.receive_damage(damage)
-        return damage
-        
-    def receive_damage(self, amount):
-        self.health -= amount
-        return self.health <= 0</code></pre>
             </div>
         </section>
 
@@ -146,15 +177,15 @@ class Character:
             <h2 class="text-3xl font-bold mb-6">Project Links</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <a href="https://github.com/yourusername/text-game" 
+                    <a href="https://github.com/colaone1/Sam-s-OOP-Game-v2" 
                        class="flex-1 bg-gray-900 text-white py-4 px-6 rounded-lg text-center hover:bg-gray-800 transition-colors">
                         <i class="fab fa-github mr-2"></i>
                         View on GitHub
                     </a>
-                    <a href="https://replit.com/@yourusername/text-game" 
+                    <a href="text-game.html" 
                        class="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg text-center hover:bg-blue-700 transition-colors">
                         <i class="fas fa-play mr-2"></i>
-                        Live Demo
+                        Play Game
                     </a>
                 </div>
             </div>
