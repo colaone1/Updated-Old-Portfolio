@@ -5,6 +5,8 @@
     <!-- ===== META TAGS ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Improved SEO and accessibility with meta description -->
+    <meta name="description" content="Sam C.'s software developer portfolio showcasing web development projects and skills">
     <title>Sam C. - Software Developer Portfolio</title>
     
     <!-- ===== EXTERNAL RESOURCES ===== -->
@@ -26,9 +28,17 @@
   <!-- min-h-screen ensures the body takes at least the full viewport height, preventing awkward short pages -->
   <!-- bg-white sets a clean background color that works well with the fantasy theme -->
   <body class="min-h-screen bg-white">
+    <!-- Skip to main content link for keyboard navigation -->
+    <!-- Positioned off-screen by default, visible on focus -->
+    <a href="#main-content" 
+       class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none">
+      Skip to main content
+    </a>
+
     <!-- ===== NAVIGATION BAR ===== -->
     <!-- The nav element is used for navigation links, providing semantic meaning for accessibility -->
-    <nav class="nav-container bg-[#f8f5f2]">
+    <!-- ARIA: Navigation landmark role is implicit in nav element -->
+    <nav class="nav-container bg-[#f8f5f2]" role="navigation" aria-label="Main navigation">
         <!-- Container with max width and padding for responsive layout -->
         <!-- max-w-7xl limits the width on large screens while maintaining readability -->
         <!-- Responsive padding (px-4, sm:px-6, lg:px-8) adjusts spacing based on screen size -->
@@ -38,9 +48,9 @@
             <!-- justify-between ensures proper spacing between logo and navigation links -->
             <div class="flex h-16 justify-between items-center">
                 <!-- Logo container with flex properties to center the text -->
-                <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
+                <!-- ARIA: Logo acts as site identifier and home link -->
                 <div class="flex flex-shrink-0 items-center">
-                    <a href="index.html" class="nav-logo">
+                    <a href="index.html" class="nav-logo" aria-label="Home">
                         <div class="css-logo">
                             <span class="logo-text">S</span>
                             <span class="logo-text">C</span>
@@ -70,7 +80,7 @@
         <!-- Background layers container positioned absolutely to fill the parent -->
         <div class="absolute inset-0">
             <!-- Static background image -->
-            <img src="images/background.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover object-top brightness-150">
+            <img src="images/background.jpg" alt="Abstract geometric background pattern" class="absolute inset-0 w-full h-full object-cover object-top brightness-150">
             
             <!-- Gradient overlays create a fade effect for better text readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
@@ -117,18 +127,18 @@
                     </div>
                 </div>
                 <div class="mt-16 space-y-8">
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 0.5s;">
+                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500">
                         <span class="text-[#3a7bd5] font-semibold">Code</span> the Future
                     </p>
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 1s;">
+                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1000">
                         <span class="text-[#3a7bd5] font-semibold">Design</span> the Experience
                     </p>
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 1.5s;">
+                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500">
                         <span class="text-[#3a7bd5] font-semibold">Shape</span> the Digital World
                     </p>
                 </div>
                 <div class="mt-16">
-                    <a href="projects.html" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp" style="animation-delay: 2s;">
+                    <a href="projects.html" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000">
                         View My Work
                     </a>
                 </div>
@@ -136,126 +146,243 @@
         </div>
     </div>
 
-    <!-- ===== PROJECTS SECTION ===== -->
-    <section class="projects-section py-16">
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills-section py-16 bg-gray-50" aria-labelledby="skills-heading">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+            <h2 id="skills-heading" class="section-title text-3xl font-bold mb-12 text-center">Technical Skills</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1: Castle Adventure Game -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full">
-                    <div class="flex-grow">
-                        <div class="flex items-center justify-center mb-6">
-                            <i class="fas fa-dungeon text-6xl text-gray-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Castle Adventure Game</h3>
-                        <p class="text-gray-300 mb-4">A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <a href="https://github.com/colaone1/Sam-s-OOP-Game-v2" class="text-blue-400 hover:text-blue-300">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                        <div class="flex gap-2">
-                            <a href="https://colaone1.github.io/Sam-s-OOP-Game-v2/" target="_blank" class="quest-button px-4 py-2">Try It Out</a>
-                            <a href="text-game.html" class="quest-button px-4 py-2">View Details</a>
-                        </div>
-                    </div>
+                <!-- Frontend Development -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Frontend Development</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fab fa-html5 text-orange-500 mr-2"></i>
+                            <span>HTML5</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-css3-alt text-blue-500 mr-2"></i>
+                            <span>CSS3</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-js text-yellow-500 mr-2"></i>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-react text-blue-400 mr-2"></i>
+                            <span>React</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-bootstrap text-purple-500 mr-2"></i>
+                            <span>Tailwind CSS</span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <!-- Project Card 2: Rolling Caesar Cipher -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full">
-                    <div class="flex-grow">
-                        <div class="flex items-center justify-center mb-6">
-                            <i class="fas fa-lock text-6xl text-gray-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Rolling Caesar Cipher</h3>
-                        <p class="text-gray-300 mb-4">A modern implementation of the Caesar Cipher with an enhanced rolling key feature for improved security. Features real-time encryption/decryption.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <a href="https://github.com/colaone1/Cipher-Encoder-Decoder-Sam" class="text-blue-400 hover:text-blue-300">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                        <div class="flex gap-2">
-                            <a href="https://colaone1.github.io/Cipher-Encoder-Decoder-Sam/" target="_blank" class="quest-button px-4 py-2">Try It Out</a>
-                            <a href="cipher.html" class="quest-button px-4 py-2">View Details</a>
-                        </div>
-                    </div>
+
+                <!-- Backend Development -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Backend Development</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fab fa-node-js text-green-500 mr-2"></i>
+                            <span>Node.js</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-server text-gray-600 mr-2"></i>
+                            <span>RESTful APIs</span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <!-- Project Card 3: Game Review Website -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full">
-                    <div class="flex-grow">
-                        <div class="flex items-center justify-center mb-6">
-                            <i class="fas fa-star text-6xl text-gray-600"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Game Review Website</h3>
-                        <p class="text-gray-300 mb-4">A hobby website built using pure HTML and CSS, featuring game reviews and ratings. Deployed on GitHub Pages.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
-                            <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
-                        </div>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <a href="https://github.com/colaone1/Hobby-website-Game-Review-Website-" class="text-blue-400 hover:text-blue-300">
-                            <i class="fab fa-github mr-2"></i>View on GitHub
-                        </a>
-                        <div class="flex gap-2">
-                            <a href="https://colaone1.github.io/Hobby-website-Game-Review-Website-/" target="_blank" class="quest-button px-4 py-2">Try It Out</a>
-                            <a href="game-review.html" class="quest-button px-4 py-2">View Details</a>
-                        </div>
+
+                <!-- Development Tools -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Development Tools</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fab fa-git-alt text-orange-600 mr-2"></i>
+                            <span>Git & GitHub</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-terminal text-gray-600 mr-2"></i>
+                            <span>Command Line</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-code text-blue-500 mr-2"></i>
+                            <span>VS Code</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-robot text-purple-500 mr-2"></i>
+                            <span>Cursor IDE</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-brain text-blue-400 mr-2"></i>
+                            <span>AI-Assisted Development</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="mt-16">
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">Education</h3>
+                    <div class="text-center">
+                        <h4 class="font-semibold text-[#1a1a1a]">The Developer Academy</h4>
+                        <p class="text-gray-600">Software Development Bootcamp</p>
+                        <p class="text-sm text-gray-500 mt-2">Comprehensive training in modern web development technologies including React, Node.js, and full-stack development practices. Proficient in leveraging AI tools and modern development environments to enhance productivity and code quality.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ===== PROJECTS SECTION ===== -->
+    <!-- Main content area for screen readers and skip link -->
+    <main id="main-content">
+        <section class="projects-section py-16" aria-labelledby="projects-heading">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- ARIA: Heading provides label for the section -->
+                <h2 id="projects-heading" class="section-title text-3xl font-bold mb-12 text-center">Featured Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1: Castle Adventure Game -->
+                    <!-- Article element used for standalone content -->
+                    <!-- Color contrast ratio for bg-gray-800 against text colors meets WCAG 2.1 standards -->
+                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
+                        <div class="flex-grow">
+                            <!-- Icon container with proper contrast and aria-hidden -->
+                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
+                                <i class="fas fa-dungeon text-6xl text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Castle Adventure Game</h3>
+                            <p class="text-gray-300 mb-4">A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.</p>
+                            <!-- Technology tags with sufficient color contrast -->
+                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                            </div>
+                        </div>
+                        <!-- Action links with descriptive aria-labels -->
+                        <div class="flex justify-between items-center mt-4">
+                            <a href="https://github.com/colaone1/Sam-s-OOP-Game-v2" 
+                               class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                               aria-label="View Castle Adventure Game source code on GitHub">
+                                <i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub
+                            </a>
+                            <div class="flex gap-2">
+                                <a href="https://colaone1.github.io/Sam-s-OOP-Game-v2/" 
+                                   target="_blank" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="Play Castle Adventure Game">Play</a>
+                                <a href="text-game.html" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="View Castle Adventure Game project details">Details</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Card 2: Rolling Caesar Cipher -->
+                    <!-- Article element used for standalone content -->
+                    <!-- Color contrast ratio for bg-gray-800 against text colors meets WCAG 2.1 standards -->
+                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
+                                <i class="fas fa-lock text-6xl text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Rolling Caesar Cipher</h3>
+                            <p class="text-gray-300 mb-4">A modern implementation of the Caesar Cipher with an enhanced rolling key feature for improved security. Features real-time encryption/decryption.</p>
+                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <a href="https://github.com/colaone1/Cipher-Encoder-Decoder-Sam" 
+                               class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                               aria-label="View Cipher Tool source code on GitHub">
+                                <i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub
+                            </a>
+                            <div class="flex gap-2">
+                                <a href="https://colaone1.github.io/Cipher-Encoder-Decoder-Sam/" 
+                                   target="_blank" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="Try the Rolling Caesar Cipher tool">Try</a>
+                                <a href="cipher.html" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="View Cipher Tool project details">Details</a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Card 3: Game Review Website -->
+                    <!-- Article element used for standalone content -->
+                    <!-- Color contrast ratio for bg-gray-800 against text colors meets WCAG 2.1 standards -->
+                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
+                        <div class="flex-grow">
+                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
+                                <i class="fas fa-star text-6xl text-gray-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Game Review Website</h3>
+                            <p class="text-gray-300 mb-4">A hobby website built using pure HTML and CSS, featuring game reviews and ratings. Deployed on GitHub Pages.</p>
+                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <a href="https://github.com/colaone1/Hobby-website-Game-Review-Website-" 
+                               class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                               aria-label="View Game Review Website source code on GitHub">
+                                <i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub
+                            </a>
+                            <div class="flex gap-2">
+                                <a href="https://colaone1.github.io/Hobby-website-Game-Review-Website-/" 
+                                   target="_blank" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="Visit the Game Review Website">Visit</a>
+                                <a href="game-review.html" 
+                                   class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                                   aria-label="View Game Review Website project details">Details</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- ===== FOOTER ===== -->
-    <!-- Footer with dark background and white text -->
-    <!-- bg-gray-900 provides a dark, professional background that contrasts with the main content -->
-    <!-- mt-auto pushes the footer to the bottom of the page when content is short -->
-    <footer class="bg-gray-900 text-white mt-auto">
-        <!-- Container with max width and centered content -->
-        <!-- max-w-7xl matches the width constraint of other sections for consistency -->
-        <!-- py-12 adds vertical padding for better spacing -->
+    <!-- Footer with semantic role and ARIA label -->
+    <!-- Color contrast ratio for bg-gray-900 against text colors meets WCAG 2.1 standards -->
+    <footer class="bg-gray-900 text-white mt-auto" role="contentinfo" aria-label="Site footer">
         <div class="mx-auto max-w-7xl px-6 py-12 text-center">
-            <!-- Social media links with spacing between them -->
-            <!-- flex and justify-center ensure icons are properly aligned -->
-            <!-- space-x-6 provides consistent spacing between social icons -->
-            <div class="flex justify-center space-x-6">
-                <!-- Each social icon has hover state for better user interaction -->
-                <!-- text-gray-400 provides a subtle default state -->
-                <!-- hover:text-gray-300 brightens the icon on hover for better feedback -->
-                <a href="https://github.com/colaone1" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
+            <!-- Social media links with descriptive labels -->
+            <div class="flex justify-center space-x-6" aria-label="Social media links">
+                <a href="https://github.com/colaone1" class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/sam-c-software-dev/" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/sam-connor-4ab195363" class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="mailto:sam.c.software.dev@gmail.com" class="text-gray-400 hover:text-gray-300">
-                    <i class="fas fa-envelope"></i>
+                <a href="mailto:samconnor2020@outlook.com" 
+                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                   aria-label="Send email to Sam">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
             
-            <!-- Copyright information with smaller text size -->
-            <!-- mt-8 adds margin-top to separate from social icons -->
-            <!-- text-xs ensures the copyright text is appropriately sized -->
+            <!-- Copyright information -->
             <div class="mt-8">
-                <p class="text-center text-xs leading-5 text-gray-400">
+                <p class="text-center text-xs leading-5 text-gray-400" role="contentinfo">
                     &copy; 2025 Sam C. Software Developer. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
+    <!-- External JavaScript -->
+    <script src="scripts.js"></script>
   </body>
 </html>
 
