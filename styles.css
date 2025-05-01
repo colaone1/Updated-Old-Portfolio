@@ -1,5 +1,7 @@
 .logo-container {
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
 }
 
 .logo-container:hover {
@@ -255,12 +257,149 @@ footer::before {
     overflow: hidden;
 }
 
-.hero-glow {
+.geometric-pattern {
     position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, transparent 0%, rgba(0, 255, 255, 0.1) 50%, transparent 100%);
-    opacity: 0.5;
-    animation: glow 10s ease-in-out infinite;
+    height: auto;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+/* Main patterns */
+.geometric-pattern.left {
+    width: 42%;
+    left: -2%;
+    bottom: 18%;
+    opacity: 0.15;
+    transform: rotate(-12deg);
+}
+
+.geometric-pattern.right {
+    width: 35%;
+    right: 3%;
+    top: 12%;
+    opacity: 0.18;
+    transform: rotate(18deg) scaleX(-1);
+}
+
+/* Secondary patterns */
+.geometric-pattern.top {
+    width: 25%;
+    right: 15%;
+    top: 5%;
+    opacity: 0.12;
+    transform: rotate(-5deg) scale(0.8);
+}
+
+.geometric-pattern.bottom {
+    width: 28%;
+    left: 20%;
+    bottom: 8%;
+    opacity: 0.1;
+    transform: rotate(8deg) scale(0.9);
+}
+
+/* Additional subtle patterns */
+.geometric-pattern.top-left {
+    width: 20%;
+    left: 8%;
+    top: 15%;
+    opacity: 0.08;
+    transform: rotate(-25deg) scale(0.7);
+}
+
+.geometric-pattern.bottom-right {
+    width: 22%;
+    right: 25%;
+    bottom: 15%;
+    opacity: 0.09;
+    transform: rotate(15deg) scale(0.75);
+}
+
+.geometric-pattern.center-left {
+    width: 18%;
+    left: 30%;
+    top: 40%;
+    opacity: 0.07;
+    transform: rotate(-8deg) scale(0.6);
+}
+
+.geometric-pattern.center-right {
+    width: 16%;
+    right: 35%;
+    top: 25%;
+    opacity: 0.06;
+    transform: rotate(22deg) scale(0.55);
+}
+
+/* Animation keyframes */
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(-12deg); }
+    50% { transform: translate(-5px, -12px) rotate(-10deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translate(0, 0) rotate(18deg) scaleX(-1); }
+    50% { transform: translate(8px, -15px) rotate(20deg) scaleX(-1); }
+}
+
+@keyframes floatTop {
+    0%, 100% { transform: rotate(-5deg) scale(0.8); }
+    50% { transform: translate(5px, -8px) rotate(-3deg) scale(0.8); }
+}
+
+@keyframes floatBottom {
+    0%, 100% { transform: rotate(8deg) scale(0.9); }
+    50% { transform: translate(-6px, -10px) rotate(10deg) scale(0.9); }
+}
+
+@keyframes floatTopLeft {
+    0%, 100% { transform: rotate(-25deg) scale(0.7); }
+    50% { transform: translate(-4px, -6px) rotate(-23deg) scale(0.7); }
+}
+
+@keyframes floatBottomRight {
+    0%, 100% { transform: rotate(15deg) scale(0.75); }
+    50% { transform: translate(6px, -8px) rotate(17deg) scale(0.75); }
+}
+
+@keyframes floatCenterLeft {
+    0%, 100% { transform: rotate(-8deg) scale(0.6); }
+    50% { transform: translate(-3px, -5px) rotate(-6deg) scale(0.6); }
+}
+
+@keyframes floatCenterRight {
+    0%, 100% { transform: rotate(22deg) scale(0.55); }
+    50% { transform: translate(4px, -7px) rotate(24deg) scale(0.55); }
+}
+
+/* Apply animations with varied durations */
+.geometric-pattern.left { animation: float 22s ease-in-out infinite; }
+.geometric-pattern.right { animation: floatRight 18s ease-in-out infinite; }
+.geometric-pattern.top { animation: floatTop 25s ease-in-out infinite; }
+.geometric-pattern.bottom { animation: floatBottom 20s ease-in-out infinite; }
+.geometric-pattern.top-left { animation: floatTopLeft 27s ease-in-out infinite; }
+.geometric-pattern.bottom-right { animation: floatBottomRight 23s ease-in-out infinite; }
+.geometric-pattern.center-left { animation: floatCenterLeft 24s ease-in-out infinite; }
+.geometric-pattern.center-right { animation: floatCenterRight 26s ease-in-out infinite; }
+
+/* Ensure reduced motion preferences are respected */
+@media (prefers-reduced-motion: reduce) {
+    .geometric-pattern {
+        animation: none !important;
+        transform: none !important;
+    }
+}
+
+/* Enhance the hero glow to complement the geometric patterns */
+.hero-glow {
+    background: radial-gradient(
+        circle at center,
+        transparent 0%,
+        rgba(0, 255, 255, 0.08) 30%,
+        transparent 70%
+    );
+    opacity: 0.6;
+    animation: glow 15s ease-in-out infinite;
 }
 
 @keyframes glow {
