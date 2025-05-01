@@ -126,20 +126,129 @@ function initializeSkipLink() {
     }
 }
 
+// Performance monitoring
+const performanceMetrics = {
+    startTime: performance.now(),
+    resources: [],
+    errors: []
+};
+
+// Error boundary
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+    performanceMetrics.errors.push({
+        message: msg,
+        url: url,
+        line: lineNo,
+        column: columnNo,
+        error: error
+    });
+    console.error('Error:', msg, '\nURL:', url, '\nLine:', lineNo, '\nColumn:', columnNo, '\nError object:', error);
+    return false;
+};
+
+// Performance observer
+const observer = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+        performanceMetrics.resources.push(entry);
+    }
+});
+
+observer.observe({ entryTypes: ['resource', 'navigation', 'paint'] });
+
+// Enhanced service worker registration
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('ServiceWorker registration successful');
+                    
+                    // Check if we're offline
+                    if (!navigator.onLine) {
+                        console.log('Application is offline');
+                        showOfflineIndicator();
+                    }
+                    
+                    // Monitor service worker updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                showUpdateAvailable();
+                            }
+                        });
+                    });
+                })
+                .catch(err => {
+                    console.error('ServiceWorker registration failed: ', err);
+                    performanceMetrics.errors.push({
+                        type: 'serviceWorker',
+                        error: err
+                    });
+                });
+        });
+    }
+}
+
+// Offline indicator
+function showOfflineIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'offline-indicator';
+    indicator.textContent = 'You are currently offline. Some features may be limited.';
+    document.body.appendChild(indicator);
+}
+
+// Update available indicator
+function showUpdateAvailable() {
+    const updateIndicator = document.createElement('div');
+    updateIndicator.className = 'update-indicator';
+    updateIndicator.innerHTML = `
+        <p>An update is available!</p>
+        <button onclick="window.location.reload()">Refresh to update</button>
+    `;
+    document.body.appendChild(updateIndicator);
+}
+
 /**
  * Initializes all application functionality
  * Sets up event listeners and initial states
  */
 function initializeApp() {
+    // Register service worker
+    registerServiceWorker();
+    
+    // Add loading states
+    const heroSection = document.querySelector('.hero-section');
+    const projectCards = document.querySelectorAll('.projects-section article');
+    
+    if (heroSection) {
+        heroSection.classList.add('loading');
+        setTimeout(() => {
+            heroSection.classList.remove('loading');
+        }, 1000);
+    }
+    
+    if (projectCards.length > 0) {
+        projectCards.forEach(card => {
+            card.classList.add('loading');
+            setTimeout(() => {
+                card.classList.remove('loading');
+            }, 1000);
+        });
+    }
+    
+    // Initialize other components
     handleReducedMotion();
     initializeNavigation();
     initializeProjectCards();
     initializeSkipLink();
     
-    // Handle window resize events
-    window.addEventListener('resize', throttle(() => {
-        handleReducedMotion();
-    }, 250));
+    // Log performance metrics
+    window.addEventListener('load', () => {
+        const loadTime = performance.now() - performanceMetrics.startTime;
+        console.log('Page load time:', loadTime, 'ms');
+        console.log('Performance metrics:', performanceMetrics);
+    });
 }
 
 // Initialize when DOM is ready

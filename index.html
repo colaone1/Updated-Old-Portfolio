@@ -9,6 +9,69 @@
     <meta name="description" content="Sam C.'s software developer portfolio showcasing web development projects and skills">
     <title>Sam C. - Software Developer Portfolio</title>
     
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="scripts.js" as="script">
+    <link rel="preload" href="images/background.jpg" as="image">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sam C. - Software Developer Portfolio">
+    <meta property="og:description" content="Full-stack developer specializing in creating immersive web experiences with clean code and innovative design.">
+    <meta property="og:image" content="https://colaone1.github.io/Portfolio-Website/images/background.jpg">
+    <meta property="og:url" content="https://colaone1.github.io/Portfolio-Website/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sam C. - Software Developer Portfolio">
+    <meta name="twitter:description" content="Full-stack developer specializing in creating immersive web experiences with clean code and innovative design.">
+    <meta name="twitter:image" content="https://colaone1.github.io/Portfolio-Website/images/background.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://colaone1.github.io/Portfolio-Website/">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sam C.",
+        "jobTitle": "Software Developer",
+        "url": "https://colaone1.github.io/Portfolio-Website/",
+        "sameAs": [
+            "https://github.com/colaone1",
+            "https://www.linkedin.com/in/sam-connor-4ab195363"
+        ],
+        "description": "Full-stack developer specializing in creating immersive web experiences with clean code and innovative design.",
+        "knowsAbout": [
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "React",
+            "Tailwind CSS",
+            "Web Development",
+            "UI/UX Design"
+        ]
+    }
+    </script>
+    
     <!-- ===== EXTERNAL RESOURCES ===== -->
     <!-- Tailwind CSS for utility-first styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,8 +79,6 @@
     <link rel="stylesheet" href="styles.css">
     
     <!-- Google Fonts - Cinzel and others for the theme -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
@@ -134,7 +195,7 @@
                         <span class="text-[#3a7bd5] font-semibold">Design</span> the Experience
                     </p>
                     <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500">
-                        <span class="text-[#3a7bd5] font-semibold">Shape</span> the Digital World
+                        <span class="text-[#3a7bd5] font-semibold">Shape</span> the World
                     </p>
                 </div>
                 <div class="mt-16">

@@ -794,3 +794,67 @@ footer::before {
     }
 }
 
+/* Loading States */
+.loading {
+    position: relative;
+    overflow: hidden;
+    min-height: 100px; /* Ensure minimum height for loading state */
+}
+
+.loading::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: loading 1.5s infinite;
+    z-index: 1;
+}
+
+@keyframes loading {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.loading > * {
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent interaction during loading */
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #3a7bd5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 2;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Ensure loading states respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .loading::before,
+    .loading::after {
+        animation: none;
+    }
+    
+    .loading::after {
+        content: 'Loading...';
+        border: none;
+        color: #3a7bd5;
+    }
+}
+
