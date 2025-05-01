@@ -79,9 +79,14 @@
         </div>
 
         <!-- Hero content positioned above the background with z-index -->
-        <div class="relative z-10 mx-auto max-w-7xl px-6 py-96 sm:py-[40rem] lg:px-8">
-            <div class="text-center hero-content p-10">
-                <!-- Empty content container to maintain spacing -->
+        <div class="relative z-10 mx-auto max-w-7xl px-6 min-h-screen flex items-center justify-center">
+            <div class="text-center">
+                <div class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto">
+                    <img src="images/SC-logo.png" alt="SC Logo" class="w-full h-full object-contain logo-image">
+                    <div class="logo-glitch absolute inset-0 opacity-0">
+                        <img src="images/SC-logo.png" alt="SC Logo Glitch Effect" class="w-full h-full object-contain">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
