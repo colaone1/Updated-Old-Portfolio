@@ -45,7 +45,7 @@
         <div class="container mx-auto px-4">
             <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Game Review Website</h1>
             <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
-                A modern web platform for game reviews, ratings, and community discussions
+                A hobby website built using pure HTML and CSS, featuring game reviews and ratings. Deployed on GitHub Pages.
             </p>
         </div>
     </header>
@@ -57,27 +57,52 @@
             <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <p class="text-lg text-gray-700 mb-6">
-                    This web application provides a platform for gamers to share reviews, ratings, and engage in discussions about their favorite games. It features a modern, responsive design and robust user interaction systems.
+                    This project is a hobby website dedicated to game reviews and ratings. Built using pure HTML and CSS, it demonstrates fundamental web development skills and clean, semantic markup. The website is deployed on GitHub Pages for easy access and sharing.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-xl font-bold mb-4">Key Features</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>User authentication system</li>
-                            <li>Review and rating system</li>
-                            <li>Comment and discussion threads</li>
-                            <li>Game search and filtering</li>
-                            <li>Responsive design for all devices</li>
+                            <li>Clean, semantic HTML structure</li>
+                            <li>Responsive CSS design</li>
+                            <li>Game review sections</li>
+                            <li>Rating system</li>
+                            <li>Navigation between pages</li>
+                            <li>Contact form</li>
+                            <li>About page</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>HTML5 & CSS3</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>Tailwind CSS</li>
-                            <li>Local Storage API</li>
-                            <li>Responsive Design</li>
+                            <li>HTML5 for structure</li>
+                            <li>CSS3 for styling</li>
+                            <li>GitHub Pages for deployment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Structure -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Project Structure</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Pages</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Home Page (index.html)</li>
+                            <li>Games Page (games-page.html)</li>
+                            <li>About Page (about-page.html)</li>
+                            <li>Contact Page (contact-us.html)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Assets</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>CSS Styles (styles.css)</li>
+                            <li>Images (images directory)</li>
                         </ul>
                     </div>
                 </div>
@@ -90,69 +115,23 @@
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Challenges Overcome</h3>
-                        <p class="text-gray-700">
-                            During development, I faced and overcame several key challenges:
-                        </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Implementing a secure user authentication system</li>
-                            <li>Creating a responsive layout for all screen sizes</li>
-                            <li>Managing state across multiple components</li>
-                            <li>Optimizing performance for large datasets</li>
+                        <h3 class="text-xl font-bold mb-4">Implementation</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Built using vanilla HTML and CSS</li>
+                            <li>No external frameworks or libraries</li>
+                            <li>Mobile-first responsive design</li>
+                            <li>Semantic HTML structure</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Learning Outcomes</h3>
-                        <p class="text-gray-700">
-                            This project significantly improved my understanding of:
-                        </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Modern web development practices</li>
-                            <li>User experience design</li>
-                            <li>Frontend performance optimization</li>
-                            <li>Responsive design principles</li>
+                        <h3 class="text-xl font-bold mb-4">Deployment</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Hosted on GitHub Pages</li>
+                            <li>Easy to update and maintain</li>
+                            <li>Publicly accessible</li>
                         </ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Code Examples -->
-        <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Code Highlights</h2>
-            <div class="bg-white rounded-lg shadow-lg p-8">
-                <pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto">
-<code>// Example of the Review Component
-class ReviewComponent {
-    constructor(gameId) {
-        this.gameId = gameId;
-        this.reviews = [];
-        this.init();
-    }
-    
-    async init() {
-        this.reviews = await this.fetchReviews();
-        this.render();
-    }
-    
-    render() {
-        const container = document.getElementById('reviews');
-        this.reviews.forEach(review => {
-            container.appendChild(this.createReviewElement(review));
-        });
-    }
-    
-    createReviewElement(review) {
-        const element = document.createElement('div');
-        element.className = 'review-card';
-        element.innerHTML = `
-            <h3>${review.title}</h3>
-            <div class="rating">${'★'.repeat(review.rating)}</div>
-            <p>${review.content}</p>
-        `;
-        return element;
-    }
-}</code></pre>
             </div>
         </section>
 
@@ -161,15 +140,15 @@ class ReviewComponent {
             <h2 class="text-3xl font-bold mb-6">Project Links</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <a href="https://github.com/yourusername/game-review" 
+                    <a href="https://github.com/colaone1/Hobby-website-Game-Review-Website-" 
                        class="flex-1 bg-gray-900 text-white py-4 px-6 rounded-lg text-center hover:bg-gray-800 transition-colors">
                         <i class="fab fa-github mr-2"></i>
                         View on GitHub
                     </a>
-                    <a href="https://game-review-demo.netlify.app" 
+                    <a href="https://colaone1.github.io/Hobby-website-Game-Review-Website-/" 
                        class="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg text-center hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-play mr-2"></i>
-                        Live Demo
+                        <i class="fas fa-external-link-alt mr-2"></i>
+                        Visit Website
                     </a>
                 </div>
             </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cipher Encoder/Decoder - Portfolio Project</title>
+    <title>Rolling Caesar Cipher - Portfolio Project</title>
     
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,9 +43,9 @@
     <!-- Project Header -->
     <header class="bg-gray-900 text-white py-20">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Cipher Encoder/Decoder</h1>
+            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Rolling Caesar Cipher</h1>
             <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
-                A secure message encryption and decryption tool implementing various cipher algorithms
+                A modern implementation of the Caesar Cipher with an enhanced rolling key feature for improved security.
             </p>
         </div>
     </header>
@@ -57,89 +57,132 @@
             <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <p class="text-lg text-gray-700 mb-6">
-                    This encryption tool provides a secure way to encode and decode messages using various classical and modern cipher algorithms. It features an intuitive interface and supports multiple encryption methods.
+                    This web application implements an enhanced version of the classic Caesar Cipher, featuring a rolling key system that changes the encryption pattern for each letter. It provides a user-friendly interface for encrypting and decrypting messages with customizable security parameters.
                 </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-xl font-bold mb-4">Key Features</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Multiple cipher algorithm implementations</li>
+                            <li>Enhanced Security with rolling key system</li>
                             <li>Real-time encryption/decryption</li>
-                            <li>Key generation and management</li>
-                            <li>File encryption support</li>
-                            <li>Command-line interface</li>
+                            <li>User-friendly interface</li>
+                            <li>Accessibility features</li>
+                            <li>Responsive design</li>
+                            <li>Light and dark mode support</li>
+                            <li>Character counting</li>
+                            <li>One-click copy functionality</li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-xl font-bold mb-4">Technologies Used</h3>
                         <ul class="list-disc list-inside space-y-2 text-gray-700">
-                            <li>Python 3.9</li>
-                            <li>Cryptography library</li>
-                            <li>Tkinter for GUI</li>
-                            <li>Argparse for CLI</li>
-                            <li>Unit testing with pytest</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>No external dependencies</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Development Process -->
+        <!-- How It Works -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Development Process</h2>
+            <h2 class="text-3xl font-bold mb-6">How It Works</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="space-y-6">
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Challenges Overcome</h3>
-                        <p class="text-gray-700">
-                            During development, I faced and overcame several key challenges:
-                        </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Implementing secure key management</li>
-                            <li>Handling different character encodings</li>
-                            <li>Optimizing performance for large files</li>
-                            <li>Creating an intuitive user interface</li>
+                        <h3 class="text-xl font-bold mb-4">Two-Key System</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Base Key: Determines initial shift amount (0-25)</li>
+                            <li>Increment Key: Determines shift increase per letter (0-25)</li>
                         </ul>
                     </div>
                     <div>
-                        <h3 class="text-xl font-bold mb-4">Learning Outcomes</h3>
-                        <p class="text-gray-700">
-                            This project significantly improved my understanding of:
+                        <h3 class="text-xl font-bold mb-4">Example</h3>
+                        <p class="text-gray-700 mb-4">
+                            With base key = 1 and increment key = 1:
                         </p>
-                        <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
-                            <li>Cryptography fundamentals</li>
-                            <li>Secure programming practices</li>
-                            <li>GUI development</li>
-                            <li>Error handling and input validation</li>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>First letter moves 1 place</li>
+                            <li>Second letter moves 2 places</li>
+                            <li>Third letter moves 3 places</li>
+                            <li>And so on...</li>
+                        </ul>
+                        <p class="text-gray-700 mt-4">
+                            So "hello" becomes "igpmo":
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>h → i (1 place)</li>
+                            <li>e → g (2 places)</li>
+                            <li>l → p (3 places)</li>
+                            <li>l → m (4 places)</li>
+                            <li>o → o (5 places)</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Code Examples -->
+        <!-- How to Use -->
         <section class="mb-16">
-            <h2 class="text-3xl font-bold mb-6">Code Highlights</h2>
+            <h2 class="text-3xl font-bold mb-6">How to Use</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
-                <pre class="bg-gray-900 text-gray-100 p-6 rounded-lg overflow-x-auto">
-<code># Example of the Caesar Cipher implementation
-class CaesarCipher:
-    def __init__(self, shift_key):
-        self.shift_key = shift_key % 26
-        
-    def encrypt(self, text):
-        result = ""
-        for char in text:
-            if char.isalpha():
-                ascii_offset = ord('A') if char.isupper() else ord('a')
-                shifted = (ord(char) - ascii_offset + self.shift_key) % 26
-                result += chr(shifted + ascii_offset)
-            else:
-                result += char
-        return result
-        
-    def decrypt(self, text):
-        return CaesarCipher(-self.shift_key).encrypt(text)</code></pre>
+                <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                    <li>
+                        <span class="font-bold">Enter Your Message:</span>
+                        <ul class="list-disc list-inside ml-6 mt-2">
+                            <li>Type your message in the textarea</li>
+                            <li>Maximum 1000 characters allowed</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="font-bold">Set Your Keys:</span>
+                        <ul class="list-disc list-inside ml-6 mt-2">
+                            <li>Enter a base key (0-25)</li>
+                            <li>Enter an increment key (0-25)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="font-bold">Choose Operation:</span>
+                        <ul class="list-disc list-inside ml-6 mt-2">
+                            <li>Select "Encode" to encrypt</li>
+                            <li>Select "Decode" to decrypt</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="font-bold">View Results:</span>
+                        <ul class="list-disc list-inside ml-6 mt-2">
+                            <li>Result appears in output box</li>
+                            <li>Use "Copy" to copy result</li>
+                            <li>Use "Clear" to reset fields</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Technical Details -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Technical Details</h2>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Implementation</h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>Built with vanilla JavaScript</li>
+                            <li>No external dependencies</li>
+                            <li>Mobile-first responsive design</li>
+                            <li>WCAG 2.1 compliant accessibility</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Security Notes</h3>
+                        <p class="text-gray-700">
+                            While this implementation is more secure than a traditional Caesar Cipher, it is still considered a basic encryption method and should not be used for sensitive information. It serves as an educational tool to understand basic encryption concepts.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -148,15 +191,15 @@ class CaesarCipher:
             <h2 class="text-3xl font-bold mb-6">Project Links</h2>
             <div class="bg-white rounded-lg shadow-lg p-8">
                 <div class="flex flex-col md:flex-row gap-6">
-                    <a href="https://github.com/yourusername/cipher-tool" 
+                    <a href="https://github.com/colaone1/Cipher-Encoder-Decoder-Sam" 
                        class="flex-1 bg-gray-900 text-white py-4 px-6 rounded-lg text-center hover:bg-gray-800 transition-colors">
                         <i class="fab fa-github mr-2"></i>
                         View on GitHub
                     </a>
-                    <a href="https://replit.com/@yourusername/cipher-tool" 
+                    <a href="cipher.html" 
                        class="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg text-center hover:bg-blue-700 transition-colors">
-                        <i class="fas fa-play mr-2"></i>
-                        Live Demo
+                        <i class="fas fa-code mr-2"></i>
+                        Try It Out
                     </a>
                 </div>
             </div>

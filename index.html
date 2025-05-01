@@ -69,11 +69,8 @@
     <div class="hero-section relative min-h-screen">
         <!-- Background layers container positioned absolutely to fill the parent -->
         <div class="absolute inset-0">
-            <!-- Video background with autoplay, loop, and muted attributes -->
-            <video class="absolute inset-0 w-full h-full object-cover object-top brightness-150" autoplay muted playsinline>
-                <source src="videos/background.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <!-- Static background image -->
+            <img src="images/background.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover object-top brightness-150">
             
             <!-- Gradient overlays create a fade effect for better text readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
@@ -145,33 +142,53 @@
             <h2 class="section-title text-3xl font-bold mb-12 text-center">My Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1: OOP Text-Based Game -->
+                <!-- Project Card 1: Castle Adventure Game -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">OOP Text-Based Game</h3>
-                    <p class="text-gray-300 mb-4">An interactive console-based adventure game built using Object-Oriented Programming principles in Python.</p>
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Castle Adventure Game</h3>
+                    <p class="text-gray-300 mb-4">A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                    </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-400 text-sm">Python</span>
-                        <a href="#text-game" class="quest-button px-4 py-2">View Details</a>
+                        <a href="https://github.com/colaone1/Sam-s-OOP-Game-v2" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github mr-2"></i>View on GitHub
+                        </a>
+                        <a href="text-game.html" class="quest-button px-4 py-2">Play Game</a>
                     </div>
                 </div>
                 
-                <!-- Project Card 2: Cipher Encoder/Decoder -->
+                <!-- Project Card 2: Rolling Caesar Cipher -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Cipher Encoder/Decoder</h3>
-                    <p class="text-gray-300 mb-4">A secure message encryption and decryption tool implementing various cipher algorithms.</p>
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Rolling Caesar Cipher</h3>
+                    <p class="text-gray-300 mb-4">A modern implementation of the Caesar Cipher with an enhanced rolling key feature for improved security. Features real-time encryption/decryption.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JavaScript</span>
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                    </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-400 text-sm">Python</span>
-                        <a href="#cipher" class="quest-button px-4 py-2">View Details</a>
+                        <a href="https://github.com/colaone1/Cipher-Encoder-Decoder-Sam" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github mr-2"></i>View on GitHub
+                        </a>
+                        <a href="cipher.html" class="quest-button px-4 py-2">Try It Out</a>
                     </div>
                 </div>
                 
                 <!-- Project Card 3: Game Review Website -->
                 <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
                     <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Game Review Website</h3>
-                    <p class="text-gray-300 mb-4">A modern web platform for game reviews, ratings, and community discussions.</p>
+                    <p class="text-gray-300 mb-4">A hobby website built using pure HTML and CSS, featuring game reviews and ratings. Deployed on GitHub Pages.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">HTML5</span>
+                        <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">CSS3</span>
+                    </div>
                     <div class="flex justify-between items-center">
-                        <span class="text-gray-400 text-sm">HTML/CSS/JS</span>
-                        <a href="#game-review" class="quest-button px-4 py-2">View Details</a>
+                        <a href="https://github.com/colaone1/Hobby-website-Game-Review-Website-" class="text-blue-400 hover:text-blue-300">
+                            <i class="fab fa-github mr-2"></i>View on GitHub
+                        </a>
+                        <a href="game-review.html" class="quest-button px-4 py-2">View Details</a>
                     </div>
                 </div>
             </div>
@@ -194,14 +211,14 @@
                 <!-- Each social icon has hover state for better user interaction -->
                 <!-- text-gray-400 provides a subtle default state -->
                 <!-- hover:text-gray-300 brightens the icon on hover for better feedback -->
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300">
+                <a href="https://github.com/colaone1" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-gray-300">
-                    <i class="fab fa-discord"></i>
+                <a href="https://www.linkedin.com/in/sam-c-software-dev/" class="text-gray-400 hover:text-gray-300" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:sam.c.software.dev@gmail.com" class="text-gray-400 hover:text-gray-300">
+                    <i class="fas fa-envelope"></i>
                 </a>
             </div>
             
@@ -210,10 +227,11 @@
             <!-- text-xs ensures the copyright text is appropriately sized -->
             <div class="mt-8">
                 <p class="text-center text-xs leading-5 text-gray-400">
-                    &copy; 2025 RPG Hub. All rights reserved.
+                    &copy; 2025 Sam C. Software Developer. All rights reserved.
                 </p>
             </div>
         </div>
     </footer>
   </body>
 </html>
+
