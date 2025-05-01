@@ -13,10 +13,10 @@
     <!-- Custom CSS for unique design elements -->
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Google Fonts - Cinzel for fantasy theme -->
+    <!-- Google Fonts - Cinzel and others for the theme -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -40,13 +40,16 @@
                 <!-- Logo container with flex properties to center the text -->
                 <!-- flex-shrink-0 prevents the logo from shrinking when space is limited -->
                 <div class="flex flex-shrink-0 items-center">
-                    <a href="index.html" class="logo-button">
+                    <a href="index.html" class="nav-logo">
+                        <div class="css-logo">
+                            <span class="logo-text">S</span>
+                            <span class="logo-text">C</span>
+                        </div>
                     </a>
                 </div>
                 
                 <!-- Navigation links with spacing between them -->
-                <!-- space-x-8 ensures consistent spacing between navigation items -->
-                <div class="flex space-x-8">
+                <div class="flex space-x-12">
                     <a href="index.html" class="nav-button">Home</a>
                     <a href="projects.html" class="nav-button">Projects</a>
                     <a href="about-page.html" class="nav-button">About</a>
@@ -54,7 +57,7 @@
                 </div>
                 
                 <!-- Empty div to balance the layout -->
-                <div class="flex-shrink-0 w-[80px]"></div>
+                <div class="flex-shrink-0 w-[100px]"></div>
             </div>
         </div>
     </nav>
@@ -63,7 +66,7 @@
     <!-- The hero section is the first thing visitors see, positioned relatively for absolute children -->
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
-    <div class="hero-section relative min-h-[100vh] max-h-[80vh]">
+    <div class="hero-section relative min-h-screen">
         <!-- Background layers container positioned absolutely to fill the parent -->
         <div class="absolute inset-0">
             <!-- Video background with autoplay, loop, and muted attributes -->
@@ -97,28 +100,34 @@
         <!-- Hero content positioned above the background with z-index -->
         <div class="relative z-10 mx-auto max-w-7xl px-6 min-h-screen flex items-center justify-center">
             <div class="text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] mb-6 tracking-wider">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] mb-8 tracking-wider">
                     Developer & Designer
                 </h1>
-                <div class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto">
-                    <img src="images/SC-logo.png" alt="SC Logo" class="w-full h-full object-contain logo-image">
+                <div class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-16">
+                    <div class="css-logo main-logo">
+                        <span class="logo-text">S</span>
+                        <span class="logo-text">C</span>
+                    </div>
                     <div class="logo-glitch absolute inset-0 opacity-0">
-                        <img src="images/SC-logo.png" alt="SC Logo Glitch Effect" class="w-full h-full object-contain">
+                        <div class="css-logo">
+                            <span class="logo-text">S</span>
+                            <span class="logo-text">C</span>
+                        </div>
                     </div>
                 </div>
-                <div class="mt-16 space-y-6">
+                <div class="mt-16 space-y-8">
                     <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 0.5s;">
-                        <span class="text-[#00ffff]">Code</span> the Future
+                        <span class="text-[#3a7bd5] font-semibold">Code</span> the Future
                     </p>
                     <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 1s;">
-                        <span class="text-[#ff00ff]">Design</span> the Experience
+                        <span class="text-[#3a7bd5] font-semibold">Design</span> the Experience
                     </p>
                     <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp" style="animation-delay: 1.5s;">
-                        <span class="text-[#00ffff]">Shape</span> the Digital World
+                        <span class="text-[#3a7bd5] font-semibold">Shape</span> the Digital World
                     </p>
                 </div>
                 <div class="mt-16">
-                    <a href="#projects" class="inline-block quest-button px-8 py-3 text-lg font-semibold opacity-0 animate-fadeInUp" style="animation-delay: 2s;">
+                    <a href="#projects" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp" style="animation-delay: 2s;">
                         View My Work
                     </a>
                 </div>
