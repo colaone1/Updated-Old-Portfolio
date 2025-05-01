@@ -63,11 +63,11 @@
     <!-- The hero section is the first thing visitors see, positioned relatively for absolute children -->
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
-    <div class="hero-section relative min-h-[100vh]">
+    <div class="hero-section relative min-h-[100vh] max-h-[80vh]">
         <!-- Background layers container positioned absolutely to fill the parent -->
         <div class="absolute inset-0">
             <!-- Video background with autoplay, loop, and muted attributes -->
-            <video class="absolute inset-0 w-full h-full object-cover brightness-150" autoplay muted playsinline>
+            <video class="absolute inset-0 w-full h-full object-cover object-top brightness-150" autoplay muted playsinline>
                 <source src="videos/background.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -93,69 +93,33 @@
             <h2 class="section-title text-3xl font-bold mb-12">Featured Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Game Card 1: The Witcher 3 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                    <div class="w-full h-48 relative">
-                        <img src="images/witcher3.png" alt="The Witcher 3: Wild Hunt - Geralt on horseback overlooking a majestic mountain landscape" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">The Witcher 3: Wild Hunt</h3>
-                        <p class="text-gray-300 mb-4">An epic action RPG set in a rich, open world fantasy universe full of meaningful choices and impactful consequences.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center mb-2">
-                                <span class="text-yellow-500 mr-2">★★★★★</span>
-                                <span class="text-gray-400 text-sm">5.0/5.0</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-400 text-sm">Release: 2015</span>
-                            <a href="games-page.html#witcher3" class="quest-button px-4 py-2">Learn More</a>
-                        </div>
+                <!-- Project Card 1: OOP Text-Based Game -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">OOP Text-Based Game</h3>
+                    <p class="text-gray-300 mb-4">An interactive console-based adventure game built using Object-Oriented Programming principles in Python.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400 text-sm">Python</span>
+                        <a href="projects.html#text-game" class="quest-button px-4 py-2">Learn More</a>
                     </div>
                 </div>
                 
-                <!-- Game Card 2: Elden Ring -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                    <div class="w-full h-48 relative">
-                        <img src="images/eldenring.jpg.webp" alt="Elden Ring - Epic battle scene with a winged creature and magical combat" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Elden Ring</h3>
-                        <p class="text-gray-300 mb-4">A new fantasy action RPG from FromSoftware Inc. and George R.R. Martin that redefines open-world gaming.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center mb-2">
-                                <span class="text-yellow-500 mr-2">★★★★★</span>
-                                <span class="text-gray-400 text-sm">5.0/5.0</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-400 text-sm">Release: 2022</span>
-                            <a href="games-page.html#eldenring" class="quest-button px-4 py-2">Learn More</a>
-                        </div>
+                <!-- Project Card 2: Cipher Encoder/Decoder -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Cipher Encoder/Decoder</h3>
+                    <p class="text-gray-300 mb-4">A secure message encryption and decryption tool implementing various cipher algorithms.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400 text-sm">Python</span>
+                        <a href="projects.html#cipher" class="quest-button px-4 py-2">Learn More</a>
                     </div>
                 </div>
                 
-                <!-- Game Card 3: Baldur's Gate 3 -->
-                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                    <div class="w-full h-48 relative">
-                        <img src="images/baldursgate.jpg.jpg" alt="Baldur's Gate 3 - Majestic castle city perched on a mountain with stunning architecture" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Baldur's Gate 3</h3>
-                        <p class="text-gray-300 mb-4">A modern masterpiece that brings the depth of D&D to life with unprecedented freedom and stunning presentation.</p>
-                        <div class="mb-4">
-                            <div class="flex items-center mb-2">
-                                <span class="text-yellow-500 mr-2">★★★★★</span>
-                                <span class="text-gray-400 text-sm">5.0/5.0</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-400 text-sm">Release: 2023</span>
-                            <a href="games-page.html#baldursgate3" class="quest-button px-4 py-2">Learn More</a>
-                        </div>
+                <!-- Project Card 3: Game Review Website -->
+                <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Game Review Website</h3>
+                    <p class="text-gray-300 mb-4">A modern web platform for game reviews, ratings, and community discussions.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gray-400 text-sm">HTML/CSS/JS</span>
+                        <a href="projects.html#game-review" class="quest-button px-4 py-2">Learn More</a>
                     </div>
                 </div>
             </div>
