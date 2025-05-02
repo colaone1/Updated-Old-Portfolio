@@ -1175,3 +1175,7 @@ form[role="search"] button:hover {
     }
 }
 
+html, body {
+    overflow-x: hidden;
+}
+

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This declares that this is an HTML5 document, enabling modern browser features and ensuring proper rendering -->
-<html lang="en" class="light">
+<html lang="en">
   <head>
     <!-- ===== META TAGS ===== -->
     <meta charset="UTF-8">
@@ -74,6 +74,10 @@
     
     <!-- ===== EXTERNAL RESOURCES ===== -->
     <!-- Tailwind CSS for utility-first styling -->
+    <script>
+      tailwind = window.tailwind || {};
+      tailwind.config = { darkMode: 'class' };
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS for unique design elements -->
     <link rel="stylesheet" href="styles.css">
@@ -516,6 +520,50 @@
 
     <!-- External JavaScript -->
     <script src="scripts.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Dark/Light mode toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        if (!themeToggle) { console.log('Theme toggle button not found'); return; }
+        const htmlEl = document.documentElement;
+        const moonIcon = themeToggle.querySelector('.fa-moon');
+        const sunIcon = themeToggle.querySelector('.fa-sun');
+        console.log('Theme toggle, htmlEl, moonIcon, sunIcon:', themeToggle, htmlEl, moonIcon, sunIcon);
+
+        function setTheme(mode) {
+          console.log('Setting theme:', mode);
+          if (mode === 'dark') {
+            htmlEl.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+            moonIcon.classList.add('hidden');
+            sunIcon.classList.remove('hidden');
+          } else {
+            htmlEl.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+            moonIcon.classList.remove('hidden');
+            sunIcon.classList.add('hidden');
+          }
+        }
+
+        // Initial theme check
+        const userTheme = localStorage.getItem('theme');
+        console.log('Initial userTheme:', userTheme);
+        if (userTheme === 'dark' || (!userTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          setTheme('dark');
+        } else {
+          setTheme('light');
+        }
+
+        themeToggle.addEventListener('click', () => {
+          console.log('Theme toggle clicked. Current classList:', htmlEl.classList);
+          if (htmlEl.classList.contains('dark')) {
+            setTheme('light');
+          } else {
+            setTheme('dark');
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
