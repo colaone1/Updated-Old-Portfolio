@@ -337,6 +337,14 @@ footer::before {
     padding-top: 2.5rem;
 }
 
+.hero-section .mt-16.space-y-8 p {
+    margin-bottom: 1.75rem;
+}
+
+.hero-section .mt-16.space-y-8 p:last-child {
+    margin-bottom: 0;
+}
+
 .geometric-pattern {
     position: absolute;
     opacity: 0.85;

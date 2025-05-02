@@ -33,7 +33,7 @@
     <link rel="canonical" href="https://colaone1.github.io/Portfolio-Website/">
     
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -369,12 +369,7 @@
                         <div class="flex-grow">
                             <!-- Icon container with proper contrast and aria-hidden -->
                             <div class="flex items-center justify-center mb-6" aria-hidden="true">
-                                <img src="images/castle-icon.png" 
-                                     srcset="images/castle-icon-small.png 32w, images/castle-icon.png 64w"
-                                     sizes="64px"
-                                     alt="" 
-                                     class="w-16 h-16"
-                                     loading="lazy">
+                                <i class="fas fa-dungeon text-6xl text-gray-600"></i>
                             </div>
                             <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Castle Adventure Game</h3>
                             <p class="text-gray-300 mb-4">A text-based adventure game set in a mysterious castle. Navigate through rooms, collect items, defeat enemies, and solve puzzles to win the game.</p>
