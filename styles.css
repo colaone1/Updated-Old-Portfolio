@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2.5rem;
 }
 
 .logo-container:hover {
@@ -328,14 +329,31 @@ footer::before {
 /* ===== HERO SECTION STYLES ===== */
 .hero-section {
     position: relative;
-    overflow: hidden;
+    min-h-screen: 100vh;
+    margin-top: 1.5rem;
+}
+
+.hero-section .relative {
+    padding-top: 2.5rem;
 }
 
 .geometric-pattern {
     position: absolute;
+    opacity: 0.85;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 24px rgba(58, 123, 213, 0.35));
+    width: 40%;
     height: auto;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
+    object-fit: contain;
+    background-color: transparent;
+    mix-blend-mode: multiply;
+    pointer-events: auto;
+}
+
+.geometric-pattern:hover {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 32px rgba(58, 123, 213, 0.5));
 }
 
 /* Main patterns */
@@ -501,11 +519,13 @@ footer::before {
 .hero-section h1 {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
 }
 
 .hero-section p {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     letter-spacing: 0.03em;
+    margin-bottom: 1.5rem;
 }
 
 .hero-section span {
@@ -630,9 +650,21 @@ footer::before {
 /* ===== GEOMETRIC PATTERN STYLES ===== */
 .geometric-pattern {
     position: absolute;
+    opacity: 0.85;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 0 24px rgba(58, 123, 213, 0.35));
+    width: 40%;
     height: auto;
-    pointer-events: none;
-    transition: opacity 0.5s ease;
+    object-fit: contain;
+    background-color: transparent;
+    mix-blend-mode: multiply;
+    pointer-events: auto;
+}
+
+.geometric-pattern:hover {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 32px rgba(58, 123, 213, 0.5));
 }
 
 /* Main patterns */
