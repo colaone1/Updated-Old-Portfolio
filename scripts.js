@@ -41,19 +41,14 @@ function initializeNavigation() {
     window.addEventListener('scroll', throttle(() => {
         const currentScroll = window.pageYOffset;
         
-        if (currentScroll <= 0) {
-            nav.classList.remove('nav-hidden');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !nav.classList.contains('nav-hidden')) {
-            nav.classList.add('nav-hidden');
-        } else if (currentScroll < lastScroll && nav.classList.contains('nav-hidden')) {
-            nav.classList.remove('nav-hidden');
+        if (currentScroll > lastScroll) {
+            nav.style.transform = 'translateY(-100%)';
+        } else {
+            nav.style.transform = 'translateY(0)';
         }
         
         lastScroll = currentScroll;
-    }, 250));
+    }, 100));
 
     // Handle keyboard navigation
     const navLinks = document.querySelectorAll('.nav-button');
@@ -96,51 +91,25 @@ function throttle(func, limit) {
  * Handles both mouse and keyboard interactions for accessibility
  */
 function initializeProjectCards() {
-    const projectCards = document.querySelectorAll('.projects-section article');
+    const cards = document.querySelectorAll('.project-card');
     
-    projectCards.forEach(card => {
-        // Handle card hover animations
-        card.addEventListener('mouseenter', () => {
-            if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
-                card.style.transform = 'translateY(-5px)';
-            }
-        });
-        
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-        
+    cards.forEach(card => {
         // Handle focus states for accessibility
-        const interactiveElements = card.querySelectorAll('a, button');
-        interactiveElements.forEach(element => {
-            element.addEventListener('focus', () => {
-                card.classList.add('card-focused');
-            });
-            
-            element.addEventListener('blur', () => {
-                card.classList.remove('card-focused');
-            });
+        card.addEventListener('focus', () => {
+            card.classList.add('ring-2', 'ring-blue-500');
         });
-
+        
+        card.addEventListener('blur', () => {
+            card.classList.remove('ring-2', 'ring-blue-500');
+        });
+        
         // Handle keyboard navigation within cards
-        const cardLinks = card.querySelectorAll('a');
-        cardLinks.forEach((link, index) => {
-            link.addEventListener('keydown', (e) => {
-                if (e.key === 'Tab' && !e.shiftKey && index === cardLinks.length - 1) {
-                    e.preventDefault();
-                    const nextCard = card.nextElementSibling;
-                    if (nextCard) {
-                        nextCard.querySelector('a').focus();
-                    }
-                } else if (e.key === 'Tab' && e.shiftKey && index === 0) {
-                    e.preventDefault();
-                    const prevCard = card.previousElementSibling;
-                    if (prevCard) {
-                        const prevLinks = prevCard.querySelectorAll('a');
-                        prevLinks[prevLinks.length - 1].focus();
-                    }
-                }
-            });
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const link = card.querySelector('a');
+                if (link) link.click();
+            }
         });
     });
 }
@@ -150,25 +119,13 @@ function initializeProjectCards() {
  * Allows users to skip directly to main content
  */
 function initializeSkipLink() {
-    const skipLink = document.querySelector('a[href="#main-content"]');
-    const mainContent = document.getElementById('main-content');
+    const skipLink = document.querySelector('.skip-link');
+    const mainContent = document.querySelector('main');
     
     if (skipLink && mainContent) {
         skipLink.addEventListener('click', (e) => {
             e.preventDefault();
-            mainContent.setAttribute('tabindex', '-1');
             mainContent.focus();
-            mainContent.removeAttribute('tabindex');
-        });
-
-        // Handle keyboard navigation
-        skipLink.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                mainContent.setAttribute('tabindex', '-1');
-                mainContent.focus();
-                mainContent.removeAttribute('tabindex');
-            }
         });
     }
 }
@@ -247,69 +204,13 @@ document.addEventListener('click', () => {
 // Enhanced service worker registration with better error tracking
 function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('ServiceWorker registration successful');
-                    
-                    // Track service worker installation time
-                    const installStart = performance.now();
-                    
-                    // Handle background sync
-                    if ('SyncManager' in window) {
-                        registration.sync.register('sync-data')
-                            .then(() => console.log('Background sync registered'))
-                            .catch(err => console.error('Background sync registration failed:', err));
-                    }
-                    
-                    // Handle push notifications
-                    if ('PushManager' in window) {
-                        registration.pushManager.getSubscription()
-                            .then(subscription => {
-                                if (!subscription) {
-                                    return registration.pushManager.subscribe({
-                                        userVisibleOnly: true,
-                                        applicationServerKey: 'YOUR_PUBLIC_VAPID_KEY' // Replace with your VAPID key
-                                    });
-                                }
-                                return subscription;
-                            })
-                            .then(subscription => {
-                                console.log('Push subscription successful:', subscription);
-                            })
-                            .catch(err => {
-                                console.error('Push subscription failed:', err);
-                            });
-                    }
-                    
-                    registration.addEventListener('updatefound', () => {
-                        const newWorker = registration.installing;
-                        newWorker.addEventListener('statechange', () => {
-                            if (newWorker.state === 'installed') {
-                                const installTime = performance.now() - installStart;
-                                console.log(`Service Worker installed in ${installTime}ms`);
-                                
-                                if (navigator.serviceWorker.controller) {
-                                    showUpdateAvailable();
-                                }
-                            }
-                        });
-                    });
-                    
-                    if (!navigator.onLine) {
-                        showOfflineIndicator();
-                    }
-                })
-                .catch(err => {
-                    const errorDetails = {
-                        type: 'serviceWorker',
-                        error: err,
-                        timestamp: new Date().toISOString()
-                    };
-                    performanceMetrics.errors.push(errorDetails);
-                    console.error('ServiceWorker registration failed:', errorDetails);
-                });
-        });
+        navigator.serviceWorker.register('/sw.js')
+            .then(() => {
+                // Service worker registered successfully
+            })
+            .catch(error => {
+                // Service worker registration failed
+            });
     }
 }
 
@@ -488,34 +389,14 @@ function initializePerformanceMonitoring() {
  * Sets up event listeners and initial states
  */
 function initializeApp() {
-    // Register service worker
-    registerServiceWorker();
-    
-    // Add loading states
-    const heroSection = document.querySelector('.hero-section');
-    const projectCards = document.querySelectorAll('.projects-section article');
-    
-    if (heroSection) {
-        heroSection.classList.add('loading');
-        setTimeout(() => {
-            heroSection.classList.remove('loading');
-        }, 1000);
-    }
-    
-    if (projectCards.length > 0) {
-        projectCards.forEach(card => {
-            card.classList.add('loading');
-            setTimeout(() => {
-                card.classList.remove('loading');
-            }, 1000);
-        });
-    }
-    
-    // Initialize other components
-    handleReducedMotion();
+    // Initialize essential components
     initializeNavigation();
     initializeProjectCards();
     initializeSkipLink();
+    registerServiceWorker();
+    
+    // Initialize other components
+    handleReducedMotion();
     
     // Initialize new features
     initializeDarkMode();
