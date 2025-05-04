@@ -222,6 +222,16 @@ Status: Pass/Fail
 Notes: [Any additional observations]
 ```
 
+### Testing Approach
+
+This project is primarily a static portfolio site built with HTML, CSS (Tailwind), and JavaScript for minor interactivity. As such, there is no complex business logic requiring automated unit tests.
+
+All main functionality—including navigation, project links, contact methods, and interactive elements (such as the back-to-top button)—was thoroughly tested manually across multiple browsers (Chrome, Firefox, Edge) and devices (desktop and mobile).
+
+I verified that all links work, the UI is responsive, and accessibility features (such as alt text and keyboard navigation) function as intended.
+
+If the project were to include more advanced JavaScript logic, I would implement automated unit tests using a framework such as Jest. For future projects with more complex interactivity, I would also consider using UI testing tools like Cypress or Puppeteer.
+
 ### Specific Test Results
 
 #### Navigation Testing Results
