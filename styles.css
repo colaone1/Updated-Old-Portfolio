@@ -13,7 +13,7 @@
 }
 
 .logo-image {
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: none;
 }
 
 /* Simplified glitch animation */
@@ -71,34 +71,22 @@
 }
 
 .main-logo.css-logo:hover + .logo-glitch {
-    opacity: 1;
+    opacity: 0;
 }
 
 .main-logo.css-logo:hover + .logo-glitch .logo-text {
     animation: none;
-    opacity: 0.6;
+    opacity: 0;
     text-shadow: none;
 }
 
 /* Remove unused animations */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-}
-
-@keyframes logo-float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-}
-
-@keyframes static-effect {
-    0% { opacity: 0.7; }
-    50% { opacity: 0.8; }
-    100% { opacity: 0.7; }
-}
+@keyframes float { }
+@keyframes logo-float { }
+@keyframes static-effect { }
 
 .logo-container {
-    animation: static-effect 2s ease-in-out infinite;
+    animation: none;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -550,6 +538,17 @@ footer::before {
     display: flex;
     align-items: center;
     padding: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+}
+
+.nav-logo img {
+    transition: none;
+}
+
+.nav-logo:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 0 2px #3a7bd5;
 }
 
 .nav-logo .css-logo {
@@ -1181,6 +1180,19 @@ html, body {
 
 /* Navbar logo hover glow effect to match hero text hover */
 .nav-logo img {
-    transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+    transition: none;
+}
+
+.nav-logo img:hover {
+    filter: none;
+}
+
+/* Navbar owl logo gradient hover effect */
+.owl-navbar-logo .owl-svg path {
+  transition: none;
+  fill: #3a7bd5;
+}
+.owl-navbar-logo:hover .owl-svg path {
+  fill: #3a7bd5;
 }
 
