@@ -1266,3 +1266,123 @@ html, body {
     to { left: 120%; opacity: 0; }
 }
 
+/* ===== RESPONSIVE NAVBAR & HERO SECTION ===== */
+@media (max-width: 900px) {
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    height: 56px;
+  }
+  .nav-logo img {
+    height: 2.25rem;
+    max-width: 2.5rem;
+  }
+  .nav-logo {
+    padding: 0.25rem;
+  }
+  .hero-section {
+    min-height: 80vh;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+  }
+  .hero-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-section p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .logo-container {
+    margin-bottom: 1rem;
+    height: 5rem;
+    max-width: 6rem;
+  }
+  .hero-section .mt-16.space-y-8 {
+    margin-top: 1.5rem;
+  }
+  .hero-section .mt-16.space-y-8 p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .hero-section .mt-16.space-y-8 p:last-child {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  .hero-section {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .hero-section h1 {
+    font-size: 1.1rem;
+  }
+  .hero-section p {
+    font-size: 0.95rem;
+  }
+  .logo-container {
+    height: 3.5rem;
+    max-width: 4.5rem;
+  }
+  .hero-section .mt-16.space-y-8 p {
+    font-size: 0.95rem;
+  }
+}
+/* Hamburger menu button */
+#mobile-menu-button {
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1.5px solid #3a7bd5;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  z-index: 60;
+}
+#mobile-menu-button:focus {
+  outline: 2px solid #3a7bd5;
+}
+/* Mobile menu overlay */
+#mobile-menu {
+  /* Default is hidden via Tailwind */
+}
+#mobile-menu a {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+#mobile-menu a:active, #mobile-menu a:focus {
+  background: #e6f0fa;
+  color: #3a7bd5;
+}
+#mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #3a7bd5;
+  cursor: pointer;
+  z-index: 100;
+}
+#mobile-menu-close:focus {
+  outline: 2px solid #3a7bd5;
+}
+@media (max-width: 768px) {
+  .nav-container .md\:flex {
+    display: none !important;
+  }
+  #mobile-menu-button {
+    display: flex !important;
+  }
+}
+
