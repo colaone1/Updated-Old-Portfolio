@@ -1238,3 +1238,31 @@ html, body {
     }
 }
 
+/* ===== HERO OWL SHINE EFFECT ===== */
+.logo-container {
+    position: relative;
+    overflow: visible;
+}
+.logo-shine {
+    position: absolute;
+    top: 0;
+    left: -80%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    opacity: 0.85;
+    z-index: 2;
+    animation: logoShineAnim 1.2s 1.1s cubic-bezier(0.4,0,0.2,1) 1 forwards;
+}
+.logo-container img {
+    position: relative;
+    z-index: 1;
+}
+@keyframes logoShineAnim {
+    from { left: -80%; opacity: 0.85; }
+    60% { opacity: 1; }
+    to { left: 120%; opacity: 0; }
+}
+
