@@ -1179,3 +1179,8 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Navbar logo hover glow effect to match hero text hover */
+.nav-logo img {
+    transition: box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
