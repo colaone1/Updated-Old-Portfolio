@@ -16,24 +16,37 @@
   
   <body class="min-h-screen bg-[#f8f5f2]">
     <!-- Navigation Bar -->
-    <nav class="nav-container bg-[#f8f5f2]">
+    <nav class="nav-container bg-[#f8f5f2]" role="navigation" aria-label="Main navigation">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 justify-between items-center">
                 <div class="flex flex-shrink-0 items-center">
                     <a href="index.html" class="nav-logo" aria-label="Home">
-                        <img src="images/logo for portfolio transparent.png" alt="Portfolio Logo" class="h-10 w-auto">
+                        <img src="images/logo.svg" alt="Portfolio Logo" class="h-10 w-auto">
                     </a>
                 </div>
                 
-                <div class="flex space-x-12">
-                    <a href="index.html" class="nav-button">Home</a>
-                    <a href="projects.html" class="nav-button">Projects</a>
-                    <a href="about-page.html" class="nav-button">About</a>
-                    <a href="contact-us.html" class="nav-button">Contact</a>
+                <div class="hidden md:flex space-x-12" role="list">
+                    <a href="index.html" class="nav-button" role="listitem">Home</a>
+                    <a href="projects.html" class="nav-button" role="listitem">Projects</a>
+                    <a href="about-page.html" class="nav-button" role="listitem">About</a>
+                    <a href="contact-us.html" class="nav-button" role="listitem">Contact</a>
                 </div>
                 
-                <div class="flex-shrink-0 w-[100px]"></div>
+                <div class="flex-shrink-0">
+                    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-[#1a1a1a] border-[#3a7bd5] focus:outline-none focus:ring-2 focus:ring-[#3a7bd5]" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden" role="menu" aria-label="Mobile navigation">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-[#3a7bd5] focus:outline-none" aria-label="Close navigation menu">&times;</button>
+            <a href="index.html" class="nav-button block w-full text-center" role="menuitem">Home</a>
+            <a href="projects.html" class="nav-button block w-full text-center" role="menuitem">Projects</a>
+            <a href="about-page.html" class="nav-button block w-full text-center" role="menuitem">About</a>
+            <a href="contact-us.html" class="nav-button block w-full text-center" role="menuitem">Contact</a>
         </div>
     </nav>
 
@@ -210,5 +223,38 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Hamburger menu toggle
+      const menuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const closeButton = document.getElementById('mobile-menu-close');
+      if (menuButton && mobileMenu && closeButton) {
+        menuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          document.body.classList.toggle('menu-open');
+          menuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+          if (!mobileMenu.classList.contains('hidden')) {
+            closeButton.focus();
+          }
+        });
+        closeButton.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          document.body.classList.remove('menu-open');
+          menuButton.setAttribute('aria-expanded', 'false');
+          menuButton.focus();
+        });
+        document.addEventListener('keydown', (e) => {
+          if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
+            mobileMenu.classList.add('hidden');
+            document.body.classList.remove('menu-open');
+            menuButton.setAttribute('aria-expanded', 'false');
+            menuButton.focus();
+          }
+        });
+      }
+    });
+    </script>
   </body>
 </html> 
