@@ -130,6 +130,25 @@
     transition: all 0.3s ease;
 }
 
+.nav-container .mx-auto {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .nav-container .mx-auto {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .nav-container .mx-auto {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
 .nav-button {
     position: relative;
     color: #1a1a1a;
@@ -1348,6 +1367,12 @@ html, body {
   padding: 0.4rem 0.6rem;
   cursor: pointer;
   z-index: 60;
+  margin-right: 0.5rem;
+}
+@media (min-width: 640px) {
+    #mobile-menu-button {
+        margin-right: 1rem;
+    }
 }
 #mobile-menu-button:focus {
   outline: 2px solid #3a7bd5;
