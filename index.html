@@ -501,23 +501,29 @@
       const menuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const closeButton = document.getElementById('mobile-menu-close');
+      
       if (menuButton && mobileMenu && closeButton) {
         menuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
+          document.body.classList.toggle('menu-open');
           menuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
           if (!mobileMenu.classList.contains('hidden')) {
             closeButton.focus();
           }
         });
+        
         closeButton.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
+          document.body.classList.remove('menu-open');
           menuButton.setAttribute('aria-expanded', 'false');
           menuButton.focus();
         });
+        
         // Close on Escape
         document.addEventListener('keydown', (e) => {
           if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
             mobileMenu.classList.add('hidden');
+            document.body.classList.remove('menu-open');
             menuButton.setAttribute('aria-expanded', 'false');
             menuButton.focus();
           }
