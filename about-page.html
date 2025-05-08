@@ -259,17 +259,22 @@
       // Show button when scrolling down
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
+          // First remove hidden to allow transitions
           backToTopButton.classList.remove('hidden');
-          // Small delay to ensure display:none is removed before showing
-          setTimeout(() => {
-            backToTopButton.classList.remove('opacity-0', 'invisible');
-            backToTopButton.classList.add('opacity-100', 'visible');
-          }, 10);
+          // Force a reflow to ensure the transition works
+          backToTopButton.offsetHeight;
+          // Then remove opacity and visibility classes
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
         } else {
+          // First add opacity and visibility classes
+          backToTopButton.classList.remove('opacity-100', 'visible');
           backToTopButton.classList.add('opacity-0', 'invisible');
           // Wait for fade out animation before hiding
           setTimeout(() => {
-            backToTopButton.classList.add('hidden');
+            if (window.scrollY <= 300) { // Only hide if still at top
+              backToTopButton.classList.add('hidden');
+            }
           }, 300);
         }
       });
@@ -277,10 +282,10 @@
       // Initial check for scroll position
       if (window.scrollY > 300) {
         backToTopButton.classList.remove('hidden');
-        setTimeout(() => {
-          backToTopButton.classList.remove('opacity-0', 'invisible');
-          backToTopButton.classList.add('opacity-100', 'visible');
-        }, 10);
+        // Force a reflow to ensure the transition works
+        backToTopButton.offsetHeight;
+        backToTopButton.classList.remove('opacity-0', 'invisible');
+        backToTopButton.classList.add('opacity-100', 'visible');
       }
 
       // Scroll to top when button is clicked
