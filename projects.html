@@ -303,24 +303,12 @@
 
     <!-- At the end of the body, before </body>, ensure the mobile menu script is present -->
     <script>
-      // Back to top button functionality
-      const backToTopButton = document.getElementById('back-to-top');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTopButton.classList.remove('opacity-0', 'invisible');
-          backToTopButton.classList.add('opacity-100', 'visible');
-        } else {
-          backToTopButton.classList.add('opacity-0', 'invisible');
-          backToTopButton.classList.remove('opacity-100', 'visible');
-        }
-      });
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
+    document.addEventListener('DOMContentLoaded', function() {
       // Hamburger menu toggle
       const menuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const closeButton = document.getElementById('mobile-menu-close');
+      
       if (menuButton && mobileMenu && closeButton) {
         menuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
@@ -330,12 +318,14 @@
             closeButton.focus();
           }
         });
+        
         closeButton.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
           document.body.classList.remove('menu-open');
           menuButton.setAttribute('aria-expanded', 'false');
           menuButton.focus();
         });
+        
         document.addEventListener('keydown', (e) => {
           if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
             mobileMenu.classList.add('hidden');
@@ -345,6 +335,7 @@
           }
         });
       }
+    });
     </script>
   </body>
 </html> 
