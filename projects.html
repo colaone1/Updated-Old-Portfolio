@@ -304,7 +304,7 @@
 
     <!-- Back to Top Button -->
     <button id="back-to-top" 
-            class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg transform translate-y-20 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50"
+            class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg opacity-0 invisible hidden transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50"
             aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -318,15 +318,28 @@
       // Show button when scrolling down
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-          backToTopButton.style.transform = 'translateY(0)';
+          backToTopButton.classList.remove('hidden');
+          // Small delay to ensure display:none is removed before showing
+          setTimeout(() => {
+            backToTopButton.classList.remove('opacity-0', 'invisible');
+            backToTopButton.classList.add('opacity-100', 'visible');
+          }, 10);
         } else {
-          backToTopButton.style.transform = 'translateY(20px)';
+          backToTopButton.classList.add('opacity-0', 'invisible');
+          // Wait for fade out animation before hiding
+          setTimeout(() => {
+            backToTopButton.classList.add('hidden');
+          }, 300);
         }
       });
 
       // Initial check for scroll position
       if (window.scrollY > 300) {
-        backToTopButton.style.transform = 'translateY(0)';
+        backToTopButton.classList.remove('hidden');
+        setTimeout(() => {
+          backToTopButton.classList.remove('opacity-0', 'invisible');
+          backToTopButton.classList.add('opacity-100', 'visible');
+        }, 10);
       }
 
       // Scroll to top when button is clicked
