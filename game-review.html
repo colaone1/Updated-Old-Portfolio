@@ -187,12 +187,45 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" 
+            class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg transform translate-y-20 transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50"
+            aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Back to top button functionality
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      // Show button when scrolling down
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          backToTopButton.style.transform = 'translateY(0)';
+        } else {
+          backToTopButton.style.transform = 'translateY(20px)';
+        }
+      });
+
+      // Initial check for scroll position
+      if (window.scrollY > 300) {
+        backToTopButton.style.transform = 'translateY(0)';
+      }
+
+      // Scroll to top when button is clicked
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
       // Hamburger menu toggle
       const menuButton = document.getElementById('mobile-menu-button');
       const mobileMenu = document.getElementById('mobile-menu');
       const closeButton = document.getElementById('mobile-menu-close');
+      
       if (menuButton && mobileMenu && closeButton) {
         menuButton.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
@@ -202,12 +235,14 @@
             closeButton.focus();
           }
         });
+        
         closeButton.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
           document.body.classList.remove('menu-open');
           menuButton.setAttribute('aria-expanded', 'false');
           menuButton.focus();
         });
+        
         document.addEventListener('keydown', (e) => {
           if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
             mobileMenu.classList.add('hidden');
