@@ -321,7 +321,7 @@ footer::before {
 /* ===== HERO SECTION STYLES ===== */
 .hero-section {
     position: relative;
-    min-h-screen: 100vh;
+    min-height: 100vh;
     margin-top: 1.5rem;
     padding-top: 4rem;
 }
@@ -1128,32 +1128,6 @@ form[role="search"] button:hover {
 #back-to-top:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.5);
-}
-
-/* Language Switcher Styles */
-[role="list"][aria-label="Language selection"] {
-    display: inline-flex;
-    gap: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-[role="list"][aria-label="Language selection"] button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    background: none;
-    border: none;
-    color: #a0aec0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-[role="list"][aria-label="Language selection"] button:hover,
-[role="list"][aria-label="Language selection"] button:focus {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-    outline: none;
 }
 
 /* Performance Monitoring Styles */
