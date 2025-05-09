@@ -6,6 +6,23 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 2.5rem;
+    animation: none;
+    overflow: visible;
+    height: 9rem;
+    max-width: 12rem;
+}
+@media (max-width: 768px) {
+    .logo-container {
+        height: 6rem;
+        max-width: 8rem;
+        margin-bottom: 1rem;
+    }
+}
+@media (max-width: 480px) {
+    .logo-container {
+        height: 3.5rem;
+        max-width: 4.5rem;
+    }
 }
 
 .logo-container:hover {
@@ -16,32 +33,14 @@
     transition: none;
 }
 
-/* Simplified glitch animation */
+/* Glitch animation */
 @keyframes glitch {
-    0% {
-        transform: translate(0);
-        opacity: 0.6;
-    }
-    20% {
-        transform: translate(-3px, 2px);
-        opacity: 0.6;
-    }
-    40% {
-        transform: translate(-2px, -2px);
-        opacity: 0.6;
-    }
-    60% {
-        transform: translate(2px, 2px);
-        opacity: 0.6;
-    }
-    80% {
-        transform: translate(3px, -1px);
-        opacity: 0.6;
-    }
-    100% {
-        transform: translate(0);
-        opacity: 0.6;
-    }
+    0% { transform: translate(0); opacity: 0.6; }
+    20% { transform: translate(-3px, 2px); opacity: 0.6; }
+    40% { transform: translate(-2px, -2px); opacity: 0.6; }
+    60% { transform: translate(2px, 2px); opacity: 0.6; }
+    80% { transform: translate(3px, -1px); opacity: 0.6; }
+    100% { transform: translate(0); opacity: 0.6; }
 }
 
 .logo-container:hover .logo-glitch {
@@ -59,12 +58,7 @@
     font-size: 7rem;
 }
 
-/* Remove all hover effects and shadows */
-.main-logo.css-logo .logo-text {
-    animation: none;
-    text-shadow: none;
-}
-
+.main-logo.css-logo .logo-text,
 .main-logo.css-logo:hover .logo-text {
     animation: none;
     text-shadow: none;
@@ -78,15 +72,6 @@
     animation: none;
     opacity: 0;
     text-shadow: none;
-}
-
-/* Remove unused animations */
-@keyframes float { }
-@keyframes logo-float { }
-@keyframes static-effect { }
-
-.logo-container {
-    animation: none;
 }
 
 /* ===== ANIMATIONS ===== */
@@ -643,19 +628,6 @@ footer::before {
 @keyframes float { }
 @keyframes logo-float { }
 @keyframes logo-glitch { }
-
-/* Remove container hover effects */
-.logo-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo-container:hover {
-    transform: none;
-}
 
 /* Animation Delays */
 .animation-delay-500 {
