@@ -92,66 +92,8 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Critical CSS -->
-    <style>
-    /* Critical CSS for above-the-fold content */
-    :root {
-        --primary-color: #3a7bd5;
-        --text-color: #1a1a1a;
-        --bg-color: #ffffff;
-    }
-    
-    body {
-        margin: 0;
-        font-family: 'Cinzel', serif;
-        color: var(--text-color);
-        background-color: var(--bg-color);
-    }
-    
-    .nav-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 50;
-        backdrop-filter: blur(8px);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .hero-section {
-        position: relative;
-        min-height: 100vh;
-        padding-top: 4rem;
-    }
-    
-    /* Add reduced motion support */
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-        }
-    }
-    </style>
-
-    <!-- Non-critical CSS -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
-
-    <!-- Google Fonts with display swap -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
-    </noscript>
-
-    <!-- Font Awesome with display swap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    </noscript>
+    <!-- Preload only the hero background image with fetchpriority and eager loading -->
+    <link rel="preload" href="images/Background/background.jpg" as="image" fetchpriority="high">
   </head>
   
   <!-- The body contains all visible content of the webpage -->
@@ -535,38 +477,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Critical JavaScript -->
-    <script type="module">
-    // Critical initialization code
-    document.addEventListener('DOMContentLoaded', () => {
-        // Initialize core functionality
-        navigation.initialize();
-        accessibility.handleReducedMotion();
-        
-        // Initialize performance monitoring
-        const perfMonitor = {
-            metrics: {
-                startTime: performance.now(),
-                resources: [],
-                errors: []
-            },
-            initialize() {
-                if ('PerformanceObserver' in window) {
-                    const observer = new PerformanceObserver((list) => {
-                        for (const entry of list.getEntries()) {
-                            this.metrics.resources.push(entry);
-                        }
-                    });
-                    observer.observe({ entryTypes: ['resource', 'paint', 'largest-contentful-paint'] });
-                }
-            }
-        };
-        perfMonitor.initialize();
-    });
-    </script>
-
-    <!-- Defer non-critical JavaScript -->
-    <script src="scripts.js" defer type="module"></script>
+    <!-- Main JS: -->
+    <script src="scripts.js" defer></script>
 
     <!-- Move all other scripts to the end of body -->
     <script type="module">
