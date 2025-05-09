@@ -89,6 +89,53 @@
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Inline critical CSS for nav, hero, and above-the-fold content -->
+    <style>
+    :root {
+      --primary-color: #3a7bd5;
+      --text-color: #1a1a1a;
+      --background-color: #f8f5f2;
+    }
+    body {
+      margin: 0;
+      font-family: 'Lexend', sans-serif;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      overflow-x: hidden;
+    }
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      background-color: rgba(248, 245, 242, 0.95);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      margin-top: 1.5rem;
+      padding-top: 4rem;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+    </style>
+    <!-- Load rest of CSS non-blocking -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+    <!-- Ensure all JS is loaded with defer (except analytics, which should be async) -->
+    <script src="scripts.js" defer></script>
+    <!-- Google Analytics remains async -->
   </head>
   
   <!-- The body contains all visible content of the webpage -->
