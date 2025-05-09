@@ -14,7 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="scripts.js" as="script">
-    <link rel="preload" href="images/background.jpg" as="image">
+    <link rel="preload" href="images/Background/background.jpg" as="image" fetchpriority="high">
+    <link rel="preload" href="images/Logos/logo.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" as="style">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Sam C. - Software Developer Portfolio">
@@ -89,6 +91,67 @@
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Critical CSS -->
+    <style>
+    /* Critical CSS for above-the-fold content */
+    :root {
+        --primary-color: #3a7bd5;
+        --text-color: #1a1a1a;
+        --bg-color: #ffffff;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Cinzel', serif;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+    }
+    
+    .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .hero-section {
+        position: relative;
+        min-height: 100vh;
+        padding-top: 4rem;
+    }
+    
+    /* Add reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    </style>
+
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+
+    <!-- Google Fonts with display swap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Font Awesome with display swap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </noscript>
   </head>
   
   <!-- The body contains all visible content of the webpage -->
@@ -113,7 +176,7 @@
                 <!-- ARIA: Logo acts as site identifier and home link -->
                 <div class="flex flex-shrink-0 items-center">
                     <a href="index.html" class="nav-logo" aria-label="Home">
-                        <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="h-10 w-auto">
+                        <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="h-10 w-auto" width="400" height="300" loading="eager" fetchpriority="high" decoding="async">
                     </a>
                 </div>
                 
@@ -154,11 +217,17 @@
         <div class="absolute inset-0">
             <!-- Static background image -->
             <img src="images/Background/background.jpg" 
-                 srcset="images/Background/background-small.jpg 640w, images/Background/background-medium.jpg 1024w, images/Background/background.jpg 1920w"
+                 srcset="images/Background/background-small.jpg 640w, 
+                         images/Background/background-medium.jpg 1024w, 
+                         images/Background/background.jpg 1920w"
                  sizes="100vw"
                  alt="Abstract geometric background pattern" 
                  class="absolute inset-0 w-full h-full object-cover object-top brightness-150"
-                 width="1920" height="1080">
+                 width="1920" 
+                 height="1080"
+                 loading="eager"
+                 fetchpriority="high"
+                 decoding="async">
             
             <!-- Gradient overlays create a fade effect for better text readability -->
             <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
@@ -198,7 +267,7 @@
                 </p>
                 <div class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-16">
                     <div class="logo-shine"></div>
-                    <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="w-full h-full object-contain">
+                    <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="w-full h-full object-contain" width="400" height="300" loading="eager" fetchpriority="high" decoding="async">
                 </div>
                 <div class="mt-16 space-y-8">
                     <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500">
@@ -466,70 +535,102 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- External JavaScript -->
-    <script src="scripts.js"></script>
-    <script>
+    <!-- Critical JavaScript -->
+    <script type="module">
+    // Critical initialization code
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize core functionality
+        navigation.initialize();
+        accessibility.handleReducedMotion();
+        
+        // Initialize performance monitoring
+        const perfMonitor = {
+            metrics: {
+                startTime: performance.now(),
+                resources: [],
+                errors: []
+            },
+            initialize() {
+                if ('PerformanceObserver' in window) {
+                    const observer = new PerformanceObserver((list) => {
+                        for (const entry of list.getEntries()) {
+                            this.metrics.resources.push(entry);
+                        }
+                    });
+                    observer.observe({ entryTypes: ['resource', 'paint', 'largest-contentful-paint'] });
+                }
+            }
+        };
+        perfMonitor.initialize();
+    });
+    </script>
+
+    <!-- Defer non-critical JavaScript -->
+    <script src="scripts.js" defer type="module"></script>
+
+    <!-- Move all other scripts to the end of body -->
+    <script type="module">
     document.addEventListener('DOMContentLoaded', function() {
-      // Back to top button functionality
-      const backToTopButton = document.getElementById('back-to-top');
-      
-      // Show button when scrolling down
-      window.addEventListener('scroll', () => {
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        // Show button when scrolling down
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        // Initial check for scroll position
         if (window.scrollY > 300) {
-          backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-          backToTopButton.classList.add('opacity-100');
-        } else {
-          backToTopButton.classList.remove('opacity-100');
-          backToTopButton.classList.add('opacity-0', 'pointer-events-none');
+            backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
+            backToTopButton.classList.add('opacity-100');
         }
-      });
 
-      // Initial check for scroll position
-      if (window.scrollY > 300) {
-        backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-        backToTopButton.classList.add('opacity-100');
-      }
-
-      // Scroll to top when button is clicked
-      backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
+        // Scroll to top when button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
-      });
 
-      // Hamburger menu toggle
-      const menuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const closeButton = document.getElementById('mobile-menu-close');
-      
-      if (menuButton && mobileMenu && closeButton) {
-        menuButton.addEventListener('click', () => {
-          mobileMenu.classList.toggle('hidden');
-          document.body.classList.toggle('menu-open');
-          menuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
-          if (!mobileMenu.classList.contains('hidden')) {
-            closeButton.focus();
-          }
-        });
+        // Hamburger menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeButton = document.getElementById('mobile-menu-close');
         
-        closeButton.addEventListener('click', () => {
-          mobileMenu.classList.add('hidden');
-          document.body.classList.remove('menu-open');
-          menuButton.setAttribute('aria-expanded', 'false');
-          menuButton.focus();
-        });
-        
-        // Close on Escape
-        document.addEventListener('keydown', (e) => {
-          if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
-            mobileMenu.classList.add('hidden');
-            document.body.classList.remove('menu-open');
-            menuButton.setAttribute('aria-expanded', 'false');
-            menuButton.focus();
-          }
-        });
-      }
+        if (menuButton && mobileMenu && closeButton) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                document.body.classList.toggle('menu-open');
+                menuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+                if (!mobileMenu.classList.contains('hidden')) {
+                    closeButton.focus();
+                }
+            });
+            
+            closeButton.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                document.body.classList.remove('menu-open');
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.focus();
+            });
+            
+            // Close on Escape
+            document.addEventListener('keydown', (e) => {
+                if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
+                    mobileMenu.classList.add('hidden');
+                    document.body.classList.remove('menu-open');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.focus();
+                }
+            });
+        }
     });
     </script>
   </body>
