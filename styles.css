@@ -1279,7 +1279,8 @@ html, body {
     pointer-events: none;
     opacity: 0;
     z-index: 2;
-    animation: logoShineAnim 3s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation: logoShineAnim 12s cubic-bezier(0.4,0,0.2,1) infinite;
+    animation-delay: 0.7s;
 }
 .logo-container img {
     position: relative;
@@ -1287,9 +1288,10 @@ html, body {
 }
 @keyframes logoShineAnim {
     0% { left: -100%; opacity: 0; }
-    20% { opacity: 0.8; }
-    50% { opacity: 1; }
-    80% { opacity: 0.8; }
+    6% { opacity: 0.8; }
+    8% { opacity: 1; }
+    10% { opacity: 0.8; }
+    14% { left: 200%; opacity: 0; }
     100% { left: 200%; opacity: 0; }
 }
 
