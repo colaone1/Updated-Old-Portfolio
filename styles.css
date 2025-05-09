@@ -1,3 +1,46 @@
+/* Critical CSS */
+:root {
+    --primary-color: #3a7bd5;
+    --text-color: #1a1a1a;
+    --background-color: #f8f5f2;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lexend', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    overflow-x: hidden;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background-color: rgba(248, 245, 242, 0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    margin-top: 1.5rem;
+    padding-top: 4rem;
+}
+
+/* Defer non-critical CSS loading */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 /* ===== LOGO STYLES ===== */
 .logo-container {
     position: relative;
@@ -103,18 +146,6 @@
 }
 
 /* ===== NAVIGATION STYLES ===== */
-.nav-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    backdrop-filter: blur(8px);
-    background-color: rgba(248, 245, 242, 0.95);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
-
 .nav-container .mx-auto {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -302,26 +333,10 @@ footer::before {
     color: #00ffff;
 }
 
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
-
 /* ===== HERO SECTION STYLES ===== */
 .hero-section {
     position: relative;
-    min-h-screen: 100vh;
+    min-height: 100vh;
     margin-top: 1.5rem;
     padding-top: 4rem;
 }
@@ -1128,32 +1143,6 @@ form[role="search"] button:hover {
 #back-to-top:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(58, 123, 213, 0.5);
-}
-
-/* Language Switcher Styles */
-[role="list"][aria-label="Language selection"] {
-    display: inline-flex;
-    gap: 1rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-[role="list"][aria-label="Language selection"] button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
-    background: none;
-    border: none;
-    color: #a0aec0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-[role="list"][aria-label="Language selection"] button:hover,
-[role="list"][aria-label="Language selection"] button:focus {
-    color: #ffffff;
-    background-color: rgba(255, 255, 255, 0.1);
-    outline: none;
 }
 
 /* Performance Monitoring Styles */

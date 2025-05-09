@@ -273,6 +273,17 @@ const indicators = {
             <button onclick="window.location.reload()">Refresh to update</button>
         `;
         document.body.appendChild(updateIndicator);
+    },
+
+    /**
+     * Initializes offline indicator functionality
+     */
+    initialize() {
+        window.addEventListener('online', () => {
+            document.querySelector('.offline-indicator')?.remove();
+        });
+        window.addEventListener('offline', this.showOffline);
+        navigator.serviceWorker?.addEventListener('controllerchange', this.showUpdateAvailable);
     }
 };
 
@@ -317,6 +328,7 @@ function initializeApp() {
     accessibility.initializeSkipLink();
     perfMonitor.initialize();
     serviceWorker.register();
+    indicators.initialize();
     backToTop.initialize();
 
     // Log performance metrics after page load
@@ -326,4 +338,4 @@ function initializeApp() {
 }
 
 // Initialize the application
-initializeApp(); 
+document.addEventListener('DOMContentLoaded', initializeApp); 
