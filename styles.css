@@ -189,6 +189,10 @@ body {
     width: 100%;
 }
 
+.nav-button[aria-current="page"]::after {
+    width: 100%;
+}
+
 .nav-link {
     position: relative;
     padding: 0.5rem 1rem;
