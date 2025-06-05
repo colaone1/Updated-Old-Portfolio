@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Detailed overview of the FriendBay Social Media Site project, a modern full-stack social platform built with Next.js, React, and TypeScript.">
-    <title>FriendBay Social Media Site - Portfolio</title>
+    <meta name="description" content="Detailed overview of the Movies API project, a RESTful API for movie data built with Node.js, Express, and MongoDB.">
+    <title>Movies API - Portfolio</title>
     
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -64,9 +64,9 @@
     <!-- Project Header -->
     <header class="bg-gray-900 text-white py-20">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">FriendBay Social Media Site</h1>
+            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Movies API</h1>
             <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
-                A modern, full-stack social media platform built with Next.js, React, and TypeScript.
+                A RESTful API for movie data, built with Node.js, Express, and MongoDB.
             </p>
         </div>
     </header>
@@ -78,30 +78,26 @@
             <section class="mb-16">
                 <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
                 <p class="text-gray-700 mb-4">
-                    FriendBay is a feature-rich social media platform designed to connect users through posts, reactions, and profiles. Built with a modern tech stack, it demonstrates advanced front-end and full-stack development skills, state management, and responsive design.
+                    The Movies API project is a scalable backend service for managing and retrieving movie data. It demonstrates backend development, RESTful API design, database integration, and deployment best practices.
                 </p>
                 <div class="bg-gray-100 p-6 rounded-lg mb-6">
                     <h3 class="text-xl font-semibold mb-4">Key Technologies</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
                         <div class="flex items-center space-x-2">
-                            <i class="fab fa-react text-blue-500 text-2xl"></i>
-                            <span>React 18</span>
+                            <i class="fab fa-node-js text-green-500 text-2xl"></i>
+                            <span>Node.js</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fab fa-js text-yellow-500 text-2xl"></i>
-                            <span>Next.js 14</span>
+                            <i class="fas fa-server text-gray-800 text-2xl"></i>
+                            <span>Express</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-database text-blue-600 text-2xl"></i>
+                            <span>MongoDB</span>
                         </div>
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-code text-gray-800 text-2xl"></i>
-                            <span>TypeScript</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-paint-brush text-pink-500 text-2xl"></i>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-database text-green-700 text-2xl"></i>
-                            <span>Full Stack</span>
+                            <span>REST API</span>
                         </div>
                     </div>
                 </div>
@@ -112,25 +108,30 @@
                 <h2 class="text-3xl font-bold mb-6">Technical Implementation</h2>
                 <div class="space-y-8">
                     <div>
-                        <h3 class="text-xl font-semibold mb-4">Architecture & Features</h3>
+                        <h3 class="text-xl font-semibold mb-4">Backend & API</h3>
                         <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Built with Next.js 14 for server-side rendering and routing</li>
-                            <li>Implemented TypeScript for type safety and maintainability</li>
-                            <li>Used React 18 for modern, performant UI components</li>
-                            <li>Styled with Tailwind CSS for rapid, responsive design</li>
-                            <li>Implemented local storage for data persistence</li>
-                            <li>Created reusable components for maintainability</li>
+                            <li>Node.js backend using Express for RESTful endpoints</li>
+                            <li>MongoDB for persistent data storage</li>
+                            <li>CRUD operations for movies, directors, and genres</li>
+                            <li>API documentation and error handling</li>
+                            <li>Deployed on Render for public access</li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-4">Key Features</h3>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">API Capabilities</h3>
                         <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Create, edit, and delete posts</li>
-                            <li>React to posts with multiple reactions</li>
-                            <li>Search functionality for posts and users</li>
-                            <li>User profiles with avatars</li>
-                            <li>Responsive, accessible UI</li>
-                            <li>Persistent state management</li>
+                            <li>Get, add, update, and delete movies</li>
+                            <li>Filter by director, genre, or title</li>
+                            <li>Robust error handling and validation</li>
+                            <li>API documentation for easy integration</li>
+                            <li>Scalable and secure backend</li>
                         </ul>
                     </div>
                 </div>
@@ -140,11 +141,11 @@
             <section class="mb-16">
                 <h2 class="text-3xl font-bold mb-6">Project Links</h2>
                 <div class="flex flex-col space-y-4">
-                    <a href="https://github.com/colaone1/FriendBay-Social-Media-Site" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    <a href="https://github.com/funkmafia/MoviesApi" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
                         <i class="fab fa-github mr-2"></i>View on GitHub
                     </a>
-                    <a href="https://vercel.com/sams-projects-88a29ea6/friend-bay-social-media-site" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                        <i class="fas fa-play mr-2"></i>View on Vercel
+                    <a href="https://moviesapi-ncp4.onrender.com" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <i class="fas fa-play mr-2"></i>View Live on Render
                     </a>
                     <a href="projects.html" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
                         <i class="fas fa-arrow-left mr-2"></i>Back to Projects
