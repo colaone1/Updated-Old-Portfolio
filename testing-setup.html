@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detailed overview of the Open Source Testing Setup project, showcasing comprehensive testing infrastructure with Jest, Cypress, and GitHub Actions integration.">
+    <title>Open Source Testing Setup - Portfolio</title>
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  </head>
+  
+  <body class="min-h-screen bg-[#f8f5f2]">
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" 
+       class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none"
+       aria-label="Skip to main content">
+      Skip to main content
+    </a>
+
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav class="nav-container bg-[#f8f5f2]" role="navigation" aria-label="Main navigation">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 justify-between items-center">
+                <!-- Logo container with flex properties to center the text -->
+                <div class="flex flex-shrink-0 items-center">
+                    <a href="index.html" class="nav-logo" aria-label="Home">
+                        <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="h-10 w-auto" width="400" height="300">
+                    </a>
+                </div>
+                <!-- Desktop nav links -->
+                <div class="hidden md:flex space-x-12" role="list">
+                    <a href="index.html" class="nav-button" role="listitem">Home</a>
+                    <a href="projects.html" class="nav-button" role="listitem">Projects</a>
+                    <a href="about-page.html" class="nav-button" role="listitem">About</a>
+                    <a href="contact-us.html" class="nav-button" role="listitem">Contact</a>
+                </div>
+                <!-- Hamburger menu button for mobile -->
+                <div class="flex-shrink-0">
+                    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-[#1a1a1a] border-[#3a7bd5] focus:outline-none focus:ring-2 focus:ring-[#3a7bd5]" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile nav menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden" role="menu" aria-label="Mobile navigation">
+        <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-[#3a7bd5] focus:outline-none" aria-label="Close navigation menu">&times;</button>
+        <a href="index.html" class="nav-button block w-full text-center" role="menuitem">Home</a>
+        <a href="projects.html" class="nav-button block w-full text-center" role="menuitem">Projects</a>
+        <a href="about-page.html" class="nav-button block w-full text-center" role="menuitem">About</a>
+        <a href="contact-us.html" class="nav-button block w-full text-center" role="menuitem">Contact</a>
+    </div>
+
+    <!-- Project Header -->
+    <header class="bg-gray-900 text-white py-20">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-cinzel font-bold text-center mb-6">Open Source Testing Setup</h1>
+            <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto">
+                A comprehensive testing infrastructure for modern web applications
+            </p>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <main id="main-content" class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto">
+            <!-- Project Overview -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Project Overview</h2>
+                <p class="text-gray-700 mb-4">
+                    The Open Source Testing Setup is a robust testing infrastructure designed to streamline the quality assurance process for web applications. It combines modern testing tools and practices to ensure code quality, reliability, and maintainability.
+                </p>
+                <div class="bg-gray-100 p-6 rounded-lg mb-6">
+                    <h3 class="text-xl font-semibold mb-4">Key Technologies</h3>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-js text-yellow-500 text-2xl"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-node-js text-green-500 text-2xl"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-github text-gray-800 text-2xl"></i>
+                            <span>GitHub Actions</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-vial text-blue-500 text-2xl"></i>
+                            <span>Jest</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                            <span>Cypress</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-docker text-blue-600 text-2xl"></i>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Implementation -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Technical Implementation</h2>
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Testing Infrastructure</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Configured Jest for unit and integration testing with custom matchers and mocks</li>
+                            <li>Set up Cypress for end-to-end testing with custom commands and fixtures</li>
+                            <li>Implemented test coverage reporting with minimum thresholds</li>
+                            <li>Created custom testing utilities and factories for common test scenarios</li>
+                            <li>Integrated snapshot testing for UI components</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">CI/CD Pipeline</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Configured GitHub Actions workflows for automated testing</li>
+                            <li>Set up parallel test execution for faster feedback</li>
+                            <li>Implemented automated deployment on successful tests</li>
+                            <li>Added status checks for pull requests</li>
+                            <li>Integrated with code quality tools</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Testing Capabilities</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Unit testing with Jest</li>
+                            <li>Integration testing with Jest</li>
+                            <li>End-to-end testing with Cypress</li>
+                            <li>API testing with Supertest</li>
+                            <li>Visual regression testing</li>
+                            <li>Performance testing</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4">Development Tools</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Custom test utilities and helpers</li>
+                            <li>Mock data factories</li>
+                            <li>Test environment configuration</li>
+                            <li>Debugging tools and documentation</li>
+                            <li>Code coverage reporting</li>
+                            <li>Test result visualization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Links -->
+            <section class="mb-16">
+                <h2 class="text-3xl font-bold mb-6">Project Links</h2>
+                <div class="flex flex-col space-y-4">
+                    <a href="https://github.com/colaone1/Open-Source-Testing-Setup" target="_blank" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <i class="fab fa-github mr-2"></i>View on GitHub
+                    </a>
+                    <a href="projects.html" class="block w-full bg-gray-900 text-white text-center py-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <i class="fas fa-arrow-left mr-2"></i>Back to Projects
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2024 Sam C. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/colaone1" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/sam-c-123456789" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
+  </body>
+</html> 
