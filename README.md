@@ -585,3 +585,5 @@ Future Enhancements:
    - Meta viewport tag
    - Character encoding
 ```
+
+<!-- Trigger redeploy: minor edit for GitHub Pages -->
