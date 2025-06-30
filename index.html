@@ -1,590 +1,1084 @@
 <!-- Test push 2: verifying deployment propagation -->
-<!DOCTYPE html>
+<!doctype html>
 <!-- This declares that this is an HTML5 document, enabling modern browser features and ensuring proper rendering -->
 <html lang="en">
   <head>
     <!-- ===== META TAGS ===== -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Improved SEO and accessibility with meta description -->
-    <meta name="description" content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design.">
+    <meta
+      name="description"
+      content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design."
+    />
     <title>Sam C. - Software Developer Portfolio</title>
-    
+
     <!-- Performance Optimizations -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="scripts.js" as="script">
-    <link rel="preload" href="images/Background/background.jpg" as="image" fetchpriority="high">
-    <link rel="preload" href="images/Logos/logo.svg" as="image" fetchpriority="high">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" as="style">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="scripts.js" as="script" />
+    <link
+      rel="preload"
+      href="images/Background/background.jpg"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="images/Logos/logo.svg"
+      as="image"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap"
+      as="style"
+    />
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Sam C. - Software Developer Portfolio">
-    <meta property="og:description" content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design.">
-    <meta property="og:image" content="https://colaone1.github.io/Portfolio-Website/images/background.jpg">
-    <meta property="og:url" content="https://colaone1.github.io/Portfolio-Website/">
-    <meta property="og:type" content="website">
-    
+    <meta property="og:title" content="Sam C. - Software Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design."
+    />
+    <meta
+      property="og:image"
+      content="https://colaone1.github.io/Portfolio-Website/images/background.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://colaone1.github.io/Portfolio-Website/"
+    />
+    <meta property="og:type" content="website" />
+
     <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sam C. - Software Developer Portfolio">
-    <meta name="twitter:description" content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design.">
-    <meta name="twitter:image" content="https://colaone1.github.io/Portfolio-Website/images/background.jpg">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Sam C. - Software Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design."
+    />
+    <meta
+      name="twitter:image"
+      content="https://colaone1.github.io/Portfolio-Website/images/background.jpg"
+    />
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://colaone1.github.io/Portfolio-Website/">
-    
+    <link
+      rel="canonical"
+      href="https://colaone1.github.io/Portfolio-Website/"
+    />
+
     <!-- Security Headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
     </script>
-    
+
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Sam C.",
         "jobTitle": "Software Developer",
         "url": "https://colaone1.github.io/Portfolio-Website/",
         "sameAs": [
-            "https://github.com/colaone1",
-            "https://www.linkedin.com/in/sam-connor-4ab195363"
+          "https://github.com/colaone1",
+          "https://www.linkedin.com/in/sam-connor-4ab195363"
         ],
         "description": "Full-stack developer specialising in creating immersive web experiences with clean code and innovative design.",
         "knowsAbout": [
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "React",
-            "Tailwind CSS",
-            "Web Development",
-            "UI/UX Design"
+          "HTML5",
+          "CSS3",
+          "JavaScript",
+          "React",
+          "Tailwind CSS",
+          "Web Development",
+          "UI/UX Design"
         ]
-    }
+      }
     </script>
-    
+
     <!-- ===== EXTERNAL RESOURCES ===== -->
     <!-- Tailwind CSS for utility-first styling -->
     <script>
       tailwind = window.tailwind || {};
-      tailwind.config = { darkMode: 'class' };
+      tailwind.config = { darkMode: "class" };
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS for unique design elements -->
-    <link rel="stylesheet" href="styles.css">
-    
+    <link rel="stylesheet" href="styles.css" />
+
     <!-- Google Fonts - Cinzel and others for the theme -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Rajdhani:wght@500;600;700&family=Lexend:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Inline critical CSS for nav, hero, and above-the-fold content -->
     <style>
-    :root {
-      --primary-color: #3a7bd5;
-      --text-color: #1a1a1a;
-      --background-color: #f8f5f2;
-    }
-    body {
-      margin: 0;
-      font-family: 'Lexend', sans-serif;
-      color: var(--text-color);
-      background-color: var(--background-color);
-      overflow-x: hidden;
-    }
-    .nav-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      backdrop-filter: blur(8px);
-      background-color: rgba(248, 245, 242, 0.95);
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    }
-    .hero-section {
-      position: relative;
-      min-height: 100vh;
-      margin-top: 1.5rem;
-      padding-top: 4rem;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+      :root {
+        --primary-color: #3a7bd5;
+        --text-color: #1a1a1a;
+        --background-color: #f8f5f2;
       }
-    }
+      body {
+        margin: 0;
+        font-family: "Lexend", sans-serif;
+        color: var(--text-color);
+        background-color: var(--background-color);
+        overflow-x: hidden;
+      }
+      .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(8px);
+        background-color: rgba(248, 245, 242, 0.95);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      .hero-section {
+        position: relative;
+        min-height: 100vh;
+        margin-top: 1.5rem;
+        padding-top: 4rem;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+    <style>
+      /* Prevent background images and SVG patterns from being highlighted/selected */
+      .hero-section img,
+      .hero-section .geometric-pattern {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        pointer-events: none;
+      }
     </style>
     <!-- Load rest of CSS non-blocking -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
 
     <!-- Ensure all JS is loaded with defer (except analytics, which should be async) -->
     <script src="scripts.js" defer></script>
     <!-- Google Analytics remains async -->
   </head>
-  
+
   <!-- The body contains all visible content of the webpage -->
   <!-- min-h-screen ensures the body takes at least the full viewport height, preventing awkward short pages -->
   <!-- bg-white sets a clean background color that works well with the fantasy theme -->
   <body class="min-h-screen bg-white transition-colors duration-300">
     <!-- Skip to main content link for keyboard navigation -->
     <!-- Positioned off-screen by default, visible on focus -->
-    <a href="#main-content" 
-       class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none"
-       aria-label="Skip to main content">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:outline-none"
+      aria-label="Skip to main content"
+    >
       Skip to main content
     </a>
 
     <!-- ===== NAVIGATION BAR ===== -->
     <!-- The nav element is used for navigation links, providing semantic meaning for accessibility -->
     <!-- ARIA: Navigation landmark role is implicit in nav element -->
-    <nav class="nav-container bg-[#f8f5f2]" role="navigation" aria-label="Main navigation">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex h-16 justify-between items-center">
-                <!-- Logo container with flex properties to center the text -->
-                <!-- ARIA: Logo acts as site identifier and home link -->
-                <div class="flex flex-shrink-0 items-center">
-                    <a href="index.html" class="nav-logo" aria-label="Home">
-                        <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="h-10 w-auto" width="400" height="300" loading="eager" fetchpriority="high" decoding="async">
-                    </a>
-                </div>
-                
-                <!-- Desktop nav links -->
-                <div class="hidden md:flex space-x-12" role="list">
-                    <a href="index.html" class="nav-button" role="listitem" aria-current="page">Home</a>
-                    <a href="projects.html" class="nav-button" role="listitem">Projects</a>
-                    <a href="about-page.html" class="nav-button" role="listitem">About</a>
-                    <a href="contact-us.html" class="nav-button" role="listitem">Contact</a>
-                </div>
-                
-                <!-- Hamburger menu button for mobile -->
-                <div class="flex-shrink-0">
-                    <button id="mobile-menu-button" class="md:hidden flex items-center px-3 py-2 border rounded text-[#1a1a1a] border-[#3a7bd5] focus:outline-none focus:ring-2 focus:ring-[#3a7bd5]" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
+    <nav
+      class="nav-container bg-[#f8f5f2]"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 justify-between items-center">
+          <!-- Logo container with flex properties to center the text -->
+          <!-- ARIA: Logo acts as site identifier and home link -->
+          <div class="flex flex-shrink-0 items-center">
+            <a href="index.html" class="nav-logo" aria-label="Home">
+              <img
+                src="images/Logos/logo.svg"
+                alt="Portfolio Logo"
+                class="h-10 w-auto"
+                width="400"
+                height="300"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </a>
+          </div>
+
+          <!-- Desktop nav links -->
+          <div class="hidden md:flex space-x-12" role="list">
+            <a
+              href="index.html"
+              class="nav-button"
+              role="listitem"
+              aria-current="page"
+              >Home</a
+            >
+            <a href="projects.html" class="nav-button" role="listitem"
+              >Projects</a
+            >
+            <a href="about-page.html" class="nav-button" role="listitem"
+              >About</a
+            >
+            <a href="contact-us.html" class="nav-button" role="listitem"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Hamburger menu button for mobile -->
+          <div class="flex-shrink-0">
+            <button
+              id="mobile-menu-button"
+              class="md:hidden flex items-center px-3 py-2 border rounded text-[#1a1a1a] border-[#3a7bd5] focus:outline-none focus:ring-2 focus:ring-[#3a7bd5]"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-        <!-- Mobile nav menu (hidden by default) - moved outside flex container for proper overlay -->
-        <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden" role="menu" aria-label="Mobile navigation">
-            <button id="mobile-menu-close" class="absolute top-6 right-6 text-3xl text-[#3a7bd5] focus:outline-none" aria-label="Close navigation menu">&times;</button>
-            <a href="index.html" class="nav-button block w-full text-center" role="menuitem">Home</a>
-            <a href="projects.html" class="nav-button block w-full text-center" role="menuitem">Projects</a>
-            <a href="about-page.html" class="nav-button block w-full text-center" role="menuitem">About</a>
-            <a href="contact-us.html" class="nav-button block w-full text-center" role="menuitem">Contact</a>
-        </div>
+      </div>
+      <!-- Mobile nav menu (hidden by default) - moved outside flex container for proper overlay -->
+      <div
+        id="mobile-menu"
+        class="md:hidden fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center space-y-8 text-2xl font-semibold hidden"
+        role="menu"
+        aria-label="Mobile navigation"
+      >
+        <button
+          id="mobile-menu-close"
+          class="absolute top-6 right-6 text-3xl text-[#3a7bd5] focus:outline-none"
+          aria-label="Close navigation menu"
+        >
+          &times;
+        </button>
+        <a
+          href="index.html"
+          class="nav-button block w-full text-center"
+          role="menuitem"
+          >Home</a
+        >
+        <a
+          href="projects.html"
+          class="nav-button block w-full text-center"
+          role="menuitem"
+          >Projects</a
+        >
+        <a
+          href="about-page.html"
+          class="nav-button block w-full text-center"
+          role="menuitem"
+          >About</a
+        >
+        <a
+          href="contact-us.html"
+          class="nav-button block w-full text-center"
+          role="menuitem"
+          >Contact</a
+        >
+      </div>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
     <!-- The hero section is the first thing visitors see, positioned relatively for absolute children -->
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
-    <header class="hero-section relative min-h-screen pt-16" role="banner" aria-label="Hero section">
-        <!-- Background layers container positioned absolutely to fill the parent -->
-        <div class="absolute inset-0">
-            <!-- Static background image -->
-            <img src="images/Background/background.jpg" 
-                 srcset="images/Background/background-small.jpg 640w, 
-                         images/Background/background-medium.jpg 1024w, 
-                         images/Background/background.jpg 1920w"
-                 sizes="100vw"
-                 alt="Abstract geometric background pattern" 
-                 class="absolute inset-0 w-full h-full object-cover object-top brightness-150"
-                 width="1920" 
-                 height="1080"
-                 loading="eager"
-                 fetchpriority="high"
-                 decoding="async">
-            
-            <!-- Gradient overlays create a fade effect for better text readability -->
-            <div class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
-            <div class="absolute inset-0 bg-white/10"></div>
-            <div class="hero-glow"></div>
-            
-            <!-- Geometric Patterns -->
-            <!-- Main patterns -->
-            <img src="images/Background/Net design.svg" 
-                 alt="" 
-                 class="geometric-pattern left" 
-                 aria-hidden="true"
-                 loading="lazy">
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern right" aria-hidden="true">
-            
-            <!-- Secondary patterns -->
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern top" aria-hidden="true">
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern bottom" aria-hidden="true">
-            
-            <!-- Additional subtle patterns -->
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern top-left" aria-hidden="true">
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern bottom-right" aria-hidden="true">
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern center-left" aria-hidden="true">
-            <img src="images/Background/Net design.svg" alt="" class="geometric-pattern center-right" aria-hidden="true">
-        </div>
+    <header
+      class="hero-section relative min-h-screen pt-16"
+      role="banner"
+      aria-label="Hero section"
+    >
+      <!-- Background layers container positioned absolutely to fill the parent -->
+      <div class="absolute inset-0">
+        <!-- Static background image -->
+        <img
+          src="images/Background/background.jpg"
+          srcset="
+            images/Background/background-small.jpg   640w,
+            images/Background/background-medium.jpg 1024w,
+            images/Background/background.jpg        1920w
+          "
+          sizes="100vw"
+          alt="Abstract geometric background pattern"
+          class="absolute inset-0 w-full h-full object-cover object-top brightness-150"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
 
-        <!-- Hero content positioned above the background with z-index -->
-        <div class="relative z-10 mx-auto max-w-7xl px-6 min-h-screen flex items-center justify-center">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] mb-8 tracking-wider">
-                    Developer & Designer
-                </h1>
-                <p class="text-xl md:text-2xl text-[#1a1a1a] mb-8 max-w-3xl mx-auto">
-                    Hi, I'm Sam! I'm a passionate software developer and technical leader with a focus on creating immersive web experiences. 
-                    I combine clean code with creative design to build applications that make a difference, and I've led development teams to deliver full-stack solutions.
-                </p>
-                <div class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8">
-                    <div class="logo-shine"></div>
-                    <img src="images/Logos/logo.svg" alt="Portfolio Logo" class="w-full h-full object-contain" width="400" height="300" loading="eager" fetchpriority="high" decoding="async">
-                </div>
-                <div class="mt-8 space-y-8">
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500">
-                        <span class="text-[#3a7bd5] font-semibold">Code</span> the Future
-                    </p>
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1000">
-                        <span class="text-[#3a7bd5] font-semibold">Design</span> the Experience
-                    </p>
-                    <p class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500">
-                        <span class="text-[#3a7bd5] font-semibold">Shape</span> the World
-                    </p>
-                </div>
-                <div class="mt-8">
-                    <a href="projects.html" class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000" aria-label="View my work">
-                        View My Work
-                    </a>
-                </div>
-            </div>
+        <!-- Gradient overlays create a fade effect for better text readability -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"
+        ></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"
+        ></div>
+        <div class="absolute inset-0 bg-white/10"></div>
+        <div class="hero-glow"></div>
+
+        <!-- Geometric Patterns -->
+        <!-- Main patterns -->
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern left"
+          aria-hidden="true"
+          loading="lazy"
+        />
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern right"
+          aria-hidden="true"
+        />
+
+        <!-- Secondary patterns -->
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern top"
+          aria-hidden="true"
+        />
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern bottom"
+          aria-hidden="true"
+        />
+
+        <!-- Additional subtle patterns -->
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern top-left"
+          aria-hidden="true"
+        />
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern bottom-right"
+          aria-hidden="true"
+        />
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern center-left"
+          aria-hidden="true"
+        />
+        <img
+          src="images/Background/Net design.svg"
+          alt=""
+          class="geometric-pattern center-right"
+          aria-hidden="true"
+        />
+      </div>
+
+      <!-- Hero content positioned above the background with z-index -->
+      <div
+        class="relative z-10 mx-auto max-w-7xl px-6 min-h-screen flex items-center justify-center"
+      >
+        <div class="text-center">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] mb-8 tracking-wider"
+          >
+            Developer & Designer
+          </h1>
+          <p class="text-xl md:text-2xl text-[#1a1a1a] mb-8 max-w-3xl mx-auto">
+            Hi, I'm Sam! I'm a passionate software developer and technical
+            leader with a focus on creating immersive web experiences. I combine
+            clean code with creative design to build applications that make a
+            difference, and I've led development teams to deliver full-stack
+            solutions.
+          </p>
+          <div
+            class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8"
+          >
+            <div class="logo-shine"></div>
+            <img
+              src="images/Logos/logo.svg"
+              alt="Portfolio Logo"
+              class="w-full h-full object-contain"
+              width="400"
+              height="300"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+          <div class="mt-8 space-y-8">
+            <p
+              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500"
+            >
+              <span class="text-[#3a7bd5] font-semibold">Code</span> the Future
+            </p>
+            <p
+              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1000"
+            >
+              <span class="text-[#3a7bd5] font-semibold">Design</span> the
+              Experience
+            </p>
+            <p
+              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500"
+            >
+              <span class="text-[#3a7bd5] font-semibold">Shape</span> the World
+            </p>
+          </div>
+          <div class="mt-8">
+            <a
+              href="projects.html"
+              class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000"
+              aria-label="View my work"
+            >
+              View My Work
+            </a>
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- ===== SKILLS SECTION ===== -->
-    <section class="skills-section py-16 bg-gray-50" aria-labelledby="skills-heading">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 id="skills-heading" class="section-title text-3xl font-bold mb-12 text-center">Technical Skills</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend Development -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Frontend Development</h3>
-                    <ul class="space-y-2" role="list">
-                        <li class="flex items-center">
-                            <i class="fab fa-html5 text-orange-500 mr-2" aria-hidden="true"></i>
-                            <span>HTML5 & Semantic Markup</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-css3-alt text-blue-500 mr-2" aria-hidden="true"></i>
-                            <span>CSS3 & Responsive Design</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-js text-yellow-500 mr-2" aria-hidden="true"></i>
-                            <span>JavaScript (ES6+)</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-react text-blue-400 mr-2" aria-hidden="true"></i>
-                            <span>React & Next.js</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fab fa-bootstrap text-purple-500 mr-2" aria-hidden="true"></i>
-                            <span>Tailwind CSS</span>
-                        </li>
-                    </ul>
-                </div>
+    <section
+      class="skills-section py-16 bg-gray-50"
+      aria-labelledby="skills-heading"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          id="skills-heading"
+          class="section-title text-3xl font-bold mb-12 text-center"
+        >
+          Technical Skills
+        </h2>
 
-                <!-- Backend Development -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Backend Development</h3>
-                    <ul class="space-y-2" role="list">
-                        <li class="flex items-center">
-                            <i class="fab fa-node-js text-green-500 mr-2" aria-hidden="true"></i>
-                            <span>Node.js & Express</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-database text-blue-600 mr-2" aria-hidden="true"></i>
-                            <span>MongoDB & Mongoose</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-server text-gray-600 mr-2" aria-hidden="true"></i>
-                            <span>RESTful API Design</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-shield-alt text-yellow-600 mr-2" aria-hidden="true"></i>
-                            <span>JWT Authentication</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-code-branch text-purple-500 mr-2" aria-hidden="true"></i>
-                            <span>API Documentation</span>
-                        </li>
-                    </ul>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Frontend Development -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">
+              Frontend Development
+            </h3>
+            <ul class="space-y-2" role="list">
+              <li class="flex items-center">
+                <i
+                  class="fab fa-html5 text-orange-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>HTML5 & Semantic Markup</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fab fa-css3-alt text-blue-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>CSS3 & Responsive Design</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fab fa-js text-yellow-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>JavaScript (ES6+)</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fab fa-react text-blue-400 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>React & Next.js</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fab fa-bootstrap text-purple-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Tailwind CSS</span>
+              </li>
+            </ul>
+          </div>
 
-                <!-- Development Tools -->
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Development Tools</h3>
-                    <ul class="space-y-2" role="list">
-                        <li class="flex items-center">
-                            <i class="fab fa-git-alt text-orange-600 mr-2" aria-hidden="true"></i>
-                            <span>Git & GitHub</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-terminal text-gray-600 mr-2" aria-hidden="true"></i>
-                            <span>Command Line</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-code text-blue-500 mr-2" aria-hidden="true"></i>
-                            <span>VS Code</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-robot text-purple-500 mr-2" aria-hidden="true"></i>
-                            <span>Cursor IDE</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-vial text-green-500 mr-2" aria-hidden="true"></i>
-                            <span>Jest Testing</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-brain text-blue-400 mr-2" aria-hidden="true"></i>
-                            <span>AI-Assisted Development</span>
-                        </li>
-                    </ul>
-                </div>
+          <!-- Backend Development -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">
+              Backend Development
+            </h3>
+            <ul class="space-y-2" role="list">
+              <li class="flex items-center">
+                <i
+                  class="fab fa-node-js text-green-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Node.js & Express</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-database text-blue-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>MongoDB & Mongoose</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-server text-gray-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>RESTful API Design</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-shield-alt text-yellow-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>JWT Authentication</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-code-branch text-purple-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>API Documentation</span>
+              </li>
+            </ul>
+          </div>
 
-                <!-- Leadership & Collaboration -->
-                <div class="bg-white rounded-lg shadow-lg p-6 lg:col-span-1 lg:col-start-2">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">Leadership & Collaboration</h3>
-                    <ul class="space-y-2" role="list">
-                        <li class="flex items-center">
-                            <i class="fas fa-users text-blue-600 mr-2" aria-hidden="true"></i>
-                            <span>Technical Team Leadership</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-project-diagram text-green-500 mr-2" aria-hidden="true"></i>
-                            <span>Project Architecture Design</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-code-branch text-purple-500 mr-2" aria-hidden="true"></i>
-                            <span>Code Review & Mentoring</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-tasks text-orange-500 mr-2" aria-hidden="true"></i>
-                            <span>Task Delegation & Management</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-comments text-blue-400 mr-2" aria-hidden="true"></i>
-                            <span>Technical Communication</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-rocket text-red-500 mr-2" aria-hidden="true"></i>
-                            <span>Project Delivery Leadership</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          <!-- Development Tools -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">
+              Development Tools
+            </h3>
+            <ul class="space-y-2" role="list">
+              <li class="flex items-center">
+                <i
+                  class="fab fa-git-alt text-orange-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Git & GitHub</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-terminal text-gray-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Command Line</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-code text-blue-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>VS Code</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-robot text-purple-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Cursor IDE</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-vial text-green-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Jest Testing</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-brain text-blue-400 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>AI-Assisted Development</span>
+              </li>
+            </ul>
+          </div>
 
-            <!-- Additional Skills -->
-            <div class="mt-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">Additional Skills</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-laptop-code text-blue-500 mr-2" aria-hidden="true"></i>
-                            <span>Full-Stack Development</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-mobile-alt text-green-500 mr-2" aria-hidden="true"></i>
-                            <span>Responsive Design</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-paint-brush text-purple-500 mr-2" aria-hidden="true"></i>
-                            <span>UI/UX Principles</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-puzzle-piece text-yellow-500 mr-2" aria-hidden="true"></i>
-                            <span>Problem Solving</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-file-alt text-gray-600 mr-2" aria-hidden="true"></i>
-                            <span>Code Documentation</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-users text-blue-400 mr-2" aria-hidden="true"></i>
-                            <span>Team Collaboration</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Achievements -->
-            <div class="mt-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">Achievements & Strengths</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="text-center">
-                            <i class="fas fa-trophy text-yellow-500 text-3xl mb-3" aria-hidden="true"></i>
-                            <h4 class="font-semibold text-[#1a1a1a] mb-2">Academic Excellence</h4>
-                            <p class="text-gray-600">Consistently achieved highest marks in project assessments, demonstrating strong technical understanding and implementation skills.</p>
-                        </div>
-                        <div class="text-center">
-                            <i class="fas fa-users-cog text-blue-500 text-3xl mb-3" aria-hidden="true"></i>
-                            <h4 class="font-semibold text-[#1a1a1a] mb-2">Team Leadership</h4>
-                            <p class="text-gray-600">Successfully led team projects, coordinating efforts and ensuring high-quality deliverables while maintaining team morale.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="mt-8">
-                <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
-                    <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">Education</h3>
-                    <div class="text-center">
-                        <h4 class="font-semibold text-[#1a1a1a]">The Developer Academy</h4>
-                        <p class="text-gray-600">Software Development Bootcamp</p>
-                        <p class="text-sm text-gray-500 mt-2">Comprehensive training in modern web development technologies and practices. Developed multiple full-stack applications using React, Node.js, and MongoDB. Gained practical experience in team collaboration, project management, and modern development workflows. Proficient in leveraging AI tools and development environments to enhance productivity and code quality.</p>
-                    </div>
-                </div>
-            </div>
+          <!-- Leadership & Collaboration -->
+          <div
+            class="bg-white rounded-lg shadow-lg p-6 lg:col-span-1 lg:col-start-2"
+          >
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4">
+              Leadership & Collaboration
+            </h3>
+            <ul class="space-y-2" role="list">
+              <li class="flex items-center">
+                <i
+                  class="fas fa-users text-blue-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Technical Team Leadership</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-project-diagram text-green-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Project Architecture Design</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-code-branch text-purple-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Code Review & Mentoring</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-tasks text-orange-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Task Delegation & Management</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-comments text-blue-400 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Technical Communication</span>
+              </li>
+              <li class="flex items-center">
+                <i
+                  class="fas fa-rocket text-red-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Project Delivery Leadership</span>
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Additional Skills -->
+        <div class="mt-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">
+              Additional Skills
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="flex items-center">
+                <i
+                  class="fas fa-laptop-code text-blue-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Full-Stack Development</span>
+              </div>
+              <div class="flex items-center">
+                <i
+                  class="fas fa-mobile-alt text-green-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Responsive Design</span>
+              </div>
+              <div class="flex items-center">
+                <i
+                  class="fas fa-paint-brush text-purple-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>UI/UX Principles</span>
+              </div>
+              <div class="flex items-center">
+                <i
+                  class="fas fa-puzzle-piece text-yellow-500 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Problem Solving</span>
+              </div>
+              <div class="flex items-center">
+                <i
+                  class="fas fa-file-alt text-gray-600 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Code Documentation</span>
+              </div>
+              <div class="flex items-center">
+                <i
+                  class="fas fa-users text-blue-400 mr-2"
+                  aria-hidden="true"
+                ></i>
+                <span>Team Collaboration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Achievements -->
+        <div class="mt-8">
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">
+              Achievements & Strengths
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="text-center">
+                <i
+                  class="fas fa-trophy text-yellow-500 text-3xl mb-3"
+                  aria-hidden="true"
+                ></i>
+                <h4 class="font-semibold text-[#1a1a1a] mb-2">
+                  Academic Excellence
+                </h4>
+                <p class="text-gray-600">
+                  Consistently achieved highest marks in project assessments,
+                  demonstrating strong technical understanding and
+                  implementation skills.
+                </p>
+              </div>
+              <div class="text-center">
+                <i
+                  class="fas fa-users-cog text-blue-500 text-3xl mb-3"
+                  aria-hidden="true"
+                ></i>
+                <h4 class="font-semibold text-[#1a1a1a] mb-2">
+                  Team Leadership
+                </h4>
+                <p class="text-gray-600">
+                  Successfully led team projects, coordinating efforts and
+                  ensuring high-quality deliverables while maintaining team
+                  morale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="mt-8">
+          <div class="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
+            <h3 class="text-xl font-bold text-[#1a1a1a] mb-4 text-center">
+              Education
+            </h3>
+            <div class="text-center">
+              <h4 class="font-semibold text-[#1a1a1a]">
+                The Developer Academy
+              </h4>
+              <p class="text-gray-600">Software Development Bootcamp</p>
+              <p class="text-sm text-gray-500 mt-2">
+                Comprehensive training in modern web development technologies
+                and practices. Developed multiple full-stack applications using
+                React, Node.js, and MongoDB. Gained practical experience in team
+                collaboration, project management, and modern development
+                workflows. Proficient in leveraging AI tools and development
+                environments to enhance productivity and code quality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== PROJECTS SECTION ===== -->
     <!-- Main content area for screen readers and skip link -->
     <main id="main-content">
-        <section class="projects-section py-16" aria-labelledby="projects-heading">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- ARIA: Heading provides label for the section -->
-                <h2 id="projects-heading" class="section-title text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project Card 1: ApartmentFlow -->
-                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
-                                <i class="fas fa-building text-6xl text-gray-600"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">ApartmentFlow Full-Stack Application</h3>
-                            <p class="text-gray-300 mb-4">Led a team to build a comprehensive apartment search platform with authentication, neighborhood info, commute times, and favorites management.</p>
-                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Next.js</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Express</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">MongoDB</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JWT</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="https://github.com/colaone1/ApartmentFlow-Fullstack-V0.2" class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-label="View ApartmentFlow source code on GitHub"><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</a>
-                        </div>
-                    </article>
-                    <!-- Project Card 2: Event Management App -->
-                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
-                                <i class="fas fa-calendar-alt text-6xl text-gray-600"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Event Management App</h3>
-                            <p class="text-gray-300 mb-4">Full-stack event management with user authentication, event creation, and real-time updates.</p>
-                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Next.js</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Express</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">MongoDB</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">JWT</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="https://github.com/colaone1/Event-App-Team-Fullstack" class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-label="View Event App source code on GitHub"><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</a>
-                            <div class="flex gap-2">
-                                <a href="https://event-app-team-fullstack-mynd.vercel.app/" target="_blank" class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-label="Try Event App">Try</a>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Project Card 3: Weather App -->
-                    <article class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full" role="article">
-                        <div class="flex-grow">
-                            <div class="flex items-center justify-center mb-6" aria-hidden="true">
-                                <i class="fas fa-cloud-sun-rain text-6xl text-gray-600"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">Weather App Full Stack Project</h3>
-                            <p class="text-gray-300 mb-4">Real-time weather and 7-day forecast, robust RESTful API, automated testing, and CI/CD.</p>
-                            <div class="flex flex-wrap gap-2 mb-4" aria-label="Technologies used">
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Node.js</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Koa</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Jest</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Cypress</span>
-                                <span class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded">Docker</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-between items-center mt-4">
-                            <a href="https://github.com/colaone1/Weather-App-Full-Stack-Repo" class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-label="View Weather App source code on GitHub"><i class="fab fa-github mr-2" aria-hidden="true"></i>GitHub</a>
-                            <div class="flex gap-2">
-                                <a href="https://weather-app-for-developer-academy-project.vercel.app/?city=0" target="_blank" class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none" aria-label="Try Weather App">Try</a>
-                            </div>
-                        </div>
-                    </article>
+      <section
+        class="projects-section py-16"
+        aria-labelledby="projects-heading"
+      >
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- ARIA: Heading provides label for the section -->
+          <h2
+            id="projects-heading"
+            class="section-title text-3xl font-bold mb-12 text-center"
+          >
+            Featured Projects
+          </h2>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1: ApartmentFlow -->
+            <article
+              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full"
+              role="article"
+            >
+              <div class="flex-grow">
+                <div
+                  class="flex items-center justify-center mb-6"
+                  aria-hidden="true"
+                >
+                  <i class="fas fa-building text-6xl text-gray-600"></i>
                 </div>
-            </div>
-        </section>
+                <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">
+                  ApartmentFlow Full-Stack Application
+                </h3>
+                <p class="text-gray-300 mb-4">
+                  Led a team to build a comprehensive apartment search platform
+                  with authentication, neighborhood info, commute times, and
+                  favorites management.
+                </p>
+                <div
+                  class="flex flex-wrap gap-2 mb-4"
+                  aria-label="Technologies used"
+                >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Next.js</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Express</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >JWT</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between items-center mt-4">
+                <a
+                  href="https://github.com/colaone1/ApartmentFlow-Fullstack-V0.2"
+                  class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  aria-label="View ApartmentFlow source code on GitHub"
+                  ><i class="fab fa-github mr-2" aria-hidden="true"></i
+                  >GitHub</a
+                >
+              </div>
+            </article>
+            <!-- Project Card 2: Event Management App -->
+            <article
+              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full"
+              role="article"
+            >
+              <div class="flex-grow">
+                <div
+                  class="flex items-center justify-center mb-6"
+                  aria-hidden="true"
+                >
+                  <i class="fas fa-calendar-alt text-6xl text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">
+                  Event Management App
+                </h3>
+                <p class="text-gray-300 mb-4">
+                  Full-stack event management with user authentication, event
+                  creation, and real-time updates.
+                </p>
+                <div
+                  class="flex flex-wrap gap-2 mb-4"
+                  aria-label="Technologies used"
+                >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Next.js</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Express</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >MongoDB</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >JWT</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between items-center mt-4">
+                <a
+                  href="https://github.com/colaone1/Event-App-Team-Fullstack"
+                  class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  aria-label="View Event App source code on GitHub"
+                  ><i class="fab fa-github mr-2" aria-hidden="true"></i
+                  >GitHub</a
+                >
+                <div class="flex gap-2">
+                  <a
+                    href="https://event-app-team-fullstack-mynd.vercel.app/"
+                    target="_blank"
+                    class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    aria-label="Try Event App"
+                    >Try</a
+                  >
+                </div>
+              </div>
+            </article>
+            <!-- Project Card 3: Weather App -->
+            <article
+              class="bg-gray-800 rounded-lg overflow-hidden shadow-lg p-6 flex flex-col h-full"
+              role="article"
+            >
+              <div class="flex-grow">
+                <div
+                  class="flex items-center justify-center mb-6"
+                  aria-hidden="true"
+                >
+                  <i class="fas fa-cloud-sun-rain text-6xl text-gray-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#d4c5a9] mb-2">
+                  Weather App Full Stack Project
+                </h3>
+                <p class="text-gray-300 mb-4">
+                  Real-time weather and 7-day forecast, robust RESTful API,
+                  automated testing, and CI/CD.
+                </p>
+                <div
+                  class="flex flex-wrap gap-2 mb-4"
+                  aria-label="Technologies used"
+                >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Node.js</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Koa</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Jest</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Cypress</span
+                  >
+                  <span
+                    class="text-gray-400 text-sm bg-gray-700 px-2 py-1 rounded"
+                    >Docker</span
+                  >
+                </div>
+              </div>
+              <div class="flex justify-between items-center mt-4">
+                <a
+                  href="https://github.com/colaone1/Weather-App-Full-Stack-Repo"
+                  class="text-blue-400 hover:text-blue-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                  aria-label="View Weather App source code on GitHub"
+                  ><i class="fab fa-github mr-2" aria-hidden="true"></i
+                  >GitHub</a
+                >
+                <div class="flex gap-2">
+                  <a
+                    href="https://weather-app-for-developer-academy-project.vercel.app/?city=0"
+                    target="_blank"
+                    class="quest-button px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    aria-label="Try Weather App"
+                    >Try</a
+                  >
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- ===== FOOTER ===== -->
     <!-- Footer with semantic role and ARIA label -->
     <!-- Color contrast ratio for bg-gray-900 against text colors meets WCAG 2.1 standards -->
-    <footer class="bg-gray-900 text-white mt-auto" role="contentinfo" aria-label="Site footer">
-        <div class="mx-auto max-w-7xl px-6 py-12">
-            <!-- Social media links with descriptive labels -->
-            <div class="flex justify-center space-x-6" aria-label="Social media links">
-                <a href="https://github.com/colaone1" 
-                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Visit my GitHub profile">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/sam-connor-4ab195363" 
-                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none" 
-                   target="_blank" 
-                   rel="noopener noreferrer"
-                   aria-label="Visit my LinkedIn profile">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:samconnor2020@outlook.com" 
-                   class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                   aria-label="Send me an email">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                </a>
-            </div>
-            
-            <!-- Copyright information -->
-            <div class="mt-8">
-                <p class="text-center text-xs leading-5 text-gray-400" role="contentinfo">
-                    &copy; 2025 Sam C. Software Developer. All rights reserved.
-                </p>
-            </div>
+    <footer
+      class="bg-gray-900 text-white mt-auto"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
+      <div class="mx-auto max-w-7xl px-6 py-12">
+        <!-- Social media links with descriptive labels -->
+        <div
+          class="flex justify-center space-x-6"
+          aria-label="Social media links"
+        >
+          <a
+            href="https://github.com/colaone1"
+            class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my GitHub profile"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sam-connor-4ab195363"
+            class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my LinkedIn profile"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href="mailto:samconnor2020@outlook.com"
+            class="text-gray-400 hover:text-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            aria-label="Send me an email"
+          >
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
         </div>
+
+        <!-- Copyright information -->
+        <div class="mt-8">
+          <p
+            class="text-center text-xs leading-5 text-gray-400"
+            role="contentinfo"
+          >
+            &copy; 2025 Sam C. Software Developer. All rights reserved.
+          </p>
+        </div>
+      </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" 
-            class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50"
-            aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+    <button
+      id="back-to-top"
+      class="fixed bottom-4 right-4 p-3 rounded-full bg-[#3a7bd5] text-white shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 z-50"
+      aria-label="Back to top"
+    >
+      <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Main JS: -->
@@ -592,69 +1086,77 @@
 
     <!-- Move all other scripts to the end of body -->
     <script type="module">
-    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Back to top button functionality
-        const backToTopButton = document.getElementById('back-to-top');
-        
+        const backToTopButton = document.getElementById("back-to-top");
+
         // Show button when scrolling down
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-                backToTopButton.classList.add('opacity-100');
-            } else {
-                backToTopButton.classList.remove('opacity-100');
-                backToTopButton.classList.add('opacity-0', 'pointer-events-none');
-            }
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.remove(
+              "opacity-0",
+              "pointer-events-none",
+            );
+            backToTopButton.classList.add("opacity-100");
+          } else {
+            backToTopButton.classList.remove("opacity-100");
+            backToTopButton.classList.add("opacity-0", "pointer-events-none");
+          }
         });
 
         // Initial check for scroll position
         if (window.scrollY > 300) {
-            backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
-            backToTopButton.classList.add('opacity-100');
+          backToTopButton.classList.remove("opacity-0", "pointer-events-none");
+          backToTopButton.classList.add("opacity-100");
         }
 
         // Scroll to top when button is clicked
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        backToTopButton.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         });
 
         // Hamburger menu toggle
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeButton = document.getElementById('mobile-menu-close');
-        
+        const menuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const closeButton = document.getElementById("mobile-menu-close");
+
         if (menuButton && mobileMenu && closeButton) {
-            menuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                document.body.classList.toggle('menu-open');
-                menuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
-                if (!mobileMenu.classList.contains('hidden')) {
-                    closeButton.focus();
-                }
-            });
-            
-            closeButton.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.classList.remove('menu-open');
-                menuButton.setAttribute('aria-expanded', 'false');
-                menuButton.focus();
-            });
-            
-            // Close on Escape
-            document.addEventListener('keydown', (e) => {
-                if (!mobileMenu.classList.contains('hidden') && e.key === 'Escape') {
-                    mobileMenu.classList.add('hidden');
-                    document.body.classList.remove('menu-open');
-                    menuButton.setAttribute('aria-expanded', 'false');
-                    menuButton.focus();
-                }
-            });
+          menuButton.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+            document.body.classList.toggle("menu-open");
+            menuButton.setAttribute(
+              "aria-expanded",
+              !mobileMenu.classList.contains("hidden"),
+            );
+            if (!mobileMenu.classList.contains("hidden")) {
+              closeButton.focus();
+            }
+          });
+
+          closeButton.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            document.body.classList.remove("menu-open");
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.focus();
+          });
+
+          // Close on Escape
+          document.addEventListener("keydown", (e) => {
+            if (
+              !mobileMenu.classList.contains("hidden") &&
+              e.key === "Escape"
+            ) {
+              mobileMenu.classList.add("hidden");
+              document.body.classList.remove("menu-open");
+              menuButton.setAttribute("aria-expanded", "false");
+              menuButton.focus();
+            }
+          });
         }
-    });
+      });
     </script>
   </body>
 </html>
-
