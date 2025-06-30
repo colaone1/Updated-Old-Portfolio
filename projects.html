@@ -1049,6 +1049,8 @@
           </div>
         </div>
       </div>
+      <!-- Pagination Controls -->
+      <div class="flex justify-center mt-12" id="pagination-controls"></div>
     </main>
 
     <!-- Footer -->
@@ -1202,6 +1204,100 @@
             });
           });
         });
+      });
+    </script>
+
+    <!-- Project Pagination JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const projectsGrid = document.getElementById("projects-grid");
+        const paginationControls = document.getElementById(
+          "pagination-controls",
+        );
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const allProjectCards = Array.from(
+          projectsGrid.querySelectorAll("[data-type]"),
+        );
+        const CARDS_PER_PAGE = 3;
+        let currentPage = 1;
+        let currentFilter = "all";
+
+        function getFilteredCards() {
+          return allProjectCards.filter(
+            (card) =>
+              currentFilter === "all" ||
+              card.getAttribute("data-type") === currentFilter,
+          );
+        }
+
+        function renderPage(page) {
+          const filteredCards = getFilteredCards();
+          const totalPages =
+            Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
+          currentPage = Math.max(1, Math.min(page, totalPages));
+
+          // Hide all cards
+          allProjectCards.forEach((card) => (card.style.display = "none"));
+
+          // Show only cards for the current page
+          const start = (currentPage - 1) * CARDS_PER_PAGE;
+          const end = start + CARDS_PER_PAGE;
+          filteredCards.slice(start, end).forEach((card) => {
+            card.style.display = "block";
+            card.style.animation = "fadeIn 0.5s ease-in-out";
+          });
+
+          // Render pagination controls
+          renderPaginationControls(totalPages);
+        }
+
+        function renderPaginationControls(totalPages) {
+          paginationControls.innerHTML = "";
+          if (totalPages <= 1) return;
+
+          // Previous button
+          const prevBtn = document.createElement("button");
+          prevBtn.textContent = "Previous";
+          prevBtn.className =
+            "mx-1 px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none";
+          prevBtn.disabled = currentPage === 1;
+          prevBtn.onclick = () => renderPage(currentPage - 1);
+          paginationControls.appendChild(prevBtn);
+
+          // Page numbers
+          for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement("button");
+            pageBtn.textContent = i;
+            pageBtn.className =
+              "mx-1 px-4 py-2 rounded-lg " +
+              (i === currentPage
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 text-gray-700 hover:bg-gray-300") +
+              " focus:ring-2 focus:ring-blue-500 focus:outline-none";
+            pageBtn.onclick = () => renderPage(i);
+            paginationControls.appendChild(pageBtn);
+          }
+
+          // Next button
+          const nextBtn = document.createElement("button");
+          nextBtn.textContent = "Next";
+          nextBtn.className =
+            "mx-1 px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none";
+          nextBtn.disabled = currentPage === totalPages;
+          nextBtn.onclick = () => renderPage(currentPage + 1);
+          paginationControls.appendChild(nextBtn);
+        }
+
+        // Hook into filter buttons
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            currentFilter = button.getAttribute("data-filter");
+            renderPage(1);
+          });
+        });
+
+        // Initial render
+        renderPage(1);
       });
     </script>
 
