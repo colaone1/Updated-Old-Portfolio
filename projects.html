@@ -156,9 +156,60 @@
 
     <!-- Projects Grid -->
     <main class="container mx-auto px-4 py-16">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project Filter Section -->
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-center mb-6 text-gray-800">
+          Filter Projects
+        </h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <button
+            class="filter-btn active px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            data-filter="all"
+          >
+            All Projects
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
+            data-filter="frontend"
+          >
+            Frontend
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
+            data-filter="backend"
+          >
+            Backend
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
+            data-filter="full-stack"
+          >
+            Full Stack
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
+            data-filter="game"
+          >
+            Games
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none"
+            data-filter="tool"
+          >
+            Tools
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        id="projects-grid"
+      >
         <!-- Text-Based Game Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="game"
+        >
           <div class="h-48 bg-blue-600 flex items-center justify-center">
             <i class="fas fa-dungeon text-6xl text-gray-600"></i>
           </div>
@@ -244,7 +295,10 @@
         </div>
 
         <!-- Cipher Tool Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="tool"
+        >
           <div class="h-48 bg-green-500 flex items-center justify-center">
             <i class="fas fa-lock text-6xl text-gray-600"></i>
           </div>
@@ -326,7 +380,10 @@
         </div>
 
         <!-- Game Review Website Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="frontend"
+        >
           <div class="h-48 bg-purple-500 flex items-center justify-center">
             <i class="fas fa-star text-6xl text-gray-600"></i>
           </div>
@@ -404,7 +461,10 @@
         </div>
 
         <!-- Star Wars Quiz Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="frontend"
+        >
           <div class="h-48 bg-orange-400 flex items-center justify-center">
             <i class="fas fa-jedi text-6xl text-gray-600"></i>
           </div>
@@ -483,7 +543,10 @@
         </div>
 
         <!-- Open Source Testing Setup Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="tool"
+        >
           <div class="h-48 bg-red-500 flex items-center justify-center">
             <i class="fas fa-vial text-6xl text-gray-600"></i>
           </div>
@@ -553,7 +616,10 @@
         </div>
 
         <!-- Weather App Full Stack Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="full-stack"
+        >
           <div class="h-48 bg-teal-500 flex items-center justify-center">
             <i class="fas fa-cloud-sun-rain text-6xl text-gray-600"></i>
           </div>
@@ -644,7 +710,10 @@
         </div>
 
         <!-- Movies API Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="backend"
+        >
           <div class="h-48 bg-pink-500 flex items-center justify-center">
             <i class="fas fa-film text-6xl text-gray-600"></i>
           </div>
@@ -719,7 +788,10 @@
         </div>
 
         <!-- Backend Environment Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="backend"
+        >
           <div class="h-48 bg-teal-500 flex items-center justify-center">
             <i class="fas fa-server text-6xl text-gray-600"></i>
           </div>
@@ -795,7 +867,10 @@
         </div>
 
         <!-- Event App Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="full-stack"
+        >
           <div class="h-48 bg-pink-500 flex items-center justify-center">
             <i class="fas fa-calendar-alt text-6xl text-gray-600"></i>
           </div>
@@ -875,7 +950,10 @@
         </div>
 
         <!-- FriendBay Social Media Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div
+          class="bg-white rounded-lg shadow-lg overflow-hidden"
+          data-type="full-stack"
+        >
           <div class="h-48 bg-teal-500 flex items-center justify-center">
             <i class="fas fa-users text-6xl text-gray-600"></i>
           </div>
@@ -1090,5 +1168,54 @@
         }
       });
     </script>
+
+    <!-- Project Filtering JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const projectCards = document.querySelectorAll("[data-type]");
+
+        // Add click event listeners to filter buttons
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            const filterType = button.getAttribute("data-filter");
+
+            // Update active button styling
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-blue-600", "text-white");
+              btn.classList.add("bg-gray-200", "text-gray-700");
+            });
+            button.classList.remove("bg-gray-200", "text-gray-700");
+            button.classList.add("active", "bg-blue-600", "text-white");
+
+            // Filter projects
+            projectCards.forEach((card) => {
+              if (
+                filterType === "all" ||
+                card.getAttribute("data-type") === filterType
+              ) {
+                card.style.display = "block";
+                card.style.animation = "fadeIn 0.5s ease-in-out";
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+    </script>
+
+    <style>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
   </body>
 </html>
