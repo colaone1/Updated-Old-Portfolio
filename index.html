@@ -20,12 +20,6 @@
     <link rel="preload" href="scripts.js" as="script" />
     <link
       rel="preload"
-      href="images/Background/background.jpg"
-      as="image"
-      fetchpriority="high"
-    />
-    <link
-      rel="preload"
       href="images/Logos/logo.svg"
       as="image"
       fetchpriority="high"
@@ -42,10 +36,7 @@
       property="og:description"
       content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design."
     />
-    <meta
-      property="og:image"
-      content="https://colaone1.github.io/Portfolio-Website/images/background.jpg"
-    />
+
     <meta
       property="og:url"
       content="https://colaone1.github.io/Portfolio-Website/"
@@ -62,10 +53,7 @@
       name="twitter:description"
       content="Full-stack developer specialising in creating immersive web experiences with clean code and innovative design."
     />
-    <meta
-      name="twitter:image"
-      content="https://colaone1.github.io/Portfolio-Website/images/background.jpg"
-    />
+
 
     <!-- Canonical URL -->
     <link
@@ -79,7 +67,6 @@
       content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com;"
     />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
-    <meta http-equiv="X-Frame-Options" content="DENY" />
     <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
 
     <!-- Google Analytics -->
@@ -349,24 +336,6 @@
     >
       <!-- Background layers container positioned absolutely to fill the parent -->
       <div class="absolute inset-0">
-        <!-- Static background image -->
-        <img
-          src="images/Background/background.jpg"
-          srcset="
-            images/Background/background-small.jpg   640w,
-            images/Background/background-medium.jpg 1024w,
-            images/Background/background.jpg        1920w
-          "
-          sizes="100vw"
-          alt="Abstract geometric background pattern"
-          class="absolute inset-0 w-full h-full object-cover object-top brightness-150"
-          width="1920"
-          height="1080"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-
         <!-- Gradient overlays create a fade effect for better text readability -->
         <div
           class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"
@@ -1097,8 +1066,7 @@
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Main JS: -->
-    <script src="scripts.js" defer></script>
+
 
     <!-- Move all other scripts to the end of body -->
     <script type="module">

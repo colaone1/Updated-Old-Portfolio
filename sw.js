@@ -4,14 +4,21 @@ const urlsToCache = [
     '/index.html',
     '/styles.css',
     '/scripts.js',
-    '/images/background.jpg',
-    '/images/About Page Picture.jpg'
+    '/images/Personal%20Pictures/About%20Page%20Picture.jpg'
 ];
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CURRENT_CACHE)
-            .then(cache => cache.addAll(urlsToCache))
+            .then(cache => {
+                // Add files one by one to handle missing files gracefully
+                return Promise.allSettled(
+                    urlsToCache.map(url => cache.add(url).catch(err => {
+                        console.log('Failed to cache:', url, err);
+                        return null;
+                    }))
+                );
+            })
             .then(() => self.skipWaiting())
     );
 });
@@ -31,7 +38,15 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-    if (!event.request.url.startsWith(self.location.origin)) return;
+    // Skip non-GET requests and non-same-origin requests
+    if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
+        return;
+    }
+
+    // Skip requests that are already being handled by the browser
+    if (event.request.mode === 'navigate') {
+        return;
+    }
 
     event.respondWith(
         caches.match(event.request)
@@ -41,6 +56,7 @@ self.addEventListener('fetch', event => {
                 }
                 return fetch(event.request)
                     .then(response => {
+                        // Only cache successful responses
                         if (!response || response.status !== 200 || response.type !== 'basic') {
                             return response;
                         }
@@ -48,6 +64,10 @@ self.addEventListener('fetch', event => {
                         caches.open(CURRENT_CACHE)
                             .then(cache => cache.put(event.request, responseToCache));
                         return response;
+                    })
+                    .catch(() => {
+                        // Return a fallback response for failed requests
+                        return new Response('Not found', { status: 404 });
                     });
             })
     );
