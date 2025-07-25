@@ -677,6 +677,55 @@ footer::before {
     background-color: transparent;
     mix-blend-mode: multiply;
     pointer-events: auto;
+    /* Ensure no text content is displayed */
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/* Hide any text content within SVG elements */
+.geometric-pattern svg text,
+.geometric-pattern svg title,
+.geometric-pattern svg desc {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* Additional rules to prevent any text display from geometric patterns */
+.geometric-pattern {
+    /* Ensure no text content can be displayed */
+    color: transparent !important;
+    text-shadow: none !important;
+    /* Additional Safari-specific fixes */
+    -webkit-text-fill-color: transparent !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+}
+
+/* Hide any potential text content that might be rendered */
+.geometric-pattern::before,
+.geometric-pattern::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Safari-specific fixes for SVG text content */
+.geometric-pattern svg * {
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/* Ensure no text content is displayed from any source */
+.geometric-pattern,
+.geometric-pattern * {
+    font-size: 0 !important;
+    line-height: 0 !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
 }
 
 .geometric-pattern:hover {
