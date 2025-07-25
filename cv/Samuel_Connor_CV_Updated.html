@@ -1,396 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel Connor - Full-Stack Developer CV</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.32;
-            color: #333;
-            background: #fff;
-            max-width: 210mm;
-            margin: 0 auto;
-            padding: 8mm 10mm;
-            font-size: 9.5pt;
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 0.7rem;
-            border-bottom: 1.5px solid #3a7bd5;
-            padding-bottom: 0.4rem;
-        }
-        
-        .name {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 0.2rem;
-        }
-        
-        .title {
-            font-size: 0.98rem;
-            color: #3a7bd5;
-            font-weight: 600;
-            margin-bottom: 0.4rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 0.7rem;
-            flex-wrap: wrap;
-            margin-bottom: 0.4rem;
-            font-size: 0.85rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-        
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 0.7rem;
-            margin-bottom: 0.4rem;
-        }
-        
-        .link {
-            color: #3a7bd5;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .link:hover {
-            text-decoration: underline;
-        }
-        
-        .section {
-            margin-bottom: 0.7rem;
-        }
-        
-        .section-title {
-            font-size: 1.01rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 0.3rem;
-            border-bottom: 1px solid #e5e7eb;
-            padding-bottom: 0.1rem;
-        }
-        
-        .profile {
-            font-size: 0.92rem;
-            line-height: 1.32;
-            text-align: justify;
-        }
-        
-        .achievements, .projects, .education, .experience {
-            list-style: none;
-        }
-        
-        .achievements li, .education li, .experience li {
-            margin-bottom: 0.18rem;
-            padding-left: 0.8rem;
-            position: relative;
-            font-size: 0.92rem;
-        }
-        
-        .achievements li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.4rem;
-        }
-        
-        .skill-category {
-            margin-bottom: 0.3rem;
-        }
-        
-        .skill-category h4 {
-            font-weight: 600;
-            color: #3a7bd5;
-            margin-bottom: 0.1rem;
-            font-size: 0.93rem;
-        }
-        
-        .skill-category p {
-            font-size: 0.88rem;
-            color: #666;
-        }
-        
-        .project {
-            margin-bottom: 0.5rem;
-            padding-bottom: 0.2rem;
-            border-bottom: 1px solid #f3f4f6;
-        }
-        
-        .project:last-child {
-            border-bottom: none;
-        }
-        
-        .project-title {
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 0.15rem;
-            font-size: 0.97rem;
-        }
-        
-        .project-links {
-            margin-bottom: 0.1rem;
-        }
-        
-        .project-links a {
-            color: #3a7bd5;
-            text-decoration: none;
-            font-size: 0.88rem;
-            margin-right: 0.5rem;
-        }
-        
-        .project-links a:hover {
-            text-decoration: underline;
-        }
-        
-        .project-description li {
-            margin-bottom: 0.09rem;
-            padding-left: 0.8rem;
-            position: relative;
-            font-size: 0.91rem;
-        }
-        
-        .project-description li::before {
-            content: "✔";
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-        }
-        
-        .education li, .experience li {
-            margin-bottom: 0.18rem;
-            padding-left: 1.4rem;
-            position: relative;
-            font-size: 0.92rem;
-            line-height: 1.38;
-        }
-        
-        .education li::before, .experience li::before {
-            left: 0;
-            width: 1.1rem;
-            display: inline-block;
-            text-align: center;
-        }
-        
-        .interests {
-            display: block;
-            margin-top: 0.2rem;
-        }
-        
-        .interest-item {
-            display: inline-block;
-            margin-right: 1.2em;
-            font-size: 0.88rem;
-        }
-        
-        @media print {
-            body {
-                margin: 0;
-                padding: 6mm 8mm;
-            }
-            
-            .link {
-                color: #3a7bd5 !important;
-            }
-        }
-        
-        /* Force 2-page layout for PDF */
-        .force-page-break {
-            page-break-after: always;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Samuel Connor - Full-Stack Developer CV</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; font-size: 13px; line-height: 1.6; }
+    h1, h2, h3 { color: #2d3748; }
+    .section { margin-bottom: 18px; }
+    .project-title { font-weight: bold; }
+    ul { margin: 0 0 10px 20px; }
+    .emoji { font-family: 'Segoe UI Emoji', 'Segoe UI Symbol', Arial, sans-serif; }
+  </style>
 </head>
 <body>
-    <div class="header">
-        <h1 class="name">Samuel Connor</h1>
-        <div class="contact-info">
-            <div class="contact-item">📍 Bricket Wood, St Albans, AL2 3SW</div>
-            <div class="contact-item">📞 07586 269990</div>
-            <div class="contact-item">📧 samconnor2020@outlook.com</div>
-        </div>
-        <div class="links">
-            <a href="https://github.com/colaone1" class="link" target="_blank">🐙 GitHub</a>
-            <a href="https://linkedin.com/in/samuel-connor-uk" class="link" target="_blank">💼 LinkedIn</a>
-            <a href="[NEW_PORTFOLIO_URL]" class="link" target="_blank">🌐 Portfolio</a>
-        </div>
-        <div class="title">Full-Stack Developer | Web Applications & Interactive UX</div>
-    </div>
+<pre style="font-family: Arial, sans-serif; white-space: pre-wrap;">
+Samuel Connor
+📍 Bricket Wood, St Albans, AL2 3SW
+📞 07586 269990 | 📧 samconnor2020@outlook.com
+🌐 <a href="https://samconnor.uk/index.html" style="color:#2563eb;text-decoration:underline;">Portfolio</a> | 🔗 <a href="https://www.linkedin.com/in/sam-connor-4ab195363" style="color:#2563eb;text-decoration:underline;">LinkedIn</a> | 💻 <a href="https://github.com/colaone1" style="color:#2563eb;text-decoration:underline;">GitHub</a>
+Full-Stack Developer | Web Applications & Interactive UX
 
-    <div class="section">
-        <h2 class="section-title">💡 Profile</h2>
-        <div class="profile" style="text-align: left;">
-            <p>Full-Stack Developer passionate about modern web applications, performance optimisation, and user experience. Proficient in frontend and backend development, building accessible, scalable, and intuitive solutions.</p>
-            <p>Experienced technical team leader with proven ability to coordinate development teams and deliver complex full-stack applications.</p>
-        </div>
-    </div>
+💡 Profile
+Full-Stack Developer passionate about modern web applications, performance optimisation, and user experience. Proficient in frontend and backend development, building accessible, scalable, and intuitive solutions. Experienced technical team leader with proven ability to coordinate development teams and deliver complex full-stack applications.
 
-    <div class="section">
-        <h2 class="section-title">🏆 Key Achievements</h2>
-        <ul class="achievements">
-            <li>Led development team as Technical Lead on ApartmentFlow full-stack application</li>
-            <li>Developed a responsive portfolio website optimised for performance</li>
-            <li>Built full-stack projects integrating React, Node.js, and RESTful APIs</li>
-            <li>Improved web performance and accessibility following WCAG compliance</li>
-            <li>Transitioned from creative industries to full-stack development, combining design thinking and technical expertise</li>
-            <li>Successfully managed project architecture, code reviews, and team coordination</li>
-        </ul>
-    </div>
+🏆 Key Achievements
+✔ Led development team as Technical Lead on ApartmentFlow full-stack application
+✔ Developed a responsive portfolio website optimised for performance (Portfolio)
+✔ Built full-stack projects integrating React, Node.js, and RESTful APIs
+✔ Improved web performance and accessibility following WCAG compliance
+✔ Transitioned from creative industries to full-stack development, combining design thinking and technical expertise
+✔ Successfully managed project architecture, code reviews, and team coordination
 
-    <div class="section">
-        <h2 class="section-title">🔥 Core Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>🖥 Frontend</h4>
-                <p>HTML5, CSS3, JavaScript, React, Next.js, TypeScript, Tailwind CSS</p>
-            </div>
-            <div class="skill-category">
-                <h4>🛠 Backend</h4>
-                <p>Node.js, Express, MongoDB, RESTful APIs, API Integration, JWT Authentication</p>
-            </div>
-            <div class="skill-category">
-                <h4>⚙ Development Tools</h4>
-                <p>Git & GitHub, VS Code, Cursor IDE, Jest Testing</p>
-            </div>
-            <div class="skill-category">
-                <h4>🔍 Performance & Security</h4>
-                <p>Web Accessibility Compliance (WCAG), Optimisation, API Documentation</p>
-            </div>
-            <div class="skill-category">
-                <h4>👥 Leadership</h4>
-                <p>Technical Team Leadership, Project Architecture Design, Code Review & Mentoring</p>
-            </div>
-        </div>
-    </div>
+🔥 Core Skills
+💡 Building interactive web applications, optimising UI/UX, and integrating backend APIs.
+🖥 Frontend: HTML5, CSS3, JavaScript, React, Next.js, TypeScript, Tailwind CSS
+🛠 Backend: Node.js, Express, MongoDB, RESTful APIs, API Integration, JWT Authentication
+⚙ Development Tools: Git & GitHub, VS Code, Cursor IDE, Jest Testing
+🔍 Performance & Security: Web Accessibility Compliance (WCAG), Optimisation, API Documentation
+👥 Leadership: Technical Team Leadership, Project Architecture Design, Code Review & Mentoring
 
-    <div class="section">
-        <h2 class="section-title">🚀 Projects</h2>
-        <ul class="projects">
-            <li class="project">
-                <div class="project-title">ApartmentFlow Full-Stack Application</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/ApartmentFlow-Fullstack-V0.2" target="_blank">GitHub</a>
-                </div>
-                <ul class="project-description">
-                    <li>Led a team to build a comprehensive apartment search platform with authentication, neighborhood info, commute times, and favorites management.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">Event Management App</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/Event-App-Team-Fullstack" target="_blank">GitHub</a>
-                    <a href="https://event-app-team-fullstack-mynd.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <ul class="project-description">
-                    <li>Full-stack event management with user authentication, event creation, and real-time updates.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">Weather App Full Stack Project</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/Weather-App-Full-Stack-Repo" target="_blank">GitHub</a>
-                    <a href="https://weather-app-for-developer-academy-project.vercel.app/?city=0" target="_blank">Live Demo</a>
-                </div>
-                <ul class="project-description">
-                    <li>Real-time weather and 7-day forecast, robust RESTful API, automated testing, and CI/CD.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">FriendBay Social Media Platform</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/FriendBay-Social-Media-Site" target="_blank">GitHub</a>
-                    <a href="https://friend-bay-social-media-site.vercel.app/" target="_blank">Live Demo</a>
-                </div>
-                <ul class="project-description">
-                    <li>Modern social media app with local-only data for privacy, post creation, and responsive design.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">Portfolio Website</div>
-                <div class="project-links">
-                    <a href="[NEW_PORTFOLIO_URL]" target="_blank">Portfolio</a>
-                </div>
-                <ul class="project-description">
-                    <li>Fully responsive, accessible portfolio showcasing projects and expertise.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">Game Review Website</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/Game-Review-Website" target="_blank">GitHub</a>
-                    <a href="https://colaone1.github.io/Game-Review-Website/" target="_blank">Live Demo</a>
-                </div>
-                <ul class="project-description">
-                    <li>Designed a gaming review platform with modern UI/UX and responsive layout.</li>
-                </ul>
-            </li>
-            <li class="project">
-                <div class="project-title">Castle Adventure Game</div>
-                <div class="project-links">
-                    <a href="https://github.com/colaone1/Sam-s-OOP-Game-v2" target="_blank">GitHub</a>
-                    <a href="https://colaone1.github.io/Sam-s-OOP-Game-v2/" target="_blank">Live Demo</a>
-                </div>
-                <ul class="project-description">
-                    <li>Interactive text adventure with puzzles, inventory, and classic game logic.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+🚀 Projects
+ApartmentFlow Full-Stack Application – GitHub
+✔ Led development team as Technical Lead on comprehensive apartment search platform
+✔ Built with Next.js frontend and Express/MongoDB backend with JWT authentication
+✔ Implemented neighborhood information, commute times, and favorite listings management
+✔ Coordinated team efforts, managed architecture decisions, and ensured project delivery
 
-    <div class="section">
-        <h2 class="section-title">🎓 Education & Training</h2>
-        <ul class="education">
-            <li>The Developer Academy – Full-Stack Development Bootcamp</li>
-            <li>Hertfordshire University, Hatfield – Level 4 Diploma in Model Design</li>
-            <li>West Herts College, Watford – BTEC Level 3 in Film</li>
-            <li>Level 2 Diploma in Digital & IT Skills – Gateway Qualifications</li>
-        </ul>
-    </div>
+Event Management App – GitHub | Live Demo
+✔ Full-stack event management application with Next.js frontend and Express/MongoDB backend
+✔ Features user authentication, event creation, and real-time updates
+✔ Led development team as technical lead, managing architecture decisions and code reviews
 
-    <div class="section">
-        <h2 class="section-title">💼 Experience & Transferable Skills</h2>
-        <ul class="experience">
-            <li><strong>Prop Modeler</strong> (House of the Dragon, Cats) – Strengthened attention to detail, vital for structured coding</li>
-            <li><strong>Admissions Host</strong> (Warner Bros. Studio Tour) – Developed problem-solving and user engagement principles</li>
-            <li><strong>Creative Media Skills Course</strong> (Pinewood Studios) – Applied design thinking to interactive projects</li>
-        </ul>
-    </div>
+Portfolio Website – Portfolio
+✔ Built a fully responsive portfolio showcasing projects and expertise
+✔ Optimised for performance and accessibility with modern web standards
 
-    <div class="section">
-        <h2 class="section-title">🌍 Technical Interests</h2>
-        <div class="interests">
-            <span class="interest-item">⚡ <strong>Full-Stack Development</strong> – Scalable, high-performance applications</span>
-            <span class="interest-item">🎨 <strong>Interactive Web Design</strong> – UX/UI enhancement techniques</span>
-            <span class="interest-item">🕹 <strong>Game Mechanics & Logic</strong> – Designing immersive interactions</span>
-            <span class="interest-item">💡 <strong>Web Performance & Accessibility</strong> – Speed, SEO, and inclusivity compliance</span>
-            <span class="interest-item">👥 <strong>Technical Leadership</strong> – Team coordination, project management, and mentorship</span>
-        </div>
-    </div>
+Castle Adventure Game – GitHub | Live Demo
+✔ Developed interactive gameplay with puzzles and inventory mechanics
+
+Star Wars Trivia Quiz – GitHub | Live Demo
+✔ Built a structured quiz system with randomised questions and scoring
+
+Rolling Caesar Cipher – GitHub | Live Demo
+✔ Created a real-time cryptographic encoding and decoding tool
+
+Open Source Testing Setup – GitHub
+✔ Created comprehensive testing infrastructure with Jest, Cypress, and GitHub Actions
+✔ Built reusable testing utilities and automated CI/CD workflows for open source projects
+✔ Developed universal testing utilities package with 80%+ test coverage requirements
+
+🎓 Education & Training
+🎓 The Developer Academy – Full-Stack Development Bootcamp
+🎓 Hertfordshire University, Hatfield – Level 4 Diploma in Model Design
+🎓 West Herts College, Watford – BTEC Level 3 in Film
+📜 Level 2 Diploma in Digital & IT Skills – Gateway Qualifications
+
+💼 Experience & Transferable Skills
+🏗 Prop Modeler (House of the Dragon, Cats) – Strengthened attention to detail, vital for structured coding
+🎟 Admissions Host (Warner Bros. Studio Tour) – Developed problem-solving and user engagement principles
+🎨 Creative Media Skills Course (Pinewood Studios) – Applied design thinking to interactive projects
+
+🌍 Technical Interests
+⚡ Full-Stack Development – Scalable, high-performance applications
+🎨 Interactive Web Design – UX/UI enhancement techniques
+🕹 Game Mechanics & Logic – Designing immersive interactions
+💡 Web Performance & Accessibility – Speed, SEO, and inclusivity compliance
+👥 Technical Leadership – Team coordination, project management, and mentorship
+</pre>
 </body>
 </html> 

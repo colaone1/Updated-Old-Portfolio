@@ -48,8 +48,10 @@ Star Wars Trivia Quiz – GitHub | Live Demo
 Rolling Caesar Cipher – GitHub | Live Demo
 ✔ Created a real-time cryptographic encoding and decoding tool
 
-Game Review Website – GitHub | Live Demo
-✔ Designed a responsive gaming review platform
+Open Source Testing Setup – GitHub
+✔ Created comprehensive testing infrastructure with Jest, Cypress, and GitHub Actions
+✔ Built reusable testing utilities and automated CI/CD workflows for open source projects
+✔ Developed universal testing utilities package with 80%+ test coverage requirements
 
 🎓 Education & Training
 🎓 The Developer Academy – Full-Stack Development Bootcamp

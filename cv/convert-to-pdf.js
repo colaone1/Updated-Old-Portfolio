@@ -5,13 +5,13 @@ async function convertHTMLToPDF() {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     
-    // Load the HTML file
-    const htmlPath = path.join(__dirname, 'Samuel_Connor_CV_Updated.html');
+    // Load the tailored SWE HTML file
+    const htmlPath = path.join(__dirname, 'Samuel_Connor_CV_SWE.html');
     await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
     
     // Generate PDF
     await page.pdf({
-        path: 'Samuel_Connor_CV_Updated.pdf',
+        path: 'Samuel_Connor_CV_SWE.pdf',
         format: 'A4',
         margin: {
             top: '15mm',
@@ -22,7 +22,7 @@ async function convertHTMLToPDF() {
         printBackground: true
     });
     
-    console.log('PDF generated successfully: Samuel_Connor_CV_Updated.pdf');
+    console.log('PDF generated successfully: Samuel_Connor_CV_SWE.pdf');
     await browser.close();
 }
 
