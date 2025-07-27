@@ -149,38 +149,38 @@ body {
     
     .hero-section h1 {
         font-size: 1.2rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
     }
     
     .hero-section p {
         font-size: 0.7rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
         line-height: 1.1;
     }
     
     .logo-container {
-        height: 1.5rem;
-        max-width: 2rem;
-        margin-bottom: 0.3rem;
+        height: 0.8rem;
+        max-width: 1.2rem;
+        margin-bottom: 0.2rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.3rem;
+        margin-top: 0.2rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
-        margin-bottom: 0.1rem;
+        margin-bottom: 0.05rem;
         font-size: 0.8rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.3rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.3rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
@@ -205,38 +205,38 @@ body {
     
     .hero-section h1 {
         font-size: 1.1rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
     }
     
     .hero-section p {
         font-size: 0.65rem;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.2rem;
         line-height: 1.1;
     }
     
     .logo-container {
-        height: 1.3rem;
-        max-width: 1.8rem;
-        margin-bottom: 0.3rem;
+        height: 0.7rem;
+        max-width: 1rem;
+        margin-bottom: 0.2rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.3rem;
+        margin-top: 0.2rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
-        margin-bottom: 0.1rem;
+        margin-bottom: 0.05rem;
         font-size: 0.75rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.3rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.3rem;
-        margin-bottom: 0.5rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.3rem;
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
