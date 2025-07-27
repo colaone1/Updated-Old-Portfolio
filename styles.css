@@ -133,10 +133,10 @@ body {
 /* Nest Hub (1024x600) - More specific targeting */
 @media (min-width: 1024px) and (max-width: 1024px) and (max-height: 600px) {
     .hero-section {
-        min-height: 85vh;
-        padding-top: 1rem;
+        min-height: 70vh;
+        padding-top: 0.5rem;
         margin-top: 0;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -144,55 +144,55 @@ body {
     }
     
     .hero-section .relative {
-        padding: 0.5rem;
+        padding: 0.2rem;
     }
     
     .hero-section h1 {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section p {
-        font-size: 0.8rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.1;
     }
     
     .logo-container {
-        height: 2rem;
-        max-width: 2.5rem;
-        margin-bottom: 0.5rem;
+        height: 1.5rem;
+        max-width: 2rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
-        margin-bottom: 0.2rem;
-        font-size: 0.9rem;
+        margin-bottom: 0.1rem;
+        font-size: 0.8rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
 /* Alternative Nest Hub targeting */
 @media (width: 1024px) and (height: 600px) {
     .hero-section {
-        min-height: 85vh;
-        padding-top: 1rem;
+        min-height: 70vh;
+        padding-top: 0.5rem;
         margin-top: 0;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -200,45 +200,45 @@ body {
     }
     
     .hero-section .relative {
-        padding: 0.5rem;
+        padding: 0.2rem;
     }
     
     .hero-section h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section p {
-        font-size: 0.75rem;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
+        font-size: 0.65rem;
+        margin-bottom: 0.3rem;
+        line-height: 1.1;
     }
     
     .logo-container {
-        height: 1.8rem;
-        max-width: 2.2rem;
-        margin-bottom: 0.5rem;
+        height: 1.3rem;
+        max-width: 1.8rem;
+        margin-bottom: 0.3rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
-        margin-bottom: 0.2rem;
-        font-size: 0.85rem;
+        margin-bottom: 0.1rem;
+        font-size: 0.75rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        margin-top: 0.3rem;
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
     }
 }
 
