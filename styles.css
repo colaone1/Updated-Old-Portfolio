@@ -31,6 +31,59 @@ body {
     padding-top: 4rem;
 }
 
+/* Mobile responsiveness improvements */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 90vh;
+        padding-top: 2rem;
+        margin-top: 1rem;
+    }
+    
+    .hero-section .relative {
+        padding: 1rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .logo-container {
+        height: 4rem;
+        max-width: 5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 85vh;
+        padding-top: 1.5rem;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .logo-container {
+        height: 3rem;
+        max-width: 4rem;
+        margin-bottom: 1rem;
+    }
+}
+
 /* Defer non-critical CSS loading */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -142,6 +195,67 @@ body {
     100% {
         transform: translate(0);
         opacity: 0.6;
+    }
+}
+
+/* ===== SERVICES SECTION STYLES ===== */
+.services-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.services-section .bg-gray-50 {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.services-section .bg-gray-50:hover {
+    transform: translateY(-5px);
+    border-color: #e5e7eb;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.services-section .text-4xl {
+    transition: transform 0.3s ease;
+}
+
+.services-section .bg-gray-50:hover .text-4xl {
+    transform: scale(1.1);
+}
+
+/* Mobile responsiveness for services */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 2rem 0;
+    }
+    
+    .services-section .grid {
+        gap: 1.5rem;
+    }
+    
+    .services-section .bg-gray-50 {
+        padding: 1.5rem;
+    }
+    
+    .services-section .text-4xl {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-section .bg-gray-50 {
+        padding: 1rem;
+    }
+    
+    .services-section .text-4xl {
+        font-size: 2rem;
+    }
+    
+    .services-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .services-section p {
+        font-size: 0.9rem;
     }
 }
 

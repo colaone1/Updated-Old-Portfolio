@@ -342,7 +342,7 @@
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
     <header
-      class="hero-section relative min-h-screen pt-16"
+      class="hero-section relative min-h-screen md:min-h-screen pt-16"
       role="banner"
       aria-label="Hero section"
     >
@@ -471,28 +471,28 @@
               decoding="async"
             />
           </div>
-          <div class="mt-8 space-y-8">
+          <div class="mt-4 md:mt-8 space-y-4 md:space-y-8">
             <p
-              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500"
+              class="text-xl md:text-2xl lg:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-500"
             >
               <span class="text-[#3a7bd5] font-semibold">Code</span> the Future
             </p>
             <p
-              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1000"
+              class="text-xl md:text-2xl lg:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1000"
             >
               <span class="text-[#3a7bd5] font-semibold">Design</span> the
               Experience
             </p>
             <p
-              class="text-2xl md:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500"
+              class="text-xl md:text-2xl lg:text-3xl font-cinzel text-[#1a1a1a] opacity-0 animate-fadeInUp animation-delay-1500"
             >
               <span class="text-[#3a7bd5] font-semibold">Shape</span> the World
             </p>
           </div>
-          <div class="mt-8">
+          <div class="mt-6 md:mt-8">
             <a
               href="projects.html"
-              class="quest-button px-12 py-4 text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000"
+              class="quest-button px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000"
               aria-label="View my work"
             >
               View My Work
@@ -501,6 +501,217 @@
         </div>
       </div>
     </header>
+
+    <!-- ===== SERVICES SECTION ===== -->
+    <section
+      class="services-section py-16 bg-white"
+      aria-labelledby="services-heading"
+    >
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          id="services-heading"
+          class="section-title text-3xl font-bold mb-12 text-center"
+        >
+          Services I Provide
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Full-Stack Development -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-code text-4xl text-[#3a7bd5] mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                Full-Stack Development
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Complete web applications from frontend to backend, using modern technologies like React, Next.js, Node.js, and MongoDB.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Responsive web applications</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>RESTful APIs & database design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Authentication & security</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Graphic Design -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-paint-brush text-4xl text-purple-500 mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                Graphic Design
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Creative visual design solutions including UI/UX design, branding, and digital graphics that enhance user experience.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>UI/UX design & prototyping</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Brand identity & logo design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Digital graphics & illustrations</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Responsive Design -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-mobile-alt text-4xl text-green-500 mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                Responsive Design
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Mobile-first design approach ensuring your website looks and functions perfectly across all devices and screen sizes.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Mobile-first approach</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Cross-device compatibility</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Performance optimization</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Technical Leadership -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-users-cog text-4xl text-blue-600 mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                Technical Leadership
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Leading development teams, coordinating projects, and ensuring high-quality deliverables through effective communication and planning.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Team coordination & mentoring</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Project architecture design</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Code review & quality assurance</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI-Enhanced Development -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-robot text-4xl text-purple-600 mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                AI-Enhanced Development
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Leveraging AI tools and automation to accelerate development, improve code quality, and create innovative solutions.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>AI-assisted coding & debugging</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Automated testing & deployment</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Performance optimization</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Problem Solving -->
+          <div class="bg-gray-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div class="text-center mb-4">
+              <i
+                class="fas fa-puzzle-piece text-4xl text-orange-500 mb-3"
+                aria-hidden="true"
+              ></i>
+              <h3 class="text-xl font-bold text-[#1a1a1a]">
+                Problem Solving
+              </h3>
+            </div>
+            <p class="text-gray-600 text-center mb-4">
+              Analytical approach to complex technical challenges, finding efficient solutions that meet business requirements and user needs.
+            </p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Technical troubleshooting</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Performance optimization</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-check text-green-500 mr-2" aria-hidden="true"></i>
+                <span>Scalable architecture design</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+          <p class="text-lg text-gray-600 mb-6">
+            Ready to bring your vision to life? Let's discuss your project requirements.
+          </p>
+          <a
+            href="contact-us.html"
+            class="quest-button px-8 py-3 text-lg font-semibold inline-block"
+            aria-label="Get in touch"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== SKILLS SECTION ===== -->
     <section
