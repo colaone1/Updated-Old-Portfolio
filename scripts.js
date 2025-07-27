@@ -236,6 +236,8 @@ const serviceWorker = {
      * Registers service worker
      */
     register() {
+        // TEMPORARILY DISABLED TO FIX DNS LOOP ISSUE
+        /*
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then(() => {
@@ -245,6 +247,7 @@ const serviceWorker = {
                     // Service worker registration failed
                 });
         }
+        */
     }
 };
 
@@ -283,7 +286,8 @@ const indicators = {
             document.querySelector('.offline-indicator')?.remove();
         });
         window.addEventListener('offline', this.showOffline);
-        navigator.serviceWorker?.addEventListener('controllerchange', this.showUpdateAvailable);
+        // TEMPORARILY DISABLED TO FIX DNS LOOP ISSUE
+        // navigator.serviceWorker?.addEventListener('controllerchange', this.showUpdateAvailable);
     }
 };
 

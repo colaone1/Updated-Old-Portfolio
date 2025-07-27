@@ -37,6 +37,8 @@ self.addEventListener('activate', event => {
     );
 });
 
+// TEMPORARILY DISABLED TO FIX DNS LOOP ISSUE
+/*
 self.addEventListener('fetch', event => {
     // Skip non-GET requests and non-same-origin requests
     if (event.request.method !== 'GET' || !event.request.url.startsWith(self.location.origin)) {
@@ -71,4 +73,5 @@ self.addEventListener('fetch', event => {
                     });
             })
     );
-}); 
+});
+*/ 
