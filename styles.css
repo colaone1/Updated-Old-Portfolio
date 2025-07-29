@@ -1,4 +1,5 @@
 /* Critical CSS */
+/* AI-OPTIMIZED: Core design system variables and critical styles */
 :root {
     --primary-color: #3a7bd5;
     --text-color: #1a1a1a;
@@ -32,6 +33,7 @@ body {
 }
 
 /* Mobile responsiveness improvements */
+/* AI-OPTIMIZED: Mobile-first responsive design with performance optimization */
 @media (max-width: 768px) {
     .hero-section {
         min-height: 100vh;
@@ -85,6 +87,7 @@ body {
 }
 
 /* Specific screen size optimizations */
+/* AI-OPTIMIZED: Device-specific optimizations for consistent user experience */
 /* iPhone SE (375x667) */
 @media (max-width: 375px) and (max-height: 667px) {
     .hero-section {

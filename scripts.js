@@ -1,5 +1,6 @@
 /**
  * Core utility functions
+ * AI-OPTIMIZED: Utility functions for performance and throttling
  */
 const utils = {
     /**
@@ -24,6 +25,7 @@ const utils = {
 
 /**
  * Navigation functionality
+ * AI-OPTIMIZED: Navigation and scroll handling with performance optimization
  */
 const navigation = {
     /**
@@ -66,6 +68,7 @@ const navigation = {
 
 /**
  * Project card functionality
+ * AI-OPTIMIZED: Project card interactions and accessibility features
  */
 const projectCards = {
     /**
@@ -98,6 +101,7 @@ const projectCards = {
 
 /**
  * Accessibility functionality
+ * AI-OPTIMIZED: Accessibility features including reduced motion and keyboard navigation
  */
 const accessibility = {
     /**
@@ -134,6 +138,7 @@ const accessibility = {
 
 /**
  * Performance monitoring
+ * AI-OPTIMIZED: Performance metrics tracking and monitoring for optimization
  */
 const perfMonitor = {
     metrics: {
