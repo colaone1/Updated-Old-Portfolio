@@ -202,7 +202,7 @@ body {
     }
     
     .hero-section .quest-button {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         margin-bottom: 0.5rem;
         padding: 0.5rem 1rem;
         font-size: 1rem;
@@ -268,7 +268,7 @@ body {
     }
     
     .hero-section .quest-button {
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         margin-bottom: 0.5rem;
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
@@ -653,6 +653,7 @@ body {
     cursor: pointer;
     min-width: 160px;
     text-align: center;
+    margin-top: 1rem;
 }
 
 .quest-button:hover {
@@ -724,7 +725,7 @@ footer::before {
 }
 
 .hero-section .mt-16.space-y-8 p:last-child {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
 }
 
 .geometric-pattern {
