@@ -208,6 +208,7 @@
         <style>
           #projects-grid {
             align-items: stretch;
+            min-height: 1200px; /* Minimum height to prevent layout shifts */
           }
           .project-card {
             display: flex;
@@ -1117,6 +1118,7 @@
           allProjectCards.forEach((card) => {
             card.style.visibility = "hidden";
             card.style.position = "absolute";
+            card.style.zIndex = "-1";
           });
 
           // Show only cards for the current page
@@ -1125,6 +1127,7 @@
           filteredCards.slice(start, end).forEach((card) => {
             card.style.visibility = "visible";
             card.style.position = "relative";
+            card.style.zIndex = "auto";
             card.style.animation = "fadeIn 0.5s ease-in-out";
           });
 
