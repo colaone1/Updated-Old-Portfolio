@@ -31,4 +31,36 @@
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# URL Rewriting for clean URLs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Remove .html extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^([^\.]+)$ $1.html [NC,L]
+    
+    # Specific page rewrites
+    RewriteRule ^contact/?$ contact-us.html [NC,L]
+    RewriteRule ^about/?$ about-page.html [NC,L]
+    RewriteRule ^projects/?$ projects.html [NC,L]
+    RewriteRule ^home/?$ index.html [NC,L]
+    
+    # Project page rewrites
+    RewriteRule ^text-game/?$ text-game.html [NC,L]
+    RewriteRule ^star-wars-quiz/?$ star-wars-quiz.html [NC,L]
+    RewriteRule ^game-review/?$ game-review.html [NC,L]
+    RewriteRule ^weather-app/?$ weather-app.html [NC,L]
+    RewriteRule ^testing-setup/?$ testing-setup.html [NC,L]
+    RewriteRule ^movies-api/?$ movies-api.html [NC,L]
+    RewriteRule ^backend-api/?$ backend-api.html [NC,L]
+    RewriteRule ^event-app/?$ event-app.html [NC,L]
+    RewriteRule ^friendbay/?$ friendbay.html [NC,L]
+    RewriteRule ^cipher/?$ cipher.html [NC,L]
+    
+    # Redirect old .html URLs to clean URLs
+    RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+    RewriteRule ^ /%1? [NC,L,R=301]
 </IfModule> 
