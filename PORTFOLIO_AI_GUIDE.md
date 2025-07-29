@@ -38,7 +38,7 @@ Portfolio Site/
 ├── contact-us.html     # Contact page
 ├── projects.html       # Projects showcase
 ├── about-page.html     # About page
-├── cv/                 # CV files and generation
+├── images/             # Images and assets
 ├── images/             # Images and assets
 └── *.html              # Individual project pages
 ```

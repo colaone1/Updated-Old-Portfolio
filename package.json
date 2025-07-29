@@ -2,7 +2,7 @@
   "name": "portfolio-website",
   "version": "1.0.0",
   "description": "This portfolio website was developed to showcase my skills and projects as a software developer. The focus was on creating a clean, accessible, and responsive design that effectively presents my work.",
-  "main": "download-fonts.js",
+  "main": "index.html",
   "dependencies": {
     "abort-controller": "^3.0.0",
     "accepts": "^1.3.8",

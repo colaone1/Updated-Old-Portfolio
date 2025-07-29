@@ -32,7 +32,7 @@ A responsive portfolio website showcasing software development projects and skil
 - **`backend-api.html`** (9.5KB, 164 lines) - Backend API project
 
 ### **Assets**
-- **`cv/`** - CV files and PDF generation scripts
+- **`images/`** - Images, logos, and social media assets
 - **`images/`** - Images, logos, and social media assets
 - **`fonts.css`** (1.1KB, 48 lines) - Custom font loading
 
