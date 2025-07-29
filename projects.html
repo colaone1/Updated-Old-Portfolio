@@ -200,8 +200,9 @@
       >
         <style>
           #projects-grid {
-            min-height: 320px; /* Further reduced for more compact layout */
+            height: 320px; /* Fixed height - exactly 3 cards worth of space */
             grid-auto-rows: 1fr; /* Make all grid rows equal height */
+            overflow: hidden; /* Hide overflow from invisible cards */
           }
           .project-card {
             display: flex;
@@ -926,7 +927,7 @@
         </div>
       </div>
       <!-- Pagination Controls -->
-      <div class="flex justify-center mt-4" id="pagination-controls"></div>
+      <div class="flex justify-center mt-2" id="pagination-controls"></div>
     </main>
 
     <!-- Footer -->
