@@ -205,6 +205,24 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         id="projects-grid"
       >
+        <style>
+          #projects-grid {
+            align-items: stretch;
+          }
+          .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+          }
+          .project-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+          }
+          .project-content > div:last-child {
+            margin-top: auto;
+          }
+        </style>
         <!-- Text-Based Game Project Card -->
         <div
           class="bg-white rounded-lg shadow-lg overflow-hidden project-card"
