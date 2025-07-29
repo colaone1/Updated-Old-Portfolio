@@ -342,7 +342,7 @@
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
     <header
-      class="hero-section relative min-h-screen md:min-h-screen pt-16"
+      class="hero-section relative pt-16"
       role="banner"
       aria-label="Hero section"
     >
@@ -441,15 +441,15 @@
 
       <!-- Hero content positioned above the background with z-index -->
       <div
-        class="relative z-10 mx-auto max-w-7xl px-6 min-h-screen flex items-center justify-center"
+        class="relative z-10 mx-auto max-w-7xl px-6"
       >
         <div class="text-center">
           <h1
-            class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] mb-8 tracking-wider"
+            class="text-4xl md:text-5xl lg:text-6xl font-cinzel font-bold text-[#1a1a1a] tracking-wider"
           >
             Developer & Designer
           </h1>
-          <p class="text-xl md:text-2xl text-[#1a1a1a] mb-8 max-w-3xl mx-auto">
+          <p class="text-xl md:text-2xl text-[#1a1a1a] max-w-3xl mx-auto">
             Hi, I'm Sam! I'm a passionate software developer and technical
             leader with a focus on creating immersive web experiences. I combine
             clean code with creative design to build applications that make a
@@ -457,7 +457,7 @@
             solutions.
           </p>
           <div
-            class="logo-container relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-8"
+            class="logo-container relative mx-auto"
           >
             <div class="logo-shine"></div>
             <img
@@ -489,10 +489,10 @@
               <span class="text-[#3a7bd5] font-semibold">Shape</span> the World
             </p>
           </div>
-          <div class="mt-6 md:mt-8">
+          <div>
             <a
               href="projects.html"
-              class="quest-button px-8 md:px-12 py-3 md:py-4 text-base md:text-lg font-semibold opacity-0 animate-fadeInUp animation-delay-2000"
+              class="quest-button font-semibold opacity-0 animate-fadeInUp animation-delay-2000"
               aria-label="View my work"
             >
               View My Work

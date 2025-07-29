@@ -133,112 +133,124 @@ body {
 /* Nest Hub (1024x600) - More specific targeting */
 @media (min-width: 1024px) and (max-width: 1024px) and (max-height: 600px) {
     .hero-section {
-        min-height: 70vh;
-        padding-top: 0.2rem;
+        min-height: 100vh;
+        padding-top: 0;
         margin-top: 0;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
     }
     
     .hero-section .relative {
-        padding: 0.2rem;
+        padding: 0.1rem;
     }
     
     .hero-section h1 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         margin-bottom: 0.1rem;
     }
     
     .hero-section p {
-        font-size: 0.7rem;
+        font-size: 1rem;
         margin-bottom: 0.1rem;
-        line-height: 1.1;
+        line-height: 1.2;
     }
     
     .logo-container {
-        height: 0.8rem;
-        max-width: 1.2rem;
-        margin-bottom: 0.2rem;
+        height: 0.2rem;
+        max-width: 0.3rem;
+        margin-bottom: 0.1rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.2rem;
+        margin-top: 0;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
         margin-bottom: 0.05rem;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.2rem;
-        margin-bottom: 0.3rem;
+        margin-top: 0.05rem;
+        margin-bottom: 0.1rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.2rem;
-        margin-bottom: 0.3rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .logo-shine {
+        width: 40%;
+        height: 100%;
+        animation: logoShineAnim 8s cubic-bezier(0.4,0,0.2,1) infinite;
     }
 }
 
 /* Alternative Nest Hub targeting */
 @media (width: 1024px) and (height: 600px) {
     .hero-section {
-        min-height: 70vh;
-        padding-top: 0.2rem;
+        min-height: 100vh;
+        padding-top: 0;
         margin-top: 0;
-        padding-bottom: 0.5rem;
+        padding-bottom: 0;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
     }
     
     .hero-section .relative {
-        padding: 0.2rem;
+        padding: 0.1rem;
     }
     
     .hero-section h1 {
-        font-size: 1.1rem;
+        font-size: 1.6rem;
         margin-bottom: 0.1rem;
     }
     
     .hero-section p {
-        font-size: 0.65rem;
+        font-size: 0.9rem;
         margin-bottom: 0.1rem;
-        line-height: 1.1;
+        line-height: 1.2;
     }
     
     .logo-container {
-        height: 0.7rem;
-        max-width: 1rem;
-        margin-bottom: 0.2rem;
+        height: 0.2rem;
+        max-width: 0.3rem;
+        margin-bottom: 0.1rem;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 {
-        margin-top: 0.2rem;
+        margin-top: 0;
     }
     
     .hero-section .mt-4.md\\:mt-8.space-y-4.md\\:space-y-8 p {
         margin-bottom: 0.05rem;
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
     
     .hero-section .mt-6.md\\:mt-8 {
-        margin-top: 0.2rem;
-        margin-bottom: 0.3rem;
+        margin-top: 0.05rem;
+        margin-bottom: 0.1rem;
     }
     
     .hero-section .quest-button {
-        margin-top: 0.2rem;
-        margin-bottom: 0.3rem;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
+        margin-top: 0.1rem;
+        margin-bottom: 0.1rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .logo-shine {
+        width: 40%;
+        height: 100%;
+        animation: logoShineAnim 8s cubic-bezier(0.4,0,0.2,1) infinite;
     }
 }
 
