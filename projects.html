@@ -207,8 +207,10 @@
             display: flex;
             flex-direction: column;
             min-height: 200px; /* Further reduced for more compact cards */
-            transition: height 0.3s ease; /* Smooth transition for height changes */
+            transition: all 0.3s ease; /* Smooth transition for all changes */
             height: 100%; /* Fill the grid cell */
+            opacity: 1;
+            visibility: visible;
           }
           .project-card.expanded {
             height: auto !important; /* Override grid stretching when expanded */
@@ -1112,16 +1114,20 @@
             Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
           currentPage = Math.max(1, Math.min(page, totalPages));
 
-          // Hide all cards
+          // Hide all cards first
           allProjectCards.forEach((card) => {
-            card.style.display = "none";
+            card.style.visibility = "hidden";
+            card.style.opacity = "0";
           });
 
           // Show only cards for the current page
           const start = (currentPage - 1) * CARDS_PER_PAGE;
           const end = start + CARDS_PER_PAGE;
-          filteredCards.slice(start, end).forEach((card) => {
-            card.style.display = "flex";
+          const cardsToShow = filteredCards.slice(start, end);
+          
+          cardsToShow.forEach((card, index) => {
+            card.style.visibility = "visible";
+            card.style.opacity = "1";
             // Reset animation by removing and re-adding it
             card.style.animation = "none";
             card.offsetHeight; // Trigger reflow
@@ -1180,7 +1186,8 @@
         // Initial render with fade-in effect
         // First hide all cards
         allProjectCards.forEach((card) => {
-          card.style.display = "none";
+          card.style.visibility = "hidden";
+          card.style.opacity = "0";
         });
         
         // Then show page 1 with animation
