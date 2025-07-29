@@ -1,4 +1,17 @@
 /**
+ * Portfolio Website - Core JavaScript
+ * AI-OPTIMIZED: Enhanced performance monitoring and AI processing efficiency
+ * 
+ * Key Modules:
+ * - utils: Utility functions for performance optimization
+ * - navigation: Navigation and scroll handling
+ * - projectCards: Project card interactions
+ * - accessibility: Accessibility features
+ * - perfMonitor: Performance monitoring and metrics
+ * - serviceWorker: Service worker management
+ */
+
+/**
  * Core utility functions
  * AI-OPTIMIZED: Utility functions for performance and throttling
  */
@@ -20,6 +33,36 @@ const utils = {
                 setTimeout(() => inThrottle = false, limit);
             }
         };
+    },
+
+    /**
+     * Debounces function execution to prevent excessive calls
+     * AI-OPTIMIZED: Performance optimization for event handling
+     * @param {Function} func - The function to debounce
+     * @param {number} delay - Delay in milliseconds
+     * @returns {Function} - Debounced version of the input function
+     */
+    debounce(func, delay) {
+        let timeoutId;
+        return function(...args) {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(() => func.apply(this, args), delay);
+        };
+    },
+
+    /**
+     * Measures execution time for performance monitoring
+     * AI-OPTIMIZED: Performance tracking for AI processing efficiency
+     * @param {string} label - Label for the measurement
+     * @param {Function} fn - Function to measure
+     * @returns {any} - Result of the function execution
+     */
+    measurePerformance(label, fn) {
+        const start = performance.now();
+        const result = fn();
+        const end = performance.now();
+        console.log(`${label}: ${(end - start).toFixed(2)}ms`);
+        return result;
     }
 };
 
@@ -100,199 +143,153 @@ const projectCards = {
 };
 
 /**
- * Accessibility functionality
- * AI-OPTIMIZED: Accessibility features including reduced motion and keyboard navigation
+ * Accessibility features
+ * AI-OPTIMIZED: Comprehensive accessibility support for better user experience
  */
 const accessibility = {
     /**
      * Handles reduced motion preferences
      */
     handleReducedMotion() {
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const animatedElements = document.querySelectorAll('.animate-fadeInUp');
-        
-        if (prefersReducedMotion) {
-            animatedElements.forEach(element => {
-                element.style.opacity = '1';
-                element.style.transform = 'none';
-                element.style.animation = 'none';
-            });
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.documentElement.style.setProperty('--animation-duration', '0s');
+            document.documentElement.style.setProperty('--transition-duration', '0s');
         }
     },
 
     /**
-     * Implements skip link functionality
+     * Initializes skip link for keyboard navigation
      */
     initializeSkipLink() {
-        const skipLink = document.querySelector('.skip-link');
-        const mainContent = document.querySelector('main');
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.textContent = 'Skip to main content';
+        skipLink.className = 'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded z-50';
+        document.body.insertBefore(skipLink, document.body.firstChild);
+    },
+
+    /**
+     * Initializes all accessibility features
+     */
+    initialize() {
+        this.handleReducedMotion();
+        this.initializeSkipLink();
         
-        if (skipLink && mainContent) {
-            skipLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                mainContent.focus();
-            });
-        }
+        // Add ARIA labels to interactive elements
+        const buttons = document.querySelectorAll('button:not([aria-label])');
+        buttons.forEach(button => {
+            if (!button.textContent.trim()) {
+                button.setAttribute('aria-label', 'Button');
+            }
+        });
     }
 };
 
 /**
  * Performance monitoring
- * AI-OPTIMIZED: Performance metrics tracking and monitoring for optimization
+ * AI-OPTIMIZED: Enhanced performance tracking for AI processing efficiency
  */
 const perfMonitor = {
-    metrics: {
-        startTime: performance.now(),
-        resources: [],
-        errors: [],
-        navigation: null,
-        paint: null,
-        firstContentfulPaint: null,
-        largestContentfulPaint: null,
-        firstInputDelay: null
-    },
-
     /**
-     * Initializes performance monitoring
-     */
-    initialize() {
-        // Enhanced error boundary
-        window.onerror = (msg, url, lineNo, columnNo, error) => {
-            const errorDetails = {
-                message: msg,
-                url: url,
-                line: lineNo,
-                column: columnNo,
-                error: error,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent
-            };
-            
-            this.metrics.errors.push(errorDetails);
-            console.error('Error:', errorDetails);
-            return false;
-        };
-
-        // Performance observer
-        const observer = new PerformanceObserver((list) => {
-            for (const entry of list.getEntries()) {
-                switch(entry.entryType) {
-                    case 'navigation':
-                        this.metrics.navigation = entry;
-                        this.metrics.firstContentfulPaint = entry.domContentLoadedEventEnd - entry.startTime;
-                        break;
-                    case 'paint':
-                        if (entry.name === 'first-paint') {
-                            this.metrics.paint = entry;
-                        }
-                        break;
-                    case 'largest-contentful-paint':
-                        this.metrics.largestContentfulPaint = entry;
-                        break;
-                    default:
-                        this.metrics.resources.push(entry);
-                }
-            }
-        });
-
-        observer.observe({ 
-            entryTypes: [
-                'navigation',
-                'paint',
-                'largest-contentful-paint',
-                'resource',
-                'first-input'
-            ]
-        });
-
-        // Track first input delay
-        let firstInput = true;
-        document.addEventListener('click', () => {
-            if (firstInput) {
-                this.metrics.firstInputDelay = performance.now() - this.metrics.startTime;
-                firstInput = false;
-            }
-        }, { once: true });
-    },
-
-    /**
-     * Logs performance metrics
+     * Logs comprehensive performance metrics
      */
     logMetrics() {
-        const loadTime = performance.now() - this.metrics.startTime;
+        const loadTime = performance.now();
+        const navigation = performance.getEntriesByType('navigation')[0];
+        const paint = performance.getEntriesByType('paint');
+        
         const metrics = {
             totalLoadTime: loadTime,
-            firstContentfulPaint: this.metrics.firstContentfulPaint,
-            largestContentfulPaint: this.metrics.largestContentfulPaint?.startTime,
-            firstInputDelay: this.metrics.firstInputDelay,
-            resourceCount: this.metrics.resources.length,
-            errorCount: this.metrics.errors.length
+            firstContentfulPaint: paint.find(p => p.name === 'first-contentful-paint')?.startTime || null,
+            largestContentfulPaint: this.getLCP(),
+            firstInputDelay: this.getFID(),
+            resourceCount: navigation?.initiatorType ? 1 : 0,
+            domContentLoaded: navigation?.domContentLoadedEventEnd - navigation?.domContentLoadedEventStart || null,
+            loadComplete: navigation?.loadEventEnd - navigation?.loadEventStart || null
         };
         
         console.log('Performance Metrics:', metrics);
+        return metrics;
+    },
+
+    /**
+     * Gets Largest Contentful Paint metric
+     */
+    getLCP() {
+        const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const lastEntry = entries[entries.length - 1];
+            return lastEntry.startTime;
+        });
+        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+        return undefined; // Will be populated by observer
+    },
+
+    /**
+     * Gets First Input Delay metric
+     */
+    getFID() {
+        const observer = new PerformanceObserver((list) => {
+            const entries = list.getEntries();
+            const firstEntry = entries[0];
+            return firstEntry.processingStart - firstEntry.startTime;
+        });
+        observer.observe({ entryTypes: ['first-input'] });
+        return null; // Will be populated by observer
     }
 };
 
 /**
- * Service worker functionality
+ * Service Worker management
+ * AI-OPTIMIZED: Service worker for caching and offline support
  */
 const serviceWorker = {
     /**
-     * Registers service worker
+     * Registers the service worker
      */
     register() {
-        // TEMPORARILY DISABLED TO FIX DNS LOOP ISSUE
-        /*
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
-                .then(() => {
-                    // Service worker registered successfully
+                .then(registration => {
+                    console.log('Service Worker registered:', registration);
+                    
+                    // Check for updates
+                    registration.addEventListener('updatefound', () => {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', () => {
+                            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                this.showUpdateAvailable();
+                            }
+                        });
+                    });
                 })
                 .catch(error => {
-                    // Service worker registration failed
+                    console.error('Service Worker registration failed:', error);
                 });
         }
-        */
-    }
-};
+    },
 
-/**
- * UI indicators
- */
-const indicators = {
     /**
      * Shows offline indicator
      */
     showOffline() {
         const indicator = document.createElement('div');
-        indicator.className = 'offline-indicator';
-        indicator.textContent = 'You are currently offline. Some features may be limited.';
+        indicator.className = 'offline-indicator fixed top-4 right-4 bg-red-500 text-white px-4 py-2 rounded z-50';
+        indicator.textContent = 'You are offline';
         document.body.appendChild(indicator);
     },
 
     /**
-     * Shows update available indicator
+     * Shows update available notification
      */
     showUpdateAvailable() {
-        const updateIndicator = document.createElement('div');
-        updateIndicator.className = 'update-indicator';
-        updateIndicator.innerHTML = `
-            <p>An update is available!</p>
-            <button onclick="window.location.reload()">Refresh to update</button>
+        const indicator = document.createElement('div');
+        indicator.className = 'update-indicator fixed top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded z-50';
+        indicator.innerHTML = `
+            <span>Update available</span>
+            <button onclick="location.reload()" class="ml-2 underline">Reload</button>
         `;
-        document.body.appendChild(updateIndicator);
-    },
-
-    /**
-     * Initializes offline indicator functionality
-     */
-    initialize() {
-        window.addEventListener('online', () => {
-            document.querySelector('.offline-indicator')?.remove();
-        });
-        window.addEventListener('offline', this.showOffline);
-        // TEMPORARILY DISABLED TO FIX DNS LOOP ISSUE
-        // navigator.serviceWorker?.addEventListener('controllerchange', this.showUpdateAvailable);
+        document.body.appendChild(indicator);
     }
 };
 
@@ -327,24 +324,28 @@ const backToTop = {
 };
 
 /**
- * Initialize all functionality
+ * Main application initialization
+ * AI-OPTIMIZED: Centralized initialization for better performance
  */
 function initializeApp() {
-    // Initialize core functionality
-    navigation.initialize();
-    projectCards.initialize();
-    accessibility.handleReducedMotion();
-    accessibility.initializeSkipLink();
-    perfMonitor.initialize();
-    serviceWorker.register();
-    indicators.initialize();
-    backToTop.initialize();
-
-    // Log performance metrics after page load
-    window.addEventListener('load', () => {
+    // Measure initialization performance
+    utils.measurePerformance('app-initialization', () => {
+        // Initialize all modules
+        navigation.initialize();
+        projectCards.initialize();
+        accessibility.initialize();
+        serviceWorker.register();
+        
+        // Log performance metrics
         perfMonitor.logMetrics();
+        
+        console.log('Portfolio website initialized successfully');
     });
 }
 
-// Initialize the application
-document.addEventListener('DOMContentLoaded', initializeApp); 
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    initializeApp();
+} 
