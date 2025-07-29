@@ -564,10 +564,12 @@
                 filterType === "all" ||
                 card.getAttribute("data-type") === filterType
               ) {
-                card.style.display = "block";
+                card.style.visibility = "visible";
+                card.style.position = "relative";
                 card.style.animation = "fadeIn 0.5s ease-in-out";
               } else {
-                card.style.display = "none";
+                card.style.visibility = "hidden";
+                card.style.position = "absolute";
               }
             });
           });
@@ -605,13 +607,17 @@
           currentPage = Math.max(1, Math.min(page, totalPages));
 
           // Hide all cards
-          allProjectCards.forEach((card) => (card.style.display = "none"));
+          allProjectCards.forEach((card) => {
+            card.style.visibility = "hidden";
+            card.style.position = "absolute";
+          });
 
           // Show only cards for the current page
           const start = (currentPage - 1) * CARDS_PER_PAGE;
           const end = start + CARDS_PER_PAGE;
           filteredCards.slice(start, end).forEach((card) => {
-            card.style.display = "block";
+            card.style.visibility = "visible";
+            card.style.position = "relative";
             card.style.animation = "fadeIn 0.5s ease-in-out";
           });
 
