@@ -207,18 +207,22 @@
             display: flex;
             flex-direction: column;
             min-height: 200px; /* Further reduced for more compact cards */
+            max-height: 200px; /* Maximum height to prevent layout shifts */
             transition: height 0.3s ease; /* Smooth transition for height changes */
           }
           .project-card.expanded {
             height: auto !important; /* Override grid stretching when expanded */
+            max-height: none; /* Remove max-height when expanded */
           }
           .project-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            overflow: hidden; /* Prevent content overflow */
           }
           .project-content-main {
             flex-grow: 1;
+            overflow: hidden; /* Prevent content overflow */
           }
           .project-content-buttons {
             margin-top: auto;
