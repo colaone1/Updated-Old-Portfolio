@@ -207,13 +207,14 @@
       >
         <style>
           #projects-grid {
-            align-items: stretch;
+            align-items: start; /* Changed from stretch to start to prevent all cards from stretching */
             min-height: 600px; /* Further reduced minimum height */
           }
           .project-card {
             display: flex;
             flex-direction: column;
             min-height: 350px; /* Further reduced to make cards shorter */
+            height: fit-content; /* Allow cards to grow independently */
           }
           .project-content {
             display: flex;
