@@ -208,12 +208,12 @@
         <style>
           #projects-grid {
             align-items: stretch;
-            min-height: 800px; /* Reduced minimum height to prevent layout shifts */
+            min-height: 600px; /* Further reduced minimum height */
           }
           .project-card {
             display: flex;
             flex-direction: column;
-            min-height: 450px; /* Reduced from 600px to make cards shorter */
+            min-height: 350px; /* Further reduced to make cards shorter */
           }
           .project-content {
             display: flex;
@@ -1180,8 +1180,18 @@
           });
         });
 
-        // Initial render
-        renderPage(1);
+        // Initial render with fade-in effect
+        // First hide all cards
+        allProjectCards.forEach((card) => {
+          card.style.visibility = "hidden";
+          card.style.position = "absolute";
+          card.style.zIndex = "-1";
+        });
+        
+        // Then show page 1 with animation
+        setTimeout(() => {
+          renderPage(1);
+        }, 100);
 
         // Show/Hide project details functionality
         document.addEventListener('click', function(e) {
