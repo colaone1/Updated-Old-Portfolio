@@ -210,7 +210,7 @@
           .project-card {
             display: flex;
             flex-direction: column;
-            height: 450px; /* Increased height to accommodate buttons */
+            min-height: 450px; /* Use min-height to allow expansion */
             transition: all 0.3s ease; /* Smooth transition for all changes */
             opacity: 1;
             visibility: visible;
@@ -228,8 +228,7 @@
           }
           .project-content-main {
             flex-grow: 1;
-            overflow: hidden; /* Hide overflow instead of scrolling */
-            max-height: 220px; /* Increased to give more room for content */
+            overflow: visible; /* Show all content */
             margin-bottom: 8px; /* Add space between content and buttons */
           }
           .project-content-buttons {
@@ -1175,6 +1174,9 @@
         // Show/Hide project details functionality
         document.addEventListener('click', function(e) {
           if (e.target.classList.contains('show-more-btn')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
             const card = e.target.closest('.project-card');
             const details = card.querySelector('.project-details');
             const btn = e.target;
