@@ -204,6 +204,9 @@
             grid-auto-rows: 1fr; /* Make all grid rows equal height */
             transition: all 0.3s ease; /* Smooth transitions for layout changes */
           }
+          .project-card.hidden {
+            display: none !important; /* Ensure hidden cards are completely hidden */
+          }
           .project-card {
             display: flex;
             flex-direction: column;
@@ -1081,9 +1084,9 @@
             Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
           currentPage = Math.max(1, Math.min(page, totalPages));
 
-          // Hide all cards first using display none to remove from layout
+          // Hide all cards first using CSS class
           allProjectCards.forEach((card) => {
-            card.style.display = "none";
+            card.classList.add("hidden");
           });
 
           // Show only cards for the current page
@@ -1092,7 +1095,7 @@
           const cardsToShow = filteredCards.slice(start, end);
           
           cardsToShow.forEach((card, index) => {
-            card.style.display = "block";
+            card.classList.remove("hidden");
             // Reset animation by removing and re-adding it
             card.style.animation = "none";
             card.offsetHeight; // Trigger reflow
@@ -1161,7 +1164,7 @@
         // Initial render with fade-in effect
         // Show all cards initially for better UX
         allProjectCards.forEach((card) => {
-          card.style.display = "block";
+          card.classList.remove("hidden");
         });
         
         // Then apply pagination
