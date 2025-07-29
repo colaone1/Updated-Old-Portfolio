@@ -145,7 +145,7 @@
 
 
     <!-- Projects Grid -->
-    <main class="container mx-auto px-4 py-8">
+    <main id="main-content" class="container mx-auto px-4 py-8">
       <!-- Project Filter Section -->
       <div class="mb-12 mt-16">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
@@ -200,9 +200,9 @@
       >
         <style>
           #projects-grid {
-            height: 320px; /* Fixed height - exactly 3 cards worth of space */
+            min-height: 320px; /* Minimum height instead of fixed height */
             grid-auto-rows: 1fr; /* Make all grid rows equal height */
-            overflow: hidden; /* Hide overflow from invisible cards */
+            transition: all 0.3s ease; /* Smooth transitions for layout changes */
           }
           .project-card {
             display: flex;
@@ -215,6 +215,8 @@
           }
           .project-card.expanded {
             height: auto !important; /* Override grid stretching when expanded */
+            z-index: 10; /* Ensure expanded cards appear above others */
+            position: relative;
           }
           .project-content {
             display: flex;
@@ -1048,45 +1050,7 @@
       });
     </script>
 
-    <!-- Project Filtering JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const filterButtons = document.querySelectorAll(".filter-btn");
-        const projectCards = document.querySelectorAll("[data-type]");
-
-        // Add click event listeners to filter buttons
-        filterButtons.forEach((button) => {
-          button.addEventListener("click", () => {
-            const filterType = button.getAttribute("data-filter");
-
-            // Update active button styling
-            filterButtons.forEach((btn) => {
-              btn.classList.remove("active", "bg-blue-600", "text-white");
-              btn.classList.add("bg-gray-200", "text-gray-700");
-            });
-            button.classList.remove("bg-gray-200", "text-gray-700");
-            button.classList.add("active", "bg-blue-600", "text-white");
-
-            // Filter projects
-            projectCards.forEach((card) => {
-              if (
-                filterType === "all" ||
-                card.getAttribute("data-type") === filterType
-              ) {
-                card.style.visibility = "visible";
-                card.style.position = "relative";
-                card.style.animation = "fadeIn 0.5s ease-in-out";
-              } else {
-                card.style.visibility = "hidden";
-                card.style.position = "absolute";
-              }
-            });
-          });
-        });
-      });
-    </script>
-
-    <!-- Project Pagination JavaScript -->
+    <!-- Project Filtering and Pagination JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const projectsGrid = document.getElementById("projects-grid");
@@ -1185,13 +1149,13 @@
         });
 
         // Initial render with fade-in effect
-        // First hide all cards
+        // Show all cards initially for better UX
         allProjectCards.forEach((card) => {
-          card.style.visibility = "hidden";
-          card.style.opacity = "0";
+          card.style.visibility = "visible";
+          card.style.opacity = "1";
         });
         
-        // Then show page 1 with animation
+        // Then apply pagination
         setTimeout(() => {
           renderPage(1);
         }, 100);
