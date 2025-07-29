@@ -138,7 +138,7 @@
             </section>
 
             <!-- Contact Form -->
-            <section class="bg-white rounded-lg shadow-lg p-8">
+            <section class="bg-white rounded-lg shadow-lg p-8 contact-form-hidden">
                 <h2 class="text-3xl font-bold mb-8 text-center">Send Me a Message</h2>
                 <form id="contact-form" action="https://formspree.io/f/mwpobjdv" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -311,6 +311,25 @@
         if (window.scrollY > 300) {
           backToTopButton.classList.remove('opacity-0', 'pointer-events-none');
           backToTopButton.classList.add('opacity-100');
+        }
+
+        // Contact form scroll reveal
+        const contactForm = document.querySelector('.contact-form-hidden');
+        if (contactForm) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.remove('contact-form-hidden');
+                        entry.target.classList.add('contact-form-visible');
+                        observer.unobserve(entry.target); // Stop observing once revealed
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of the form is visible
+                rootMargin: '0px 0px -50px 0px' // Start animation slightly before form comes into view
+            });
+            
+            observer.observe(contactForm);
         }
 
         // Scroll to top when button is clicked
