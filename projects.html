@@ -207,9 +207,8 @@
           .project-card {
             display: flex;
             flex-direction: column;
-            min-height: 200px; /* Further reduced for more compact cards */
+            height: 400px; /* Fixed height for consistent card sizes */
             transition: all 0.3s ease; /* Smooth transition for all changes */
-            height: 100%; /* Fill the grid cell */
             opacity: 1;
             visibility: visible;
           }
@@ -222,9 +221,13 @@
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            overflow: hidden; /* Prevent content overflow */
           }
           .project-content-main {
             flex-grow: 1;
+            overflow-y: auto; /* Allow scrolling if content is too long */
+            max-height: 200px; /* Limit height to prevent cards from becoming too tall */
+            padding-right: 4px; /* Add padding for scrollbar */
           }
           .project-content-buttons {
             margin-top: auto;
@@ -929,7 +932,7 @@
         </div>
       </div>
       <!-- Pagination Controls -->
-      <div class="flex justify-center mt-2" id="pagination-controls"></div>
+      <div class="flex justify-center mt-8 mb-4" id="pagination-controls"></div>
     </main>
 
     <!-- Footer -->
