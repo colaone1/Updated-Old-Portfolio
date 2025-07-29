@@ -207,7 +207,7 @@
           .project-card {
             display: flex;
             flex-direction: column;
-            height: 400px; /* Fixed height for consistent card sizes */
+            height: 450px; /* Increased height to accommodate buttons */
             transition: all 0.3s ease; /* Smooth transition for all changes */
             opacity: 1;
             visibility: visible;
@@ -225,9 +225,8 @@
           }
           .project-content-main {
             flex-grow: 1;
-            overflow-y: auto; /* Allow scrolling if content is too long */
-            max-height: 180px; /* Reduced to leave room for buttons */
-            padding-right: 4px; /* Add padding for scrollbar */
+            overflow: hidden; /* Hide overflow instead of scrolling */
+            max-height: 220px; /* Increased to give more room for content */
             margin-bottom: 8px; /* Add space between content and buttons */
           }
           .project-content-buttons {
