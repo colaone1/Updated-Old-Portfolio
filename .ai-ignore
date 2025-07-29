@@ -1,0 +1,57 @@
+# AI Processing Ignore File
+# Files and directories that AI assistants should skip
+
+# Dependencies and build files
+node_modules/
+package-lock.json
+*.min.js
+*.min.css
+dist/
+build/
+
+# Generated files
+*.log
+*.tmp
+*.cache
+
+# Large binary files
+*.pdf
+*.zip
+*.tar.gz
+*.mp4
+*.mp3
+
+# Configuration files (usually don't need AI changes)
+.env
+.env.local
+.env.production
+.gitignore
+.git/
+.husky/
+
+# Documentation (usually reference only)
+README.md
+*.md
+LICENSE
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test files (unless specifically working on tests)
+__tests__/
+*.test.js
+*.spec.js
+test/
+
+# Backup files
+*.bak
+*.backup
+*~ 
