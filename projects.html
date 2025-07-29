@@ -1128,6 +1128,9 @@
             card.style.visibility = "visible";
             card.style.position = "relative";
             card.style.zIndex = "auto";
+            // Reset animation by removing and re-adding it
+            card.style.animation = "none";
+            card.offsetHeight; // Trigger reflow
             card.style.animation = "fadeIn 0.5s ease-in-out";
           });
 
