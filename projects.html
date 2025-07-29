@@ -1079,10 +1079,9 @@
             Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
           currentPage = Math.max(1, Math.min(page, totalPages));
 
-          // Hide all cards first
+          // Hide all cards first using display none to remove from layout
           allProjectCards.forEach((card) => {
-            card.style.visibility = "hidden";
-            card.style.opacity = "0";
+            card.style.display = "none";
           });
 
           // Show only cards for the current page
@@ -1091,8 +1090,7 @@
           const cardsToShow = filteredCards.slice(start, end);
           
           cardsToShow.forEach((card, index) => {
-            card.style.visibility = "visible";
-            card.style.opacity = "1";
+            card.style.display = "block";
             // Reset animation by removing and re-adding it
             card.style.animation = "none";
             card.offsetHeight; // Trigger reflow
@@ -1143,7 +1141,17 @@
         // Hook into filter buttons
         filterButtons.forEach((button) => {
           button.addEventListener("click", () => {
-            currentFilter = button.getAttribute("data-filter");
+            const filterType = button.getAttribute("data-filter");
+            currentFilter = filterType;
+
+            // Update active button styling
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-blue-600", "text-white");
+              btn.classList.add("bg-gray-200", "text-gray-700");
+            });
+            button.classList.remove("bg-gray-200", "text-gray-700");
+            button.classList.add("active", "bg-blue-600", "text-white");
+
             renderPage(1);
           });
         });
@@ -1151,8 +1159,7 @@
         // Initial render with fade-in effect
         // Show all cards initially for better UX
         allProjectCards.forEach((card) => {
-          card.style.visibility = "visible";
-          card.style.opacity = "1";
+          card.style.display = "block";
         });
         
         // Then apply pagination
