@@ -207,14 +207,17 @@
       >
         <style>
           #projects-grid {
-            align-items: start; /* Changed from stretch to start to prevent all cards from stretching */
+            align-items: stretch; /* Back to stretch for consistent initial heights */
             min-height: 600px; /* Further reduced minimum height */
           }
           .project-card {
             display: flex;
             flex-direction: column;
             min-height: 350px; /* Further reduced to make cards shorter */
-            height: fit-content; /* Allow cards to grow independently */
+            transition: height 0.3s ease; /* Smooth transition for height changes */
+          }
+          .project-card.expanded {
+            height: auto !important; /* Override grid stretching when expanded */
           }
           .project-content {
             display: flex;
@@ -1207,14 +1210,16 @@
             if (details.classList.contains('hidden')) {
               // Show details
               details.classList.remove('hidden');
+              card.classList.add('expanded'); // Add expanded class
               btn.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>Show Less Details';
-              btn.classList.remove('bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-orange-600', 'bg-red-600', 'bg-indigo-600', 'bg-pink-600', 'bg-yellow-600');
+              btn.classList.remove('bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-orange-600', 'bg-red-600', 'bg-indigo-600', 'bg-pink-600', 'bg-yellow-600', 'bg-emerald-600', 'bg-violet-600', 'bg-amber-600', 'bg-cyan-600', 'bg-rose-600', 'bg-lime-600');
               btn.classList.add('bg-gray-600');
-              btn.classList.remove('hover:bg-blue-700', 'hover:bg-green-700', 'hover:bg-purple-700', 'hover:bg-orange-700', 'hover:bg-red-700', 'hover:bg-indigo-700', 'hover:bg-pink-700', 'hover:bg-yellow-700');
+              btn.classList.remove('hover:bg-blue-700', 'hover:bg-green-700', 'hover:bg-purple-700', 'hover:bg-orange-700', 'hover:bg-red-700', 'hover:bg-indigo-700', 'hover:bg-pink-700', 'hover:bg-yellow-700', 'hover:bg-emerald-700', 'hover:bg-violet-700', 'hover:bg-amber-700', 'hover:bg-cyan-700', 'hover:bg-rose-700', 'hover:bg-lime-700');
               btn.classList.add('hover:bg-gray-700');
             } else {
               // Hide details
               details.classList.add('hidden');
+              card.classList.remove('expanded'); // Remove expanded class
               btn.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Show More Details';
               
               // Restore original color based on card type
@@ -1224,16 +1229,16 @@
                 btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
               } else if (cardType === 'tool') {
                 btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-green-600', 'hover:bg-green-700');
+                btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
               } else if (cardType === 'frontend') {
                 btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-purple-600', 'hover:bg-purple-700');
+                btn.classList.add('bg-violet-600', 'hover:bg-violet-700');
               } else if (cardType === 'full-stack') {
                 btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-teal-600', 'hover:bg-teal-700');
+                btn.classList.add('bg-cyan-600', 'hover:bg-cyan-700');
               } else if (cardType === 'backend') {
                 btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-gray-600', 'hover:bg-gray-700');
+                btn.classList.add('bg-teal-600', 'hover:bg-teal-700');
               }
             }
           }
