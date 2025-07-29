@@ -1488,13 +1488,18 @@
         // Initial render
         renderPage(1);
 
+        // Ensure CSS layout is established before JavaScript runs
+        setTimeout(() => {
+          // Force layout recalculation
+          document.body.offsetHeight;
+        }, 100);
+
         // Show/Hide project details functionality
         document.addEventListener('click', function(e) {
           if (e.target.classList.contains('show-more-btn')) {
             const card = e.target.closest('.project-card');
             const details = card.querySelector('.project-details');
             const btn = e.target;
-            const icon = btn.querySelector('i');
             
             if (details.classList.contains('hidden')) {
               // Show details
@@ -1520,6 +1525,12 @@
               } else if (cardType === 'frontend') {
                 btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
                 btn.classList.add('bg-purple-600', 'hover:bg-purple-700');
+              } else if (cardType === 'full-stack') {
+                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+                btn.classList.add('bg-teal-600', 'hover:bg-teal-700');
+              } else if (cardType === 'backend') {
+                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
+                btn.classList.add('bg-gray-600', 'hover:bg-gray-700');
               }
             }
           }
