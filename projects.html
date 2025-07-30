@@ -146,6 +146,11 @@
 
     <!-- Projects Grid -->
     <main id="main-content" class="container mx-auto px-4 py-8">
+      <!-- Loading indicator -->
+      <div id="loading-indicator" class="text-center py-8">
+        <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+        <p class="mt-2 text-gray-600">Loading projects...</p>
+      </div>
       <!-- Project Filter Section -->
       <div class="mb-12 mt-16">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
@@ -200,7 +205,7 @@
       >
         <style>
           #projects-grid {
-            min-height: 320px; /* Minimum height instead of fixed height */
+            min-height: 520px; /* Minimum height to accommodate fixed card height */
             grid-auto-rows: 1fr; /* Make all grid rows equal height */
             transition: all 0.3s ease; /* Smooth transitions for layout changes */
           }
@@ -210,16 +215,17 @@
           .project-card {
             display: flex;
             flex-direction: column;
-            min-height: 450px; /* Use min-height to allow expansion */
+            height: 500px; /* Fixed height for consistent card sizes */
             transition: all 0.3s ease; /* Smooth transition for all changes */
+            opacity: 0;
+            visibility: hidden;
+          }
+          
+          .project-card.visible {
             opacity: 1;
             visibility: visible;
           }
-          .project-card.expanded {
-            height: auto !important; /* Override grid stretching when expanded */
-            z-index: 10; /* Ensure expanded cards appear above others */
-            position: relative;
-          }
+
           .project-content {
             display: flex;
             flex-direction: column;
@@ -228,11 +234,14 @@
           }
           .project-content-main {
             flex-grow: 1;
-            overflow: visible; /* Show all content */
+            overflow: hidden; /* Hide overflow to maintain consistent height */
             margin-bottom: 8px; /* Add space between content and buttons */
+            display: flex;
+            flex-direction: column;
           }
           .project-content-buttons {
             flex-shrink: 0; /* Prevent buttons from shrinking */
+            margin-top: auto; /* Push buttons to bottom */
             display: flex;
             flex-direction: column;
             gap: 0.4rem; /* Further reduced gap for tighter spacing */
@@ -257,30 +266,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">CSS3</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Game Dev</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Implemented using ES6+ JavaScript classes for game objects</li>
-                    <li>Utilized inheritance for shared functionality between game entities</li>
-                    <li>Created a state management system for tracking game progress</li>
-                    <li>Implemented input validation and error handling</li>
-                    <li>Used event listeners for user interactions</li>
-                    <li>Designed a modular architecture for easy expansion</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Multiple interactive rooms with unique properties</li>
-                    <li>Inventory system with item management</li>
-                    <li>Character interactions with dialogue trees</li>
-                    <li>Combat system with weapon requirements</li>
-                    <li>Puzzle-solving mechanics with state tracking</li>
-                    <li>Save/load game functionality</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -294,9 +280,7 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
+
             </div>
           </div>
         </div>
@@ -319,30 +303,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">CSS3</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Cryptography</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Implemented custom rolling key algorithm for enhanced security</li>
-                    <li>Created real-time encryption/decryption with event listeners</li>
-                    <li>Developed input validation and sanitization system</li>
-                    <li>Built modular functions for different cipher operations</li>
-                    <li>Implemented error handling for edge cases</li>
-                    <li>Used modern JavaScript features for string manipulation</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Real-time encryption and decryption</li>
-                    <li>Custom rolling key implementation</li>
-                    <li>Input validation and error handling</li>
-                    <li>Responsive design for all devices</li>
-                    <li>Copy to clipboard functionality</li>
-                    <li>User-friendly interface with clear feedback</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -356,9 +317,7 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors focus:ring-2 focus:ring-green-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
+
             </div>
           </div>
         </div>
@@ -381,30 +340,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Semantic HTML</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">GitHub Pages</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Built with semantic HTML5 for better accessibility</li>
-                    <li>Implemented responsive design using CSS media queries</li>
-                    <li>Used CSS Grid and Flexbox for modern layouts</li>
-                    <li>Created custom animations and transitions</li>
-                    <li>Optimised images for web performance</li>
-                    <li>Deployed using GitHub Pages</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Responsive design for all devices</li>
-                    <li>Semantic HTML structure</li>
-                    <li>Accessible navigation</li>
-                    <li>Optimised images</li>
-                    <li>Clean, modern design</li>
-                    <li>Fast loading times</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -418,9 +354,7 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-violet-700 text-white py-2 rounded-lg hover:bg-violet-800 transition-colors focus:ring-2 focus:ring-violet-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
+
             </div>
           </div>
         </div>
@@ -443,30 +377,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">CSS3</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Tailwind CSS</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Built with vanilla JavaScript for core functionality</li>
-                    <li>Implemented dynamic question loading and randomization</li>
-                    <li>Created a custom timer system with countdown functionality</li>
-                    <li>Developed score tracking and high score system</li>
-                    <li>Used event delegation for efficient event handling</li>
-                    <li>Implemented responsive design with Tailwind CSS</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Timed questions with countdown timer</li>
-                    <li>Randomized question order</li>
-                    <li>Score tracking and high score system</li>
-                    <li>Star Wars themed UI elements</li>
-                    <li>Responsive design for all devices</li>
-                    <li>Interactive feedback system</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -480,9 +391,7 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
+
             </div>
           </div>
         </div>
@@ -505,43 +414,19 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Cypress</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">GitHub Actions</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Configured Jest for unit and integration testing</li>
-                    <li>Set up Cypress for end-to-end testing</li>
-                    <li>Implemented GitHub Actions workflows for CI/CD</li>
-                    <li>Created custom testing utilities and factories</li>
-                    <li>Integrated code coverage reporting</li>
-                    <li>Set up automated test runs on pull requests</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Comprehensive test suite setup</li>
-                    <li>Automated CI/CD pipeline</li>
-                    <li>Code coverage tracking</li>
-                    <li>Cross-browser testing support</li>
-                    <li>Custom testing utilities</li>
-                    <li>Documentation and best practices</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
                 <a href="https://github.com/colaone1/Open-Source-Testing-Setup" target="_blank" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
                   <i class="fab fa-github mr-1"></i>GitHub
                 </a>
+                <div class="flex-1"></div>
                 <a href="/testing-setup" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-amber-700 text-white py-2 rounded-lg hover:bg-amber-800 transition-colors focus:ring-2 focus:ring-amber-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
+
             </div>
           </div>
         </div>
@@ -567,30 +452,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">GitHub Actions</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Docker</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Node.js backend with Koa for RESTful API endpoints</li>
-                    <li>Frontend for weather and forecast display</li>
-                    <li>Error handling, logging, and rate limiting</li>
-                    <li>Comprehensive automated testing with Jest and Cypress</li>
-                    <li>Continuous integration with GitHub Actions</li>
-                    <li>Dockerized for easy deployment</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Fetch current weather and 7-day forecast by city or coordinates</li>
-                    <li>Health check endpoint</li>
-                    <li>Error handling and logging (Winston)</li>
-                    <li>Rate limiting and security middleware</li>
-                    <li>Automated tests and code coverage</li>
-                    <li>Modern, responsive UI</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -604,9 +466,6 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition-colors focus:ring-2 focus:ring-teal-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -629,28 +488,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">REST API</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Backend</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Node.js backend with Express for RESTful endpoints</li>
-                    <li>MongoDB for persistent data storage</li>
-                    <li>CRUD operations for movies, directors, and genres</li>
-                    <li>API documentation and error handling</li>
-                    <li>Deployed on Render for public access</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Get, add, update, and delete movies</li>
-                    <li>Filter by director, genre, or title</li>
-                    <li>Robust error handling and validation</li>
-                    <li>API documentation for easy integration</li>
-                    <li>Scalable and secure backend</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -664,9 +502,6 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-emerald-700 text-white py-2 rounded-lg hover:bg-emerald-800 transition-colors focus:ring-2 focus:ring-emerald-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -676,7 +511,7 @@
           <div class="h-48 bg-teal-500 flex items-center justify-center">
             <i class="fas fa-server text-6xl text-gray-600"></i>
           </div>
-          <div class="p-6 project-content">
+          <div class="p-4 project-content">
             <div class="project-content-main">
               <h3 class="text-xl font-bold mb-2">Backend Environment and API Structure</h3>
               <p class="text-gray-600 mb-4">
@@ -690,43 +525,18 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Prettier</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Husky</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Express.js backend with modular architecture</li>
-                    <li>Comprehensive testing setup with Jest</li>
-                    <li>Code quality tools (ESLint, Prettier)</li>
-                    <li>Git hooks with Husky for pre-commit checks</li>
-                    <li>Environment configuration management</li>
-                    <li>Error handling and logging middleware</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Ready-to-use backend development environment</li>
-                    <li>Automated testing and code quality checks</li>
-                    <li>Standardized API structure and error handling</li>
-                    <li>Development workflow automation</li>
-                    <li>Comprehensive documentation</li>
-                    <li>MIT licensed for open-source use</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
                 <a href="https://github.com/colaone1/OPEN-SOURCE-Backend-Environment-and-API-Structure" target="_blank" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
                   <i class="fab fa-github mr-1"></i>GitHub
                 </a>
+                <div class="flex-1"></div>
                 <a href="/backend-api" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-teal-600 text-white py-2 rounded-lg hover:bg-teal-700 transition-colors focus:ring-2 focus:ring-teal-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -750,30 +560,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Full Stack</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Team Project</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Next.js frontend with modern React practices</li>
-                    <li>Express.js backend with MongoDB integration</li>
-                    <li>JWT authentication for secure user management</li>
-                    <li>Protected routes and API endpoints</li>
-                    <li>Responsive design with modern UI components</li>
-                    <li>Git hooks with Husky for code quality</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>User registration and authentication</li>
-                    <li>Create, view, edit, and delete events</li>
-                    <li>Protected routes for authenticated users</li>
-                    <li>Modern, accessible UI design</li>
-                    <li>Real-time event management</li>
-                    <li>Team collaboration features</li>
-                  </ul>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -787,9 +574,6 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-purple-700 text-white py-2 rounded-lg hover:bg-purple-800 transition-colors focus:ring-2 focus:ring-purple-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -813,36 +597,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Local Storage</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Social Media</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Next.js 14 with React 18 for modern frontend development</li>
-                    <li>TypeScript for type-safe development and better code quality</li>
-                    <li>Tailwind CSS for responsive and accessible UI design</li>
-                    <li>Local storage for private, device-only data persistence</li>
-                    <li>Component-based architecture with reusable React components</li>
-                    <li>Unit testing with React Testing Library and Jest</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Create, edit, and delete posts with rich content</li>
-                    <li>React to posts with like, love, and laugh reactions</li>
-                    <li>Search functionality for posts by username or content</li>
-                    <li>User profiles with customizable avatars</li>
-                    <li>Local-only data storage for complete privacy</li>
-                    <li>Responsive design optimized for all devices</li>
-                  </ul>
-                </div>
-                <div class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                  <p class="text-sm text-blue-800 font-medium">
-                    <i class="fas fa-shield-alt mr-2"></i>
-                    <strong>Privacy-Focused:</strong> All posts and data are stored locally on your device only. No shared content or external data storage.
-                  </p>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -856,9 +611,6 @@
                   Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-rose-700 text-white py-2 rounded-lg hover:bg-rose-800 transition-colors focus:ring-2 focus:ring-rose-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -882,36 +634,7 @@
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">JWT Auth</span>
                 <span class="px-2 py-1 bg-gray-200 rounded-full text-sm">Cloudinary</span>
               </div>
-              <div class="project-details hidden">
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Technical Implementation:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Next.js 15 with App Router and React 19 for modern frontend</li>
-                    <li>Express.js backend with MVC architecture and MongoDB</li>
-                    <li>JWT-based authentication system with secure token management</li>
-                    <li>Cloudinary integration for image uploads and storage</li>
-                    <li>Comprehensive testing suite (53/53 backend tests passing)</li>
-                    <li>Redis caching and database optimization for performance</li>
-                  </ul>
-                </div>
-                <div class="mb-4">
-                  <h4 class="font-semibold mb-2">Key Features:</h4>
-                  <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-                    <li>Full CRUD operations for apartment listings</li>
-                    <li>Advanced search and filtering with multiple criteria</li>
-                    <li>Favorite listings management and user profiles</li>
-                    <li>File upload system with Cloudinary integration</li>
-                    <li>Responsive design optimized for all devices</li>
-                    <li>Real-time data synchronization and updates</li>
-                  </ul>
-                </div>
-                <div class="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-                  <p class="text-sm text-green-800 font-medium">
-                    <i class="fas fa-check-circle mr-2"></i>
-                    <strong>High Quality:</strong> 100% backend test coverage, 93% frontend test pass rate, and comprehensive error handling.
-                  </p>
-                </div>
-              </div>
+
             </div>
             <div class="project-content-buttons">
               <div class="flex flex-wrap gap-2">
@@ -921,13 +644,10 @@
                 <a href="https://apartment-flow-fullstack-v0-2-a6hh8pj43-sams-projects-88a29ea6.vercel.app/" target="_blank" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
                   <i class="fas fa-external-link-alt mr-1"></i>Live
                 </a>
-                <a href="https://apartmentflow-backend.onrender.com" target="_blank" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
-                  <i class="fas fa-server mr-1"></i>API
+                <a href="/apartment-flow" class="flex-1 bg-gray-900 text-white text-center py-2 px-3 rounded-lg hover:bg-gray-800 transition-colors focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+                  Details
                 </a>
               </div>
-              <button class="show-more-btn w-full mt-4 bg-lime-700 text-white py-2 rounded-lg hover:bg-lime-800 transition-colors focus:ring-2 focus:ring-lime-500 focus:outline-none">
-                <i class="fas fa-chevron-down mr-2"></i>Show More Details
-              </button>
             </div>
           </div>
         </div>
@@ -1095,6 +815,7 @@
           
           cardsToShow.forEach((card, index) => {
             card.classList.remove("hidden");
+            card.classList.add("visible");
             // Reset animation by removing and re-adding it
             card.style.animation = "none";
             card.offsetHeight; // Trigger reflow
@@ -1160,63 +881,19 @@
           });
         });
 
-        // Initial render with fade-in effect
-        // Show all cards initially for better UX
-        allProjectCards.forEach((card) => {
-          card.classList.remove("hidden");
-        });
+        // Hide loading indicator and show initial page
+        const loadingIndicator = document.getElementById('loading-indicator');
+        if (loadingIndicator) {
+          loadingIndicator.style.display = 'none';
+        }
         
-        // Then apply pagination
+        // Initial render with fade-in effect
+        // Apply pagination immediately to prevent flash
         setTimeout(() => {
           renderPage(1);
-        }, 100);
+        }, 50);
 
-        // Show/Hide project details functionality
-        document.addEventListener('click', function(e) {
-          if (e.target.classList.contains('show-more-btn')) {
-            e.preventDefault();
-            e.stopPropagation();
-            
-            const card = e.target.closest('.project-card');
-            const details = card.querySelector('.project-details');
-            const btn = e.target;
-            
-            if (details.classList.contains('hidden')) {
-              // Show details
-              details.classList.remove('hidden');
-              card.classList.add('expanded'); // Add expanded class
-              btn.innerHTML = '<i class="fas fa-chevron-up mr-2"></i>Show Less Details';
-              btn.classList.remove('bg-blue-600', 'bg-green-600', 'bg-purple-600', 'bg-orange-600', 'bg-red-600', 'bg-indigo-600', 'bg-pink-600', 'bg-yellow-600', 'bg-emerald-600', 'bg-violet-600', 'bg-amber-600', 'bg-cyan-600', 'bg-rose-600', 'bg-lime-600');
-              btn.classList.add('bg-gray-600');
-              btn.classList.remove('hover:bg-blue-700', 'hover:bg-green-700', 'hover:bg-purple-700', 'hover:bg-orange-700', 'hover:bg-red-700', 'hover:bg-indigo-700', 'hover:bg-pink-700', 'hover:bg-yellow-700', 'hover:bg-emerald-700', 'hover:bg-violet-700', 'hover:bg-amber-700', 'hover:bg-cyan-700', 'hover:bg-rose-700', 'hover:bg-lime-700');
-              btn.classList.add('hover:bg-gray-700');
-            } else {
-              // Hide details
-              details.classList.add('hidden');
-              card.classList.remove('expanded'); // Remove expanded class
-              btn.innerHTML = '<i class="fas fa-chevron-down mr-2"></i>Show More Details';
-              
-              // Restore original color based on card type
-              const cardType = card.getAttribute('data-type');
-              if (cardType === 'game') {
-                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
-              } else if (cardType === 'tool') {
-                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
-              } else if (cardType === 'frontend') {
-                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-violet-600', 'hover:bg-violet-700');
-              } else if (cardType === 'full-stack') {
-                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-cyan-600', 'hover:bg-cyan-700');
-              } else if (cardType === 'backend') {
-                btn.classList.remove('bg-gray-600', 'hover:bg-gray-700');
-                btn.classList.add('bg-teal-600', 'hover:bg-teal-700');
-              }
-            }
-          }
-        });
+
       });
     </script>
 
@@ -1230,6 +907,17 @@
           opacity: 1;
           transform: translateY(0);
         }
+      }
+      
+      /* Ensure cards are hidden by default */
+      .project-card {
+        opacity: 0;
+        visibility: hidden;
+      }
+      
+      .project-card.visible {
+        opacity: 1;
+        visibility: visible;
       }
     </style>
   </body>
