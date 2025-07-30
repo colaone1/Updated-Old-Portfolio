@@ -830,13 +830,16 @@
           paginationControls.innerHTML = "";
           if (totalPages <= 1) return;
 
-          // Previous button
+          // Previous button - circular navigation
           const prevBtn = document.createElement("button");
           prevBtn.textContent = "Previous";
           prevBtn.className =
             "mx-1 px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none";
-          prevBtn.disabled = currentPage === 1;
-          prevBtn.onclick = () => renderPage(currentPage - 1);
+          // Remove disabled state for circular navigation
+          prevBtn.onclick = () => {
+            const newPage = currentPage === 1 ? totalPages : currentPage - 1;
+            renderPage(newPage);
+          };
           paginationControls.appendChild(prevBtn);
 
           // Page numbers
@@ -853,13 +856,16 @@
             paginationControls.appendChild(pageBtn);
           }
 
-          // Next button
+          // Next button - circular navigation
           const nextBtn = document.createElement("button");
           nextBtn.textContent = "Next";
           nextBtn.className =
             "mx-1 px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none";
-          nextBtn.disabled = currentPage === totalPages;
-          nextBtn.onclick = () => renderPage(currentPage + 1);
+          // Remove disabled state for circular navigation
+          nextBtn.onclick = () => {
+            const newPage = currentPage === totalPages ? 1 : currentPage + 1;
+            renderPage(newPage);
+          };
           paginationControls.appendChild(nextBtn);
         }
 
