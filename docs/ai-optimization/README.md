@@ -9,6 +9,7 @@ This folder contains all documentation specifically designed to optimize AI assi
 - **`PERFORMANCE_CHECKLIST.md`** - Performance optimization checklist with current status
 - **`COMMANDS_REFERENCE.md`** - Common commands and patterns for AI assistance
 - **`PORTFOLIO_SUMMARY.md`** - Quick reference for project structure and specifications
+- **`UNSAFE_OPTIMIZATIONS.md`** - Documented unsafe optimizations and SEO strategy
 
 ### **Legacy AI Documentation**
 - **`AI_PROCESSING_OPTIMIZATION.md`** - Original AI processing optimization guide
@@ -22,6 +23,7 @@ This folder contains all documentation specifically designed to optimize AI assi
 2. **Check `PERFORMANCE_CHECKLIST.md`** - For optimization tasks
 3. **Use `COMMANDS_REFERENCE.md`** - For common operations
 4. **Reference `PORTFOLIO_SUMMARY.md`** - For project structure overview
+5. **Review `UNSAFE_OPTIMIZATIONS.md`** - For future improvement roadmap
 
 ## **🎯 Purpose**
 
@@ -79,6 +81,7 @@ This folder is specifically designed to:
 - **Apartment Flow page** - Optimized viewport positioning for initial load
 - **Documentation organization** - All AI optimization files moved to dedicated folder
 - **File cleanup** - Removed redundant legacy files for better organization
+- **Future roadmap** - Documented unsafe optimizations and SEO strategy
 
 ## **📈 Success Metrics**
 
