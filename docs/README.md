@@ -1,34 +1,27 @@
 # 📚 Documentation - Portfolio Website
 
-This folder contains all AI optimization and project documentation files for the portfolio website.
+This folder contains all project documentation files for the portfolio website, organized by purpose.
 
 ## **📁 File Organization**
 
-### **Primary AI Guides**
-- **`AI_OPTIMIZATION_GUIDE.md`** - Comprehensive guide for AI assistants working with this project
-- **`PROJECT_SUMMARY.md`** - Quick reference for project structure and key files
-- **`PERFORMANCE_CHECKLIST.md`** - Performance optimization checklist with current status
+### **AI Optimization Documentation**
+- **`ai-optimization/`** - All AI optimization and performance documentation
+  - **`AI_OPTIMIZATION_GUIDE.md`** - Comprehensive guide for AI assistants
+  - **`PERFORMANCE_CHECKLIST.md`** - Performance optimization checklist
+  - **`COMMANDS_REFERENCE.md`** - Common commands and patterns
+  - **Legacy files** - Original AI optimization documentation
 
-### **Reference Documentation**
-- **`COMMANDS_REFERENCE.md`** - Common commands and patterns for AI assistance
+### **Project Documentation**
+- **`PROJECT_SUMMARY.md`** - Quick reference for project structure and key files
 - **`code-patterns.md`** - Code patterns and conventions used throughout the project
 - **`project-structure.md`** - Detailed project structure and file organization
 
-### **Legacy Documentation**
-- **`AI_PROCESSING_OPTIMIZATION.md`** - Original AI processing optimization guide
-- **`ai-performance-checklist.md`** - Original performance checklist
-- **`ai-workflow-automation.md`** - Original workflow automation guide
-- **`ai-commands.md`** - Original commands reference
-- **`PORTFOLIO_PERFORMANCE_OPTIMIZATION.md`** - Original performance optimization summary
-- **`PORTFOLIO_AI_GUIDE.md`** - Original AI guide
-- **`PORTFOLIO_SUMMARY.md`** - Original project summary
-
 ## **🚀 Quick Start for AI Assistants**
 
-1. **Start with `AI_OPTIMIZATION_GUIDE.md`** - Get comprehensive understanding
+1. **Start with `ai-optimization/AI_OPTIMIZATION_GUIDE.md`** - Get comprehensive understanding
 2. **Check `PROJECT_SUMMARY.md`** - Understand current project state
-3. **Use `COMMANDS_REFERENCE.md`** - For common operations
-4. **Reference `PERFORMANCE_CHECKLIST.md`** - For optimization tasks
+3. **Use `ai-optimization/COMMANDS_REFERENCE.md`** - For common operations
+4. **Reference `ai-optimization/PERFORMANCE_CHECKLIST.md`** - For optimization tasks
 
 ## **📊 Current Project Status**
 
@@ -86,4 +79,4 @@ This folder contains all AI optimization and project documentation files for the
 
 ---
 
-**This documentation is optimized for AI assistant processing speed and efficiency. Follow the patterns in `AI_OPTIMIZATION_GUIDE.md` for optimal results.** 
+**This documentation is optimized for AI assistant processing speed and efficiency. Follow the patterns in `ai-optimization/AI_OPTIMIZATION_GUIDE.md` for optimal results.** 
