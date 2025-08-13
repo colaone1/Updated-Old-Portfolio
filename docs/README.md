@@ -34,7 +34,7 @@ This folder contains all project documentation files for the portfolio website, 
 - ✅ **`contact.html`** (18KB, 360 lines) - Contact page
 
 ### **Project Pages Optimized**
-- ✅ **`apartment-flow.html`** (20KB, 341 lines) - Apartment Flow project
+
 - ✅ **`weather-app.html`** (12KB, 215 lines) - Weather application
 - ✅ **`text-game.html`** (13KB, 223 lines) - Text-based game
 - ✅ **`testing-setup.html`** (12KB, 207 lines) - Testing infrastructure

@@ -181,7 +181,7 @@
 - [x] **`contact.html`** (18KB, 360 lines) - Contact page
 
 ### **Project Pages Optimized**
-- [x] **`apartment-flow.html`** (20KB, 340 lines) - Apartment Flow project
+
 - [x] **`weather-app.html`** (12KB, 215 lines) - Weather application
 - [x] **`text-game.html`** (13KB, 223 lines) - Text-based game
 - [x] **`testing-setup.html`** (12KB, 207 lines) - Testing infrastructure

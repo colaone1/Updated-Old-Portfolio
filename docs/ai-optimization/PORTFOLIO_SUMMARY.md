@@ -20,7 +20,7 @@ A responsive portfolio website showcasing software development projects and skil
 - **`contact.html`** (18KB, 359 lines) - Contact page with CV download
 
 ### **Project Pages**
-- **`apartment-flow.html`** (20KB, 340 lines) - Apartment Flow project details
+
 - **`weather-app.html`** (12KB, 214 lines) - Weather application project
 - **`text-game.html`** (13KB, 222 lines) - Text-based game project
 - **`testing-setup.html`** (12KB, 206 lines) - Testing infrastructure project

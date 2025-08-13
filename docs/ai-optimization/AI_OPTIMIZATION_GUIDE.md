@@ -15,7 +15,7 @@
 - **`projects.html`** - All projects showcase (45KB, 930 lines)
 - **`about.html`** - About page with CV link (18KB, 322 lines)
 - **`contact.html`** - Contact page with CV download (18KB, 359 lines)
-- **`apartment-flow.html`** - Apartment Flow project details (20KB, 340 lines)
+
 
 ### **📊 Performance Monitoring**
 - **Performance metrics** in `scripts.js` with detailed breakdowns
@@ -36,7 +36,7 @@ Portfolio Site/
 ├── projects.html       # Projects showcase with pagination
 ├── about.html          # About page
 ├── contact.html        # Contact page
-├── apartment-flow.html # Apartment Flow project details
+
 ├── images/             # Images and assets
 │   ├── Background/     # Background images
 │   ├── Logos/          # Logo files

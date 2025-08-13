@@ -45,7 +45,7 @@ This folder is specifically designed to:
 - ✅ **`contact.html`** (18KB, 359 lines) - Contact page
 
 ### **Project Pages Optimized**
-- ✅ **`apartment-flow.html`** (20KB, 340 lines) - Apartment Flow project
+
 - ✅ **`weather-app.html`** (12KB, 214 lines) - Weather application
 - ✅ **`text-game.html`** (13KB, 222 lines) - Text-based game
 - ✅ **`testing-setup.html`** (12KB, 206 lines) - Testing infrastructure
