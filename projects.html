@@ -232,6 +232,14 @@
             visibility: visible;
           }
 
+          /* Ensure all project card headers have exactly the same height */
+          .project-card > div:first-child {
+            height: 192px !important;
+            min-height: 192px !important;
+            max-height: 192px !important;
+            flex-shrink: 0;
+          }
+
           .project-content {
             display: flex;
             flex-direction: column;
