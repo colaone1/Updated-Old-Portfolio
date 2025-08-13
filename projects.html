@@ -240,25 +240,48 @@
             flex-shrink: 0;
           }
 
+          /* Ensure content area has enough space and buttons are always visible */
           .project-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-            height: 100%; /* Ensure it takes full height */
+            height: 100%;
+            min-height: 308px; /* 500px total - 192px header = 308px for content */
           }
+          
           .project-content-main {
             flex-grow: 1;
-            overflow: hidden; /* Hide overflow to maintain consistent height */
-            margin-bottom: 8px; /* Add space between content and buttons */
+            overflow: hidden;
+            margin-bottom: 8px;
             display: flex;
             flex-direction: column;
+            min-height: 200px; /* Ensure minimum space for content */
           }
-          .project-content-buttons {
-            flex-shrink: 0; /* Prevent buttons from shrinking */
-            margin-top: auto; /* Push buttons to bottom */
+          
+          .project-content {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem; /* Further reduced gap for tighter spacing */
+            flex-grow: 1;
+            height: 100%;
+            min-height: 308px; /* 500px total - 192px header = 308px for content */
+          }
+          
+          .project-content-main {
+            flex-grow: 1;
+            overflow: hidden;
+            margin-bottom: 8px;
+            display: flex;
+            flex-direction: column;
+            min-height: 200px; /* Ensure minimum space for content */
+          }
+          
+          .project-content-buttons {
+            flex-shrink: 0;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            min-height: 40px; /* Ensure buttons are always visible */
           }
         </style>
         
