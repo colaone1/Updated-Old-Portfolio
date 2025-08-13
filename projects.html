@@ -7,11 +7,23 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
+    <meta name="cache-bust" content="v2-2025-01-13" />
     <meta
       name="description"
       content="Explore a showcase of Sam C.'s technical projects, including games, tools, and web platforms built with JavaScript, React, Next.js, and more."
     />
     <title>Projects</title>
+    <script>
+      // Force cache refresh
+      if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
+        window.location.reload();
+      }
+      
+      // Additional cache-busting
+      if (window.location.search.indexOf('refresh') === -1) {
+        window.location.search = window.location.search + (window.location.search ? '&' : '?') + 'refresh=' + Date.now();
+      }
+    </script>
 
     <!-- External Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -148,7 +160,7 @@
 
 
     <!-- Projects Grid -->
-    <main id="main-content" class="container mx-auto px-4 py-8 pb-16 flex-grow">
+    <main id="main-content" class="container mx-auto px-4 py-8 pb-16 flex-grow" style="padding-bottom: 4rem !important;">
       <!-- Loading indicator -->
       <div id="loading-indicator" class="text-center py-8">
         <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
@@ -202,6 +214,7 @@
           <button
             class="filter-btn px-6 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300 transition-colors focus:ring-2 focus:ring-gray-500 focus:outline-none hidden"
             data-filter="design"
+            style="display: none !important;"
           >
             Design
           </button>
@@ -641,7 +654,7 @@
 
 
         <!-- CARECOVID Logo Design Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design" style="display: none !important;">
           <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
             <i class="fas fa-palette text-6xl text-white"></i>
           </div>
@@ -670,7 +683,7 @@
         </div>
 
         <!-- CARECOVID Leaflet Design Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design" style="display: none !important;">
           <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
             <i class="fas fa-file-alt text-6xl text-white"></i>
           </div>
@@ -699,7 +712,7 @@
         </div>
 
         <!-- Website Thumbnail Design Project Card -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden project-card hidden" data-type="design" style="display: none !important;">
           <div class="h-48 bg-gradient-to-r from-pink-500 to-red-600 flex items-center justify-center">
             <i class="fas fa-share-alt text-6xl text-white"></i>
           </div>
@@ -728,7 +741,7 @@
         </div>
       </div>
       <!-- Pagination Controls -->
-      <div class="flex justify-center mt-8 mb-24" id="pagination-controls"></div>
+      <div class="flex justify-center mt-8 mb-24" id="pagination-controls" style="margin-bottom: 6rem !important; padding-bottom: 2rem !important;"></div>
     </main>
 
     <!-- Footer -->
