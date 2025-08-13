@@ -865,6 +865,8 @@
     <!-- Project Filtering and Pagination JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        console.log("Projects page loaded");
+        try {
         const projectsGrid = document.getElementById("projects-grid");
         const paginationControls = document.getElementById(
           "pagination-controls",
@@ -879,14 +881,20 @@
 
         function getFilteredCards() {
           return allProjectCards.filter(
-            (card) =>
-              currentFilter === "all" ||
-              card.getAttribute("data-type") === currentFilter,
+            (card) => {
+              // Always exclude design cards
+              if (card.getAttribute("data-type") === "design") {
+                return false;
+              }
+              return currentFilter === "all" ||
+                card.getAttribute("data-type") === currentFilter;
+            }
           );
         }
 
         function renderPage(page) {
           const filteredCards = getFilteredCards();
+          console.log("Filtered cards:", filteredCards.length, "Current filter:", currentFilter);
           const totalPages =
             Math.ceil(filteredCards.length / CARDS_PER_PAGE) || 1;
           currentPage = Math.max(1, Math.min(page, totalPages));
@@ -987,6 +995,9 @@
           renderPage(1);
         }, 50);
 
+        } catch (error) {
+          console.error("Error in projects page:", error);
+        }
 
       });
     </script>
