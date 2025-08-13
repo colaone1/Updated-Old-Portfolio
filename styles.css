@@ -1852,5 +1852,437 @@ body.menu-open {
     }
 }
 
+/* Graphic Design Project Pages Styles */
+
+/* Project Hero Section */
+.project-hero {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #f8f5f2 0%, #e6f0fa 100%);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+.project-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.project-hero-text {
+    max-width: 600px;
+}
+
+.project-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.project-subtitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.25rem;
+    color: #3a7bd5;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.project-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.meta-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: #666;
+    min-width: 80px;
+}
+
+.meta-value {
+    font-family: 'Lexend', sans-serif;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+
+.project-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-main-image:hover {
+    transform: translateY(-5px);
+}
+
+/* Project Details Section */
+.project-details {
+    padding: 4rem 0;
+    background: #ffffff;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.project-overview {
+    max-width: 600px;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+}
+
+.project-description {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+.subsection-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3a7bd5;
+    margin-bottom: 1rem;
+}
+
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list li {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.project-list li::before {
+    content: "•";
+    color: #3a7bd5;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Skills Section */
+.project-skills {
+    max-width: 500px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.skill-category {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid #3a7bd5;
+}
+
+.skill-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    background: #3a7bd5;
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Design Process Section */
+.design-process {
+    margin: 4rem 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.process-step {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #3a7bd5;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.step-content {
+    margin-top: 1rem;
+}
+
+.step-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+}
+
+.step-description {
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Design Features Section */
+.design-features {
+    margin: 4rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Call to Action Section */
+.project-cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #3a7bd5 0%, #2d5aa0 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-family: 'Lexend', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .quest-button {
+    background: white;
+    color: #3a7bd5;
+    border: 2px solid white;
+}
+
+.cta-buttons .quest-button.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.cta-buttons .quest-button:hover {
+    background: #f8f9fa;
+    color: #3a7bd5;
+}
+
+.cta-buttons .quest-button.secondary:hover {
+    background: white;
+    color: #3a7bd5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-hero-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .project-title {
+        font-size: 2.25rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-hero {
+        padding: 4rem 0 2rem;
+    }
+    
+    .project-title {
+        font-size: 1.875rem;
+    }
+    
+    .section-title {
+        font-size: 1.875rem;
+    }
+    
+    .skill-tags {
+        justify-content: center;
+    }
+    
+    .project-meta-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+}
+
+/* Animation for process steps */
+.process-step {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.process-step:nth-child(1) { animation-delay: 0.1s; }
+.process-step:nth-child(2) { animation-delay: 0.2s; }
+.process-step:nth-child(3) { animation-delay: 0.3s; }
+.process-step:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Feature items animation */
+.feature-item {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+.feature-item:nth-child(4) { animation-delay: 0.4s; }
+
 
 
