@@ -212,7 +212,7 @@
   <!-- The body contains all visible content of the webpage -->
   <!-- min-h-screen ensures the body takes at least the full viewport height, preventing awkward short pages -->
   <!-- bg-white sets a clean background color that works well with the fantasy theme -->
-  <body class="min-h-screen bg-white transition-colors duration-300">
+  <body class="min-h-screen bg-white transition-colors duration-300 flex flex-col">
     <!-- Skip to main content link for keyboard navigation -->
     <!-- Positioned off-screen by default, visible on focus -->
     <a
@@ -1039,7 +1039,7 @@
 
     <!-- ===== PROJECTS SECTION ===== -->
     <!-- Main content area for screen readers and skip link -->
-    <main id="main-content">
+    <main id="main-content" class="flex-grow">
       <section
         class="projects-section py-16"
         aria-labelledby="projects-heading"
