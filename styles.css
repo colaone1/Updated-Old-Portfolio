@@ -26,7 +26,7 @@ body {
     right: 0;
     z-index: 50;
     backdrop-filter: blur(8px);
-    background-color: rgba(248, 245, 242, 0.95);
+    background-color: rgba(248, 245, 242, 0.7);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -444,7 +444,7 @@ body {
 
 /* ===== SERVICES SECTION STYLES ===== */
 .services-section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    background: transparent;
 }
 
 .services-section .bg-gray-50 {
@@ -601,7 +601,7 @@ body {
 
 /* ===== PROJECT CARD STYLES ===== */
 .projects-section {
-    background-color: #f8f5f2;
+    background-color: transparent;
     padding: 6rem 0;
 }
 
@@ -1779,7 +1779,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: rgba(248, 245, 242, 0.98);
+    background-color: rgba(248, 245, 242, 0.85);
     z-index: 50;
     display: flex;
     flex-direction: column;
