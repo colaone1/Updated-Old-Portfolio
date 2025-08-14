@@ -215,7 +215,99 @@
   <!-- The body contains all visible content of the webpage -->
   <!-- min-h-screen ensures the body takes at least the full viewport height, preventing awkward short pages -->
   <!-- bg-white sets a clean background color that works well with the fantasy theme -->
-  <body class="min-h-screen bg-white transition-colors duration-300 flex flex-col">
+  <body class="min-h-screen bg-white transition-colors duration-300 flex flex-col relative">
+    <!-- Page-wide background with geometric patterns -->
+    <div class="fixed inset-0 pointer-events-none z-0">
+      <!-- Gradient overlays create a fade effect for better text readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"
+      ></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"
+      ></div>
+      <div class="absolute inset-0 bg-white/10"></div>
+
+      <!-- Geometric Patterns -->
+      <!-- Main patterns -->
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern left"
+        aria-hidden="true"
+        role="presentation"
+        loading="lazy"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern right"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+
+      <!-- Secondary patterns -->
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern top"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern bottom"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+
+      <!-- Additional subtle patterns -->
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern top-left"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern bottom-right"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern center-left"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+      <img
+        src="images/Background/Net design.svg"
+        alt=""
+        class="geometric-pattern center-right"
+        aria-hidden="true"
+        role="presentation"
+        style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
+        data-decorative="true"
+      />
+    </div>
+
     <!-- Skip to main content link for keyboard navigation -->
     <!-- Positioned off-screen by default, visible on focus -->
     <a
@@ -346,106 +438,14 @@
     <!-- Using relative positioning allows child elements to be positioned absolutely within this container -->
     <!-- This creates a layered effect with the background image and content -->
     <header
-      class="hero-section relative pt-16"
+      class="hero-section relative pt-16 z-10"
       role="banner"
       aria-label="Hero section"
     >
-      <!-- Background layers container positioned absolutely to fill the parent -->
-      <div class="absolute inset-0">
-        <!-- Gradient overlays create a fade effect for better text readability -->
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-transparent"
-        ></div>
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"
-        ></div>
-        <div class="absolute inset-0 bg-white/10"></div>
-        <div class="hero-glow"></div>
-
-        <!-- Geometric Patterns -->
-        <!-- Main patterns -->
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern left"
-          aria-hidden="true"
-          role="presentation"
-          loading="lazy"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern right"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-
-        <!-- Secondary patterns -->
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern top"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern bottom"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-
-        <!-- Additional subtle patterns -->
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern top-left"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern bottom-right"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern center-left"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-        <img
-          src="images/Background/Net design.svg"
-          alt=""
-          class="geometric-pattern center-right"
-          aria-hidden="true"
-          role="presentation"
-          style="font-size: 0; line-height: 0; color: transparent; -webkit-text-fill-color: transparent;"
-          data-decorative="true"
-        />
-      </div>
 
       <!-- Hero content positioned above the background with z-index -->
       <div
-        class="relative z-10 mx-auto max-w-7xl px-6"
+        class="relative mx-auto max-w-7xl px-6"
       >
         <div class="text-center">
           <h1
