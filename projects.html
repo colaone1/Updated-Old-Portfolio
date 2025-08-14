@@ -40,7 +40,7 @@
     />
   </head>
 
-  <body class="min-h-screen bg-[#f8f5f2] flex flex-col">
+  <body class="min-h-screen bg-[#f8f5f2] flex flex-col" style="padding-top: 0;">
     <!-- Skip to main content link for keyboard navigation -->
     <a
       href="#main-content"
@@ -160,18 +160,18 @@
 
 
     <!-- Projects Grid -->
-    <main id="main-content" class="container mx-auto px-4 py-8 pb-16 flex-grow" style="padding-bottom: 4rem !important;">
+    <main id="main-content" class="container mx-auto px-4 flex-grow" style="padding-top: 4.5rem !important; padding-bottom: 4rem !important;">
       <!-- Loading indicator -->
       <div id="loading-indicator" class="text-center py-8">
         <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
         <p class="mt-2 text-gray-600">Loading projects...</p>
       </div>
       <!-- Project Filter Section -->
-      <div class="mb-12 mt-16">
+      <div class="mb-8 mt-2">
         <h2 class="text-3xl font-bold text-center mb-4 text-gray-800">
           My Projects
         </h2>
-        <p class="text-lg text-center text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p class="text-lg text-center text-gray-600 mb-6 max-w-2xl mx-auto">
           A showcase of my technical projects and development work
         </p>
         <div class="flex flex-wrap justify-center gap-4">
@@ -222,7 +222,7 @@
       </div>
 
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6"
         id="projects-grid"
       >
         <style>
@@ -741,7 +741,7 @@
         </div>
       </div>
       <!-- Pagination Controls -->
-      <div class="flex justify-center mt-8 mb-24" id="pagination-controls" style="margin-bottom: 6rem !important; padding-bottom: 2rem !important;"></div>
+      <div class="flex justify-center mt-6" id="pagination-controls" style="margin-bottom: 8rem !important; padding-bottom: 2rem !important;"></div>
     </main>
 
     <!-- Footer -->
@@ -1023,6 +1023,31 @@
       .project-card.visible {
         opacity: 1;
         visibility: visible;
+      }
+      
+      /* Ensure navigation is properly positioned and visible */
+      .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: rgba(248, 245, 242, 0.95);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Ensure main content has proper spacing from navigation */
+      main#main-content {
+        margin-top: 0;
+        padding-top: 4.5rem !important;
+      }
+      
+      /* Ensure page has proper breathing room */
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
     </style>
   </body>
