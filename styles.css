@@ -450,7 +450,7 @@ body {
 .services-section .bg-gray-50 {
     transition: all 0.3s ease;
     border: 1px solid transparent;
-    background-color: rgba(248, 250, 252, 0.8) !important;
+    background-color: rgba(248, 250, 252, 0.15) !important;
     backdrop-filter: blur(8px);
 }
 
@@ -458,7 +458,7 @@ body {
     transform: translateY(-5px);
     border-color: #e5e7eb;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    background-color: rgba(248, 250, 252, 0.9) !important;
+    background-color: rgba(248, 250, 252, 0.25) !important;
 }
 
 .services-section .text-4xl {
@@ -611,7 +611,7 @@ body {
 /* Home page card transparency for geometric background visibility */
 .projects-section .bg-white,
 .skills-section .bg-white {
-    background-color: rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
     backdrop-filter: blur(8px);
     transition: all 0.3s ease !important;
 }
@@ -623,14 +623,14 @@ body {
 
 .projects-section .bg-white:hover,
 .skills-section .bg-white:hover {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.25) !important;
     transform: translateY(-5px) !important;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
 }
 
 /* Featured project cards transparency and hover effects */
 .projects-section .bg-gray-800 {
-    background-color: rgba(31, 41, 55, 0.95) !important;
+    background-color: rgba(248, 250, 252, 0.15) !important;
     backdrop-filter: blur(8px);
     transition: all 0.3s ease !important;
     cursor: pointer;
@@ -638,9 +638,46 @@ body {
 }
 
 .projects-section .bg-gray-800:hover {
-    background-color: rgba(31, 41, 55, 0.98) !important;
+    background-color: rgba(248, 250, 252, 0.25) !important;
     transform: translateY(-5px) !important;
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Featured project card content styling for better readability */
+.projects-section .bg-gray-800 h3 {
+    color: #1a1a1a !important;
+    font-weight: 700 !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+.projects-section .bg-gray-800 p {
+    color: #374151 !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
+}
+
+.projects-section .bg-gray-800 i {
+    color: #3a7bd5 !important;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+.projects-section .bg-gray-800 .text-gray-400 {
+    color: #1f2937 !important;
+    background-color: rgba(58, 123, 213, 0.1) !important;
+    border: 1px solid rgba(58, 123, 213, 0.2) !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
+}
+
+.projects-section .bg-gray-800 .text-blue-400 {
+    color: #3a7bd5 !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
+}
+
+.projects-section .bg-gray-800 .text-blue-400:hover {
+    color: #2563eb !important;
+    text-decoration: underline !important;
 }
 
 /* Ensure all child elements don't interfere with card hover */
