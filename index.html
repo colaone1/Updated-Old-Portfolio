@@ -328,20 +328,10 @@
     >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 justify-between items-center">
-          <!-- Logo container with flex properties to center the text -->
-          <!-- ARIA: Logo acts as site identifier and home link -->
+          <!-- Logo/Brand on the left -->
           <div class="flex flex-shrink-0 items-center">
-            <a href="/" class="nav-logo" aria-label="Home">
-              <img
-                src="images/Logos/logo.svg"
-                alt="Portfolio Logo"
-                class="h-10 w-auto"
-                width="400"
-                height="300"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
+            <a href="/" class="font-rajdhani font-semibold text-[#2d5aa0] text-lg" aria-label="Portfolio">
+              Portfolio
             </a>
           </div>
 
@@ -448,12 +438,14 @@
         class="relative mx-auto max-w-7xl px-6 pt-2"
       >
         <div class="text-center">
+          <!-- Removed duplicate owl logo for cleaner design -->
           <h1
-            class="text-5xl md:text-6xl lg:text-7xl font-rajdhani font-bold text-[#2d5aa0] tracking-widest uppercase drop-shadow-md"
+            class="text-5xl md:text-6xl lg:text-7xl font-rajdhani font-bold text-[#2d5aa0] tracking-widest uppercase"
+            style="filter: drop-shadow(0 4px 12px rgba(45, 90, 160, 0.4));"
           >
             Developer & Designer
           </h1>
-          <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mt-6 font-semibold">
+          <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mt-6 font-semibold drop-shadow-sm">
             Full-stack developer creating immersive web experiences with clean code and innovative design.
           </p>
           <div
